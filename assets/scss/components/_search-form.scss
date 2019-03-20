@@ -1,0 +1,19 @@
+////
+/// Search form component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.search-form {
+	display: flex;
+
+	&-input {
+	}
+
+	&-submit {
+		margin-left: 1em;
+	}
+}
+

@@ -1,0 +1,154 @@
+////
+/// Entry component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.entry {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	.archive & {
+		margin-bottom: $gutter;
+
+		> * {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.archive.has-2-columns & {
+
+		@include mq(m) {
+			width: $one-half;
+			margin-left: $gutter;
+
+			&:nth-of-type(2n +1) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.archive.has-3-columns & {
+
+		@include mq(m) {
+			width: $one-third;
+			margin-left: $gutter;
+
+			&:nth-of-type(3n +1) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.archive.has-4-columns & {
+
+		@include mq(m) {
+			width: $one-fourth;
+			margin-left: $gutter;
+
+			&:nth-of-type(4n +1) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.archive .masonry & {
+
+		@include mq(m) {
+			width: 100%;
+			margin-left: 0;
+			break-inside: avoid;
+		}
+	}
+
+	.page-template-blocks .content > & {
+		padding: 0;
+	}
+
+	// Entry header.
+	&-header {
+	}
+
+	// Entry title.
+	&-title {
+
+	}
+
+	// Entry title link.
+	&-title-link {}
+
+	// Entry time.
+	&-time {
+	}
+
+	// Entry author.
+	&-author {
+	}
+
+	// Entry author link.
+	&-author-link {
+	}
+
+	// Entry author name.
+	&-author-name {
+	}
+
+	// Entry comments link
+	&-comments-link {
+	}
+
+	// Entry meta.
+	&-meta {
+	}
+
+	// Entry image link.
+	&-image-link {
+		display: block;
+		margin-bottom: $spacing--l;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	// Entry content.
+	&-content {
+
+		form,
+		pre,
+		table {
+			margin-bottom: $gutter;
+		}
+
+		p {
+
+			.archive & {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	// Entry footer.
+	&-footer {
+	}
+
+	// Entry categories.
+	&-categories {
+	}
+
+	// Entry tags.
+	&-tags {
+	}
+
+	// Comments.
+	&-comments {
+		padding: $gutter;
+	}
+}

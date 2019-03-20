@@ -1,0 +1,42 @@
+////
+/// Site header object.
+///
+/// @group  Objects
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-header {
+	position: relative;
+	z-index: 10;
+	transition: background-color $base--transition-duration $base--transition-timing-function;
+
+	@include mq(m) {
+
+		.has-logo-side &,
+		.has-logo-side.has-sticky-header &,
+		.has-logo-side.has-sticky-header-dekstop & {
+
+			@include position(fixed, 0 null 0 0);
+
+			.wrap {
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+
+	.wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mq(m) {
+
+			.has-logo-center & {
+				justify-content: center;
+			}
+		}
+	}
+}

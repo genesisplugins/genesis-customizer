@@ -1,0 +1,9 @@
+.after-entry {
+	margin: $spacing--l 0;
+	width: 100%;
+	column-span: all;
+
+	.author-box + & {
+		margin-top: 0;
+	}
+}

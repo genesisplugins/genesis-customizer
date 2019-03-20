@@ -1,0 +1,55 @@
+////
+/// Header right component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.site-header {
+
+	.widget {
+		margin-bottom: 0;
+	}
+}
+
+.header-left {
+
+	@include mq(m) {
+		margin-right: auto;
+
+		.has-logo-center & {
+		}
+	}
+
+	@include mq(0, m) {
+
+		.has-logo-above-mobile & {
+			margin-right: auto;
+			flex: 1;
+		}
+	}
+}
+
+.header-right {
+	text-align: right;
+
+	@include mq(m) {
+		margin-left: auto;
+
+		.has-logo-side & {
+			text-align: center;
+			align-self: flex-end;
+			margin-bottom: 20px;
+		}
+	}
+
+	@include mq(0, m) {
+
+		.has-logo-above-mobile & {
+			margin-left: auto;
+			flex: 1;
+		}
+	}
+}
+

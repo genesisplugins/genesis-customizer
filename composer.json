@@ -1,0 +1,36 @@
+{
+  "name": "genesisplugins/genesis-customizer",
+  "description": "Core functionality plugin for Genesis Customizer.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "genesisplugins",
+      "email": "genesisplugins@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "aristath/kirki": "dev-develop",
+    "yahnis-elsts/plugin-update-checker": "dev-master"
+  },
+  "autoload": {
+    "files": [
+      "src/bootstrap/compat.php",
+      "src/bootstrap/helpers.php",
+      "src/bootstrap/setup.php",
+      "src/bootstrap/autoload.php",
+      "vendor/aristath/kirki/kirki.php"
+    ],
+    "classmap": [
+      "src/classes/"
+    ]
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  }
+}

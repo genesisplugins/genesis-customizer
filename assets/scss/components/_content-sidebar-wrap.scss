@@ -1,0 +1,31 @@
+////
+/// Content Sidebar Wrap component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.content-sidebar-wrap {
+	width: 90%;
+
+	@include margin(null auto);
+
+	@include mq(m) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.page-template-blocks & {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	// Sub wrap.
+	.wrap {
+		width: 100%;
+		max-width: 100%;
+	}
+}

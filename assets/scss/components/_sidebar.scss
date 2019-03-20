@@ -1,0 +1,30 @@
+////
+/// Sidebar component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.sidebar {
+
+	&-primary {
+
+		@include margin($spacing--l null);
+
+		@include mq(m) {
+			width: $layout--width--sidebar;
+
+			@include margin($spacing--xl null);
+		}
+	}
+
+	ul {
+		margin-bottom: 0;
+	}
+
+	li {
+		margin-bottom: 0.382em;
+		list-style-type: none;
+	}
+}

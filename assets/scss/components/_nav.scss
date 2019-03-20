@@ -1,0 +1,121 @@
+////
+/// Nav Primary component.
+///
+/// @group  Components
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+.nav {
+
+	&-primary {
+
+		@include mq(m) {
+			display: flex;
+
+			.has-logo-side & {
+				width: 100%;
+
+				.menu {
+					width: 100%;
+				}
+			}
+
+			.has-logo-above & {
+				width: 100%;
+				justify-content: center;
+			}
+		}
+
+		.mobile & {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100vw;
+			display: none;
+			z-index: 4;
+		}
+
+		.mobile.has-mobile-menu-left &,
+		.mobile.has-mobile-menu-right &,
+		.mobile.has-mobile-menu-center & {
+			display: flex;
+			align-items: center;
+
+			@include position(fixed, 0 0 0 0);
+			@include size(100%);
+			@include padding(0 $spacing--l);
+			@include transition();
+		}
+
+		.mobile.has-mobile-menu-center & {
+			transform: scale(0);
+			opacity: 0;
+
+			&.visible {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		.mobile.has-mobile-menu-right & {
+			transform: translateX(100vw);
+		}
+
+		.mobile.has-mobile-menu-left & {
+			transform: translateX(-100vw);
+
+			&.visible {
+				transform: translateX(0);
+			}
+		}
+
+		.mobile.has-mobile-menu-top & {
+			left: -5vw;
+		}
+
+		.no-js & {
+			display: flex;
+			position: relative;
+		}
+	}
+
+	&-secondary {
+		transition: background-color $base--transition-duration $base--transition-timing-function, opacity $base--transition-duration $base--transition-timing-function;
+
+		.mobile & {
+			display: none;
+		}
+
+		.desktop & {
+			z-index: 2;
+			width: 100%;
+			position: relative;
+			opacity: 1;
+			display: flex;
+			align-items: center;
+
+			.wrap {
+				height: 100%;
+				position: relative;
+			}
+
+			.menu {
+				justify-content: flex-start;
+				height: 100%;
+			}
+		}
+
+		.has-logo-above &,
+		.has-logo-center & {
+
+			.wrap {
+				justify-content: center;
+			}
+		}
+
+		.has-logo-side & {
+			height: auto;
+		}
+	}
+}

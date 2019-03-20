@@ -1,0 +1,79 @@
+<?php
+
+namespace GenesisPlugins\GenesisCustomizer;
+
+return [
+	[
+		'type'     => 'multicolor',
+		'settings' => 'colors',
+		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'choices'  => [
+			'text'       => __( 'Text', 'genesis-customizer' ),
+			'background' => __( 'Background', 'genesis-customizer' ),
+		],
+		'default'  => [
+			'text'       => _get_color( 'text' ),
+			'background' => _get_color( 'background' ),
+		],
+		'output'   => [
+			[
+				'choice'   => 'text',
+				'element'  => 'body',
+				'property' => 'color'
+			],
+			[
+				'choice'   => 'background',
+				'element'  => 'body',
+				'property' => 'background-color'
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-2',
+		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'typography',
+		'settings' => 'typography',
+		'label'    => __( 'Typography', 'genesis-customizer' ),
+		'default'  => [
+			'font-family'    => '',
+			'font-size'      => _get_size( 'm' ),
+			'variant'        => '400',
+			'line-height'    => '1.6',
+			'letter-spacing' => '',
+			'text-transform' => '',
+		],
+		'output'   => [
+			[
+				'element' => 'body',
+			]
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-5',
+		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'dimensions',
+		'settings' => 'paragraph',
+		'label'    => __( 'Paragraphs', 'genesis-customizer' ),
+		'default'  => [
+			'margin-top'    => '0',
+			'margin-bottom' => _get_size( 'm' ),
+		],
+		'choices'  => [
+			'labels' => [
+				'margin-top'    => __( 'Margin Top', 'genesis-customizer' ),
+				'margin-bottom' => __( 'Margin Bottom', 'genesis-customizer' ),
+			],
+		],
+		'output'   => [
+			[
+				'element' => 'p',
+			],
+		],
+	],
+];

@@ -1,9 +1,7 @@
-/src/pro/
-/src/pro/*
-
 /logs/
 /node_modules/
 /composer.lock
+/yarn.lock
 /.phpcs.xml
 /phpcs.xml
 /phpunit.xml
@@ -40,3 +38,10 @@
 
 /vendor/seothemes/core/*.md
 /vendor/seothemes/core/.*
+
+/vendor/bin/
+
+/vendor/yahnis-elsts/plugin-update-checker/examples/
+/vendor/yahnis-elsts/plugin-update-checker/.editorconfig
+/vendor/yahnis-elsts/plugin-update-checker/license.txt
+/vendor/yahnis-elsts/plugin-update-checker/README.md

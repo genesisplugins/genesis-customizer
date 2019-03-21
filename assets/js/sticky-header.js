@@ -44,7 +44,7 @@
                     siteHeader.removeClass('shrink');
                 }
             } else {
-                if (!body.hasClass('no-sticky-header') && scroll >= height) {
+                if (!body.hasClass('no-sticky-header') && scroll >= primaryHeaderHeight) {
                     siteHeader.addClass('shrink');
                     siteHeader.removeClass('no-shrink');
                 } else {
@@ -55,7 +55,7 @@
         }
 
         // Has sticky nav secondary.
-        if (siteHeader.hasClass('shrink')) {
+        if (siteHeader.hasClass('shrink') || !aboveHeader.length) {
             navSecondary.css({
                 'transform': 'translateY(' + -Math.abs(navSecondaryScroll) + 'px)'
             });
@@ -79,7 +79,13 @@
         if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side')) {
 
             // Default.
-            if ( scroll >= aboveHeaderHeight && aboveHeader.is(':visible') ) {
+            if (scroll >= aboveHeaderHeight && aboveHeader.is(':visible')) {
+                siteHeader.css({
+                    'margin-top': '-' + aboveHeaderHeight + 'px',
+                    'position': 'fixed',
+                });
+
+            } else if (scroll >= aboveHeaderHeight) {
                 siteHeader.css({
                     'margin-top': '-' + aboveHeaderHeight + 'px',
                     'position': 'fixed',

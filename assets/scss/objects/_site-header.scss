@@ -11,6 +11,14 @@
 	z-index: 10;
 	transition: background-color $base--transition-duration $base--transition-timing-function;
 
+	@include mq(0, m) {
+
+		.admin-bar.has-sticky-header-mobile &,
+		.admin-bar.has-sticky-header & {
+			top: 46px !important;
+		}
+	}
+
 	@include mq(m) {
 
 		.has-logo-side &,
@@ -23,6 +31,10 @@
 				justify-content: center;
 				align-items: center;
 			}
+		}
+
+		.admin-bar.has-sticky-header-desktop & {
+			top: 32px !important;
 		}
 	}
 

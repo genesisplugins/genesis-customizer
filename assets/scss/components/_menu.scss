@@ -35,6 +35,12 @@
 		transition: all 0.2s ease;
 	}
 
+	.sidebar & {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
 	// Menu item.
 	&-item {
 		display: flex;
@@ -77,6 +83,10 @@
 				justify-content: center;
 				text-align: center;
 			}
+		}
+
+		.sidebar & {
+			width: 100%;
 		}
 	}
 

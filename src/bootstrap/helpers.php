@@ -53,8 +53,19 @@ function _get_handle() {
  *
  * @return string
  */
+function _get_author() {
+	return 'Genesis Plugins';
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
 function _get_version() {
-	return '1.0.0';
+	return '0.1.0';
 }
 
 /**

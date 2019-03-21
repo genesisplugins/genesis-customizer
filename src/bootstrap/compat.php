@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'admin_init', 'genesis_customizer_deactivate_plugin' );
+add_action( 'plugins_loaded', 'genesis_customizer_deactivate_plugin' );
 /**
  * Description of expected behavior.
  *

@@ -46,17 +46,6 @@ function genesis_customizer_deactivation_notice() {
  *
  * @since 1.0.0
  *
- * @return bool
- */
-function genesis_customizer_is_compatible() {
-	return genesis_customizer_deactivation_message() ? false : true;
-}
-
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
  * @return bool|string
  */
 function genesis_customizer_deactivation_message() {
@@ -84,6 +73,17 @@ function genesis_customizer_deactivation_message() {
 	}
 
 	return false;
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return bool
+ */
+function genesis_customizer_is_compatible() {
+	return genesis_customizer_deactivation_message() ? false : true;
 }
 
 // Return boolean value.

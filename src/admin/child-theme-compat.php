@@ -26,3 +26,27 @@ function child_theme_compat() {
 
 	return false;
 }
+
+add_action( 'admin_notices', __NAMESPACE__ . '\child_theme_notice' );
+/**
+ * Displays the admin notice warning message.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function child_theme_notice() {
+	if ( child_theme_compat() ) {
+		return;
+
+	} else {
+		printf(
+			'<div class="notice notice-warning"><p><strong>%s</strong> %s <a href="%s" target="_blank">%s</a> %s </p></div>',
+			_get_name(),
+			__( ' is not supported by the active child theme and may not work as expected. Please install a compatible child theme or refer to the', 'genesis-customizer' ),
+			esc_attr__( 'https://genesiscustomizer.com/blog' ),
+			__( 'adding theme support guide', 'genesis-customizer' ),
+			__( 'for instructions on how to declare Genesis Customizer support in your theme.', 'genesis-customizer' )
+		);
+	}
+}

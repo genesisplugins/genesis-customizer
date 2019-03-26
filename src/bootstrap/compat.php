@@ -32,7 +32,7 @@ function genesis_customizer_deactivation_notice() {
 			'<div class="notice notice-error"><p><b>%1$s</b> %2$s %3$s</p></div>',
 			__( 'Genesis Customizer', 'genesis-customizer' ),
 			genesis_customizer_deactivation_message(),
-			__( 'or greater to run and has been deactivated.', 'genesis-customizer' )
+			__( 'to run and has been deactivated.', 'genesis-customizer' )
 		);
 
 		if ( isset( $_GET['activate'] ) ) {
@@ -61,19 +61,30 @@ function genesis_customizer_is_compatible() {
  */
 function genesis_customizer_deactivation_message() {
 	if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
-		return __( 'requires PHP version 5.6', 'genesis-customizer' );
+		return __( 'requires PHP version 5.6 or greater', 'genesis-customizer' );
 	}
 
 	if ( version_compare( get_bloginfo( 'version' ), '5.0.0', '<' ) ) {
-		return __( 'requires WordPress version 5.0.0', 'genesis-customizer' );
+		return __( 'requires WordPress version 5.0.0 or greater', 'genesis-customizer' );
 	}
 
-	if ( 'genesis' !== get_template() && 'Genesis' !== get_template() || wp_get_theme()->parent() && version_compare( wp_get_theme()->parent()->Version, '2.8.0', '<' ) ) {
-		return __( 'requires Genesis version 2.8.0', 'genesis-customizer' );
+	if ( 'genesis' !== get_template() && 'Genesis' !== get_template() || 'genesis' === get_stylesheet() ) {
+		return __( 'requires the Genesis Framework and an active child theme', 'genesis-customizer' );
+	}
+
+	$parent = wp_get_theme()->parent();
+	$name   = (string) $parent;
+
+	if ( ! $name || 'genesis' !== $name && 'Genesis' !== $name ) {
+		return __( 'requires the Genesis Framework and an active child theme', 'genesis-customizer' );
+	}
+
+	if ( version_compare( $parent->Version, '2.9.1', '<' ) ) {
+		return __( 'requires the Genesis Framework version 2.9.1', 'genesis-customizer' );
 	}
 
 	return false;
 }
 
-// Return boolean.
+// Return boolean value.
 return genesis_customizer_is_compatible();

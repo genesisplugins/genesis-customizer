@@ -1,6 +1,5 @@
 <?php
 
-
 add_action( 'admin_notices', __NAMESPACE__ . '\upgrade_notice' );
 /**
  * Description of expected behavior.

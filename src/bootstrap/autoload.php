@@ -2,16 +2,31 @@
 
 namespace GenesisPlugins\GenesisCustomizer;
 
-add_action( 'genesis_customizer_init', __NAMESPACE__ . '\load_composer' );
+spl_autoload_register( __NAMESPACE__ . '\autoload_register' );
 /**
  * Description of expected behavior.
  *
  * @since 1.0.0
  *
- * @return void
+ * @param $class_name
+ *
+ * @return null|string
  */
-function load_composer() {
-	require_once _get_path() . 'vendor/autoload.php';
+function autoload_register( $class_name ) {
+	if ( 0 !== strpos( $class_name, __NAMESPACE__ ) ) {
+		return null;
+	}
+
+	$search    = [ __NAMESPACE__, '\\', '-', '_', ];
+	$replace   = [ '', '-', '', '-', ];
+	$file_name = strtolower( str_replace( $search, $replace, $class_name ) );
+	$file      = _get_path() . 'src/classes/class-' . $file_name . '.php';
+
+	if ( file_exists( $file ) ) {
+		require $file;
+	}
+
+	return $file;
 }
 
 add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\load_files', 5 );

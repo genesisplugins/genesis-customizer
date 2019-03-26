@@ -2,17 +2,7 @@
 
 namespace GenesisPlugins\GenesisCustomizer;
 
-add_action( 'genesis_customizer_init', __NAMESPACE__ . '\load_kirki' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function load_kirki() {
-}
-
+// Load Kirki.
 require_once _get_path() . 'vendor/aristath/kirki/kirki.php';
 
 add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\kirki_setup' );

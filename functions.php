@@ -38,6 +38,10 @@ add_action( 'admin_init', 'genesis_customizer_not_a_theme' );
 function genesis_customizer_not_a_theme() {
 	global $wp_filesystem;
 
+	$theme_dir   = trailingslashit( get_stylesheet_directory() );
+	$child_dir   = dirname( $theme_dir ) . '/genesis-child-theme/';
+	$child_files = $theme_dir . 'assets/templates/child-theme/';
+
 	if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'genesis-customizer-theme-to-plugin' ) ) {
 		return false;
 	}
@@ -56,7 +60,6 @@ function genesis_customizer_not_a_theme() {
 	}
 
 	$plugin_dir = $wp_filesystem->wp_plugins_dir() . 'genesis-customizer/';
-	$theme_dir  = trailingslashit( get_stylesheet_directory() );
 
 	// Check if the framework plugin directory already exists.
 	if ( is_dir( $plugin_dir ) ) {
@@ -67,7 +70,6 @@ function genesis_customizer_not_a_theme() {
 
 	// Move the plugin.
 	if ( $wp_filesystem->move( $theme_dir, $plugin_dir ) ) {
-		// @todo Any way to re-activate the previous theme?
 		activate_plugin( basename( __DIR__ ) . '/genesis-customizer.php' );
 		wp_safe_redirect( esc_url_raw( admin_url( 'plugins.php' ) ) );
 		exit;

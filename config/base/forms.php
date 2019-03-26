@@ -32,7 +32,7 @@ return [
 			[
 				'choice'   => 'background',
 				'element'  => _get_elements( 'input' ),
-				'property' => 'color',
+				'property' => 'background-color',
 			],
 			[
 				'choice'   => 'text',

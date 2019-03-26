@@ -45,7 +45,9 @@ return [
 		'settings' => 'typography',
 		'label'    => __( 'Typography', 'genesis-customizer' ),
 		'default'  => [
+			'font-family' => '',
 			'font-size'   => '',
+			'variant'     => '',
 			'line-height' => '',
 		],
 		'output'   => [

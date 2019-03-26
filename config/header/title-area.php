@@ -37,6 +37,17 @@ return [
 	],
 	[
 		'type'     => 'custom',
+		'settings' => 'tip-1',
+		'default'  => sprintf(
+			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'Looking for the Custom Logo settings? Change them in the ', 'genesis-customizer' ),
+			esc_attr( '"title_tagline"' ),
+			esc_html__( 'Site Identity Section', 'genesis-customizer' )
+		),
+	],
+	[
+		'type'     => 'custom',
 		'settings' => 'divider-1',
 		'default'  => '<hr>',
 	],

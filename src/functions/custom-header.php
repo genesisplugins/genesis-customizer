@@ -5,12 +5,9 @@ namespace GenesisPlugins\GenesisCustomizer;
 /**
  * Custom header image callback.
  *
- * Loads custom header or featured image depending on what is set on a per
- * page basis. If a featured image is set for a page, it will override
- * the default header image. It also gets the image for custom post
- * types by looking for a page with the same slug as the CPT e.g
- * the Portfolio CPT archive will pull the featured image from
- * a page with the slug of 'portfolio', if the page exists.
+ * Loads custom header or featured image depending on what is set on a per page basis,
+ * if a featured image is set for the page, it will override the default header image.
+ * Also gets the images for custom post types by looking for pages with the same slug.
  *
  * @since  1.0.0
  *
@@ -21,6 +18,7 @@ function custom_header() {
 	$custom  = _get_value( 'header_hero-section_background' );
 	$default = isset( $custom['background-image'] ) ? $custom['background-image'] : get_theme_support( 'custom-header', 'default_image' );
 
+	/// TODO: Add rules for every conditional in template-loader.php.
 	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 		$id = wc_get_page_id( 'shop' );
 

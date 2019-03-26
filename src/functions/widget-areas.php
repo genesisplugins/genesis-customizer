@@ -2,9 +2,19 @@
 
 namespace GenesisPlugins\GenesisCustomizer;
 
-unregister_sidebar( 'sidebar' );
-unregister_sidebar( 'sidebar-alt' );
-unregister_sidebar( 'header-right' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\unregister_widget_areas', 19 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function unregister_widget_areas() {
+	unregister_sidebar( 'sidebar' );
+	unregister_sidebar( 'sidebar-alt' );
+	unregister_sidebar( 'header-right' );
+}
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\register_widget_areas', 20 );
 /**

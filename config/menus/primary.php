@@ -26,7 +26,7 @@ return [
 				'element'  => [
 					'.menu-primary a:hover',
 					'.menu-primary a:focus',
-					'.menu-primary .current-menu-item > a'
+					'.menu-primary .current-menu-item > a',
 				],
 				'property' => 'color',
 			],
@@ -34,8 +34,18 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-1',
-		'default'  => '<hr>',
+		'settings' => 'tip-1',
+		'default'  => sprintf(
+			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a> %s</p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'These settings are for the default desktop colors only and will be overridden by ', 'genesis-customizer' ),
+			esc_attr( '"genesis-customizer_menus_mobile"' ),
+			esc_html__( 'Mobile Menu', 'genesis-customizer' ),
+			esc_html__( 'and', 'genesis-customizer' ),
+			esc_attr( '"genesis-customizer_header_transparent"' ),
+			esc_html__( 'Transparent Header', 'genesis-customizer' ),
+			esc_html__( 'settings.', 'genesis-customizer' )
+		),
 	],
 	[
 		'type'     => 'typography',

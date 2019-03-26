@@ -10,6 +10,10 @@ add_action( 'plugins_loaded', 'genesis_customizer_deactivate_plugin' );
  */
 function genesis_customizer_deactivate_plugin() {
 	if ( ! genesis_customizer_is_compatible() ) {
+		if ( ! function_exists( 'deactivate_plugins' ) ) {
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+
 		deactivate_plugins( plugin_dir_path( dirname( __DIR__ ) ) . 'genesis-customizer.php' );
 	}
 }
@@ -70,3 +74,6 @@ function genesis_customizer_deactivation_message() {
 
 	return false;
 }
+
+// Return boolean.
+return genesis_customizer_is_compatible();

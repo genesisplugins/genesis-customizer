@@ -4,6 +4,17 @@ namespace GenesisPlugins\GenesisCustomizer;
 
 return [
 	[
+		'type'     => 'custom',
+		'settings' => 'tip-1',
+		'default'  => sprintf(
+			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'This is a widget area. Add or remove widgets from the  ', 'genesis-customizer' ),
+			esc_attr( '"sidebar-widgets-above-header"' ),
+			esc_html__( 'Above Header Widgets Screen', 'genesis-customizer' )
+		),
+	],
+	[
 		'type'     => 'radio',
 		'settings' => 'enabled',
 		'label'    => __( 'Enable on', 'genesis-customizer' ),

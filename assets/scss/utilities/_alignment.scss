@@ -62,7 +62,7 @@
 
 		&-desktop {
 
-			.desktop & {
+			@include mq(m) {
 				margin-right: auto;
 			}
 		}
@@ -74,7 +74,7 @@
 
 		&-desktop {
 
-			.desktop & {
+			@include mq(m) {
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -86,7 +86,7 @@
 
 		&-desktop {
 
-			.desktop & {
+			@include mq(m) {
 				margin-left: auto;
 			}
 		}

@@ -35,8 +35,16 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-2',
-		'default'  => '<hr>',
+		'settings' => 'tip-0',
+		'default'  => sprintf(
+			'<hr><p><strong>%s</strong> %s <strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip:', 'genesis-customizer' ),
+			esc_html__( 'Menu not aligning correctly? Try adjusting the', 'genesis-customizer' ),
+			esc_html__( 'Align Menu', 'genesis-customizer' ),
+			esc_html__( 'setting in the', 'genesis-customizer' ),
+			esc_attr( '"genesis-customizer_menus_primary"' ),
+			esc_html__( 'Primary Menu Section', 'genesis-customizer' )
+		),
 	],
 	[
 		'type'      => 'multicolor',
@@ -79,7 +87,7 @@ return [
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong>%s<a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
-			esc_html__( 'Transparent header colors can be customized from the ', 'genesis-customizer' ),
+			esc_html__( 'Transparent header colors override the Primary Header defaults. They can be customized from the ', 'genesis-customizer' ),
 			esc_attr( '"genesis-customizer_header_transparent"' ),
 			esc_html__( 'Transparent Header Section', 'genesis-customizer' )
 		),

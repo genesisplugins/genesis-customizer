@@ -14,7 +14,7 @@ function load_textdomain() {
 	load_plugin_textdomain( _get_handle() );
 }
 
-add_action( 'init', __NAMESPACE__ . '\add_init_hook', 15 );
+add_action( 'plugins_loaded', __NAMESPACE__ . '\add_init_hook', 15 );
 /**
  * Description of expected behavior.
  *

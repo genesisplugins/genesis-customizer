@@ -18,8 +18,14 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-1',
-		'default'  => '<hr>',
+		'settings' => 'tip-1',
+		'default'  => sprintf(
+			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'Edit the  ', 'genesis-customizer' ),
+			esc_attr( '"sidebar-widgets-header-left-widget"' ),
+			esc_html__( 'Header Left Widgets', 'genesis-customizer' )
+		),
 	],
 	[
 		'type'      => 'radio',
@@ -36,8 +42,14 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-3',
-		'default'  => '<hr>',
+		'settings' => 'tip-2',
+		'default'  => sprintf(
+			'<hr><p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'Edit the  ', 'genesis-customizer' ),
+			esc_attr( '"sidebar-widgets-header-right-widget"' ),
+			esc_html__( 'Header Right Widgets', 'genesis-customizer' )
+		),
 	],
 	[
 		'type'     => 'slider',

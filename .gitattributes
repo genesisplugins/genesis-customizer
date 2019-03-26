@@ -1,0 +1,76 @@
+# Normalize text file line endings to LF on checkin
+# and prevent conversion to CRLF on checkout.
+* text=auto eol=lf
+
+# Text files.
+*.css text
+*.dist text
+*.js text
+*.json text
+*.md text
+*.php text
+*.po text
+*.pot text
+*.xml text
+
+# Binary files.
+*.eot binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.mo binary
+*.png binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# Omit during export.
+.editorconfig export-ignore
+.eslintignore export-ignore
+.eslintrc.js export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+.scripts/ export-ignore
+.stylelintrc.json export-ignore
+composer.json export-ignore
+phpcs.xml.dist export-ignore
+package-lock.json export-ignore
+package.json export-ignore
+
+/tests/ export-ignore
+
+/vendor/aristath/kirki/.github/ export-ignore
+/vendor/aristath/kirki/docs/ export-ignore
+/vendor/aristath/kirki/tests/ export-ignore
+/vendor/aristath/kirki/controls/scss/ export-ignore
+/vendor/aristath/kirki/.* export-ignore
+/vendor/aristath/kirki/*.sh export-ignore
+/vendor/aristath/kirki/*.md export-ignore
+/vendor/aristath/kirki/*.txt export-ignore
+/vendor/aristath/kirki/*.xml export-ignore
+/vendor/aristath/kirki/*.dist export-ignore
+/vendor/aristath/kirki/LICENSE export-ignore
+/vendor/aristath/kirki/package* export-ignore
+/vendor/aristath/kirki/Gruntfile.js export-ignore
+/vendor/aristath/kirki/example.php export-ignore
+
+/vendor/monolog/monolog/LICENSE export-ignore
+/vendor/monolog/monolog/*.md export-ignore
+
+/vendor/psr/log/.* export-ignore
+/vendor/psr/log/*.md export-ignore
+/vendor/psr/log/LICENSE export-ignore
+/vendor/psr/log/Psr/Log/Test export-ignore
+
+/vendor/richtabor/merlin-wp/dist/ export-ignore
+/vendor/richtabor/merlin-wp/assets/scss/ export-ignore
+/vendor/richtabor/merlin-wp/*.md export-ignore
+/vendor/richtabor/merlin-wp/*.lock export-ignore
+/vendor/richtabor/merlin-wp/package* export-ignore
+/vendor/richtabor/merlin-wp/LICENSE export-ignore
+
+/vendor/yahnis-elsts/plugin-update-checker/examples/ export-ignore
+/vendor/yahnis-elsts/plugin-update-checker/.editorconfig export-ignore
+/vendor/yahnis-elsts/plugin-update-checker/license.txt export-ignore
+/vendor/yahnis-elsts/plugin-update-checker/README.md export-ignore

@@ -2,7 +2,20 @@
 
 namespace GenesisPlugins\GenesisCustomizer;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\kirki_setup', 20 );
+add_action( 'genesis_customizer_init', __NAMESPACE__ . '\load_kirki' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function load_kirki() {
+}
+
+require_once _get_path() . 'vendor/aristath/kirki/kirki.php';
+
+add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\kirki_setup' );
 /**
  * Description of expected behavior.
  *
@@ -11,15 +24,15 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\kirki_setup', 20 );
  * @return void
  */
 function kirki_setup() {
-//	add_filter( 'kirki/dynamic_css/method', '__return_true' );
 	add_filter( 'kirki_telemetry', '__return_false' );
+//	add_filter( 'kirki/dynamic_css/method', '__return_true' );
 //	add_filter( 'kirki_output_inline_styles', '__return_false' );
 //	add_filter( 'kirki_gutenberg_' . _get_handle() . '_dynamic_css', function () {
 	//return file_get_contents( WP_CONTENT_DIR . '/uploads/kirki-css/styles.css' );
 //	} );
 }
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\add_kirki_config', 20 );
+add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_kirki_config' );
 /**
  * Adds the theme's Kirki config.
  *
@@ -73,12 +86,12 @@ function customize_register( $wp_customize ) {
 		new Link_Section(
 			$wp_customize,
 			$handle . '_pro',
-			array(
+			[
 				'title'      => __( 'Upgrade to Genesis Customizer Pro', 'genesis-customizer' ),
 				'priority'   => 0,
 				'type'       => 'genesis-customizer-link',
 				'button_url' => 'https://genesiscustomizer.com/',
-			)
+			]
 		)
 	);
 
@@ -86,12 +99,12 @@ function customize_register( $wp_customize ) {
 		new Hidden_Section(
 			$wp_customize,
 			$handle,
-			array(
+			[
 				'panel'    => $handle,
 				'title'    => $handle,
 				'priority' => 0,
 				'type'     => 'genesis-customizer-hidden',
-			)
+			]
 		)
 	);
 
@@ -151,8 +164,8 @@ function add_misc_fields() {
 	\Kirki::add_field( $handle, [
 		'type'     => 'slider',
 		'section'  => 'title_tagline',
-		'settings' => $handle . '_logo_width',
-		'label'    => __( 'Logo Width', 'genesis-customizer' ),
+		'settings' => $handle . '_logo_width_mobile',
+		'label'    => __( 'Logo Width Mobile', 'genesis-customizer' ),
 		'priority' => 8,
 		'default'  => '200',
 		'choices'  => [
@@ -162,9 +175,32 @@ function add_misc_fields() {
 		],
 		'output'   => [
 			[
-				'element'  => '.custom-logo',
-				'property' => 'width',
-				'units'    => 'px',
+				'element'     => '.custom-logo',
+				'property'    => 'width',
+				'units'       => 'px',
+				'media_query' => _get_media_query( 'max' ),
+			],
+		],
+	] );
+
+	\Kirki::add_field( $handle, [
+		'type'     => 'slider',
+		'section'  => 'title_tagline',
+		'settings' => $handle . '_logo_width_desktop',
+		'label'    => __( 'Logo Width Desktop', 'genesis-customizer' ),
+		'priority' => 8,
+		'default'  => '200',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 600,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'     => '.custom-logo',
+				'property'    => 'width',
+				'units'       => 'px',
+				'media_query' => _get_media_query(),
 			],
 		],
 	] );

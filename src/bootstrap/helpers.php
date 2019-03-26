@@ -65,7 +65,7 @@ function _get_author() {
  * @return string
  */
 function _get_version() {
-	return '0.1.2';
+	return '0.1.3';
 }
 
 /**
@@ -131,16 +131,37 @@ function _get_setting( $setting ) {
  *
  * @since 1.0.0
  *
+ * @param $field
+ *
+ * @return string
+ */
+function _get_default( $field ) {
+	$default = '';
+
+	if ( isset( \Kirki::$fields[ $field ] ) && isset( \Kirki::$fields[ $field ]['default'] ) ) {
+		$default = \Kirki::$fields[ $field ]['default'];
+	}
+
+	return $default;
+}
+
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
  * @param string $field   Setting name. Format `{$panel}_{$section}_{$setting}`.
  * @param string $default Default value to return if empty.
  *
  * @return mixed
  */
 function _get_value( $field, $default = null ) {
+
+	// Prefix the field with plugin handle.
 	$field = _get_handle() . '_' . $field;
 
-	if ( ! $default && isset( \Kirki::$fields[ $field ] ) && isset( \Kirki::$fields[ $field ]['default'] ) ) {
-		$default = \Kirki::$fields[ $field ]['default'];
+	if ( null === $default) {
+		$default = _get_default( $field );
 	}
 
 	$value = get_theme_mod( $field, $default );
@@ -225,7 +246,7 @@ function _get_size( $size = 'm', $suffix = 'px' ) {
  * @param      $element
  * @param bool $hover
  *
- * @return array
+ * @return string
  */
 function _get_elements( $element, $hover = false ) {
 	$elements = apply_filters( 'genesis_customizer_elements', [
@@ -234,6 +255,7 @@ function _get_elements( $element, $hover = false ) {
 			'button',
 			'input[type="submit"]',
 			'.elementor-button',
+			'.elementor-button.elementor-size-sm',
 		],
 		'input'   => [
 			'input',

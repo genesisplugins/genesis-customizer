@@ -2,7 +2,7 @@
 
 namespace GenesisPlugins\GenesisCustomizer;
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\autoload', 5 );
+add_action( 'genesis_customizer_init', __NAMESPACE__ . '\load_composer' );
 /**
  * Description of expected behavior.
  *
@@ -10,7 +10,19 @@ add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\autoload', 5 );
  *
  * @return void
  */
-function autoload() {
+function load_composer() {
+	require_once _get_path() . 'vendor/autoload.php';
+}
+
+add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\load_files', 5 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function load_files() {
 	$files = apply_filters( 'genesis_customizer_files', [
 		'functions/theme-support',
 		'functions/updater',
@@ -21,8 +33,8 @@ function autoload() {
 		'functions/styles',
 		'functions/custom-header',
 		'admin/hero-settings',
-		'admin/general',
 		'admin/child-theme-compat',
+		'admin/upgrade-notice',
 		'structure/header',
 		'structure/menus',
 		'structure/hero',

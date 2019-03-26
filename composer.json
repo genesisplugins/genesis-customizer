@@ -15,14 +15,13 @@
     "aristath/kirki": "dev-develop",
     "yahnis-elsts/plugin-update-checker": "dev-master"
   },
+  "require-dev": {
+    "php": "^5.6|^7",
+    "brain/monkey": "^2.2",
+    "phpunit/phpunit": "~5.7.9",
+    "wp-phpunit/wp-phpunit": "^5.1"
+  },
   "autoload": {
-    "files": [
-      "src/bootstrap/compat.php",
-      "src/bootstrap/helpers.php",
-      "src/bootstrap/setup.php",
-      "src/bootstrap/autoload.php",
-      "vendor/aristath/kirki/kirki.php"
-    ],
     "classmap": [
       "src/classes/"
     ]
@@ -32,5 +31,9 @@
       "*": "dist"
     },
     "sort-packages": true
+  },
+  "scripts": {
+    "test-unit": "\"vendor/bin/phpunit\" --testsuite unit --color=always",
+    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always"
   }
 }

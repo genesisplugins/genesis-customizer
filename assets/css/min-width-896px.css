@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.admin-bar.has-sticky-header-desktop .site-header {
+  top: 32px !important;
+}
+
 .has-logo-center .site-header .wrap {
   justify-content: center;
 }
@@ -390,4 +394,17 @@
 .alignright {
   float: right;
   margin: 0 0 1.6rem 1.6rem;
+}
+
+.flex-left-desktop {
+  margin-right: auto;
+}
+
+.flex-center-desktop {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-right-desktop {
+  margin-left: auto;
 }

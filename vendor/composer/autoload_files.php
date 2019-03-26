@@ -6,10 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
+    '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+    '051bafe20e2674435a162870efa2d2a7' => $vendorDir . '/brain/monkey/inc/api.php',
+    '38fbb71d514eee25044aa9d94851ee76' => $vendorDir . '/wp-phpunit/wp-phpunit/__loaded.php',
     '89ff252b349d4d088742a09c25f5dd74' => $vendorDir . '/yahnis-elsts/plugin-update-checker/plugin-update-checker.php',
-    '7b30b21358a48f0e5aab28d52ac7ae27' => $baseDir . '/src/bootstrap/compat.php',
-    '7babf7668f5b4095ae03ecf72b2fe0cf' => $baseDir . '/src/bootstrap/helpers.php',
-    'ebd9a7a6ed878efe67a4d501b58efa4a' => $baseDir . '/src/bootstrap/setup.php',
-    '68266dc8c22dcc8678e23b0c392f04ab' => $baseDir . '/src/bootstrap/autoload.php',
-    '87c3259f0e8c6d1dccb01f72f2f501c2' => $vendorDir . '/aristath/kirki/kirki.php',
 );

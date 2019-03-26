@@ -17,15 +17,17 @@ function header_body_classes( $classes ) {
 	$has_different_logo     = _get_value( 'header_transparent_different-logo' );
 	$different_logo         = _get_value( 'header_transparent_logo' );
 	$header_layout          = _get_value( 'header_primary_layout' );
+	$sticky_enabled         = _get_value( 'header_sticky_enabled' );
 	$page_builder_templates = [
 		'blocks.php',
 		'elementor_header_footer',
 	];
 
 	$classes[] = $header_layout;
-	$classes[] = _get_value( 'header_sticky_enabled' );;
+	$classes[] = $sticky_enabled ? $sticky_enabled : 'no-sticky-header';
 	$classes[] = _get_value( 'header_primary_mobile-layout' );
 	$classes[] = _get_value( 'menus_mobile_animation' );
+
 
 	/*
 	 * Different Logo.

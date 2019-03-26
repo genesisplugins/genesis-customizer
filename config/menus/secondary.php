@@ -4,6 +4,17 @@ namespace GenesisPlugins\GenesisCustomizer;
 
 return [
 	[
+		'type'     => 'custom',
+		'settings' => 'tip-1',
+		'default'  => sprintf(
+			'<p><strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			esc_html__( 'Tip: ', 'genesis-customizer' ),
+			esc_html__( 'Secondary Menu not showing? Make sure it has been assigned from the', 'genesis-customizer' ),
+			esc_attr( '"menu_locations"' ),
+			esc_html__( 'Menu Locations Screen', 'genesis-customizer' )
+		),
+	],
+	[
 		'type'     => 'multicolor',
 		'settings' => 'colors',
 		'label'    => __( 'Colors', 'genesis-customizer' ),

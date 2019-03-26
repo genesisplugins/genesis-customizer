@@ -1,3 +1,8 @@
+.admin-bar.has-sticky-header-mobile .site-header,
+.admin-bar.has-sticky-header .site-header {
+  top: 46px !important;
+}
+
 .has-logo-above-mobile .primary-header > .wrap {
   justify-content: center;
 }

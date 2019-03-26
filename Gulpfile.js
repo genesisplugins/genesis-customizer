@@ -37,7 +37,7 @@ toolkit.extendConfig(
             json: ['**/*.json', '!node_modules/**'],
             i18n: './assets/lang/',
             vars: 'assets/scss/settings/_colors.scss',
-            mq: 'assets/css/genesis-customizer.css'
+            mq: 'assets/css/all.css'
         },
         js: {
             'genesis-customizer': [
@@ -60,7 +60,7 @@ toolkit.extendConfig(
                     dest: './',
                     outputStyle: 'expanded'
                 },
-                'genesis-customizer': {
+                'all': {
                     src: 'assets/scss/style.scss',
                     dest: 'assets/css/',
                     outputStyle: 'compact'

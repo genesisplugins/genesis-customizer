@@ -15,10 +15,10 @@ function enqueue_main_styles() {
 	$breakpoint = _get_value( 'general_breakpoints_global' );
 
 	wp_register_style(
-		$handle,
-		_get_url() . 'assets/css/' . $handle . '.css',
+		$handle . '-all',
+		_get_url() . 'assets/css/all.css',
 		[],
-		_get_asset_version( 'css/' . $handle . '.css' ),
+		_get_asset_version( 'css/all.css' ),
 		'all'
 	);
 
@@ -38,7 +38,7 @@ function enqueue_main_styles() {
 		'(min-width:' . $breakpoint . 'px)'
 	);
 
-	wp_enqueue_style( $handle );
+	wp_enqueue_style( $handle . '-all' );
 	wp_enqueue_style( $handle . '-mobile' );
 	wp_enqueue_style( $handle . '-desktop' );
 }

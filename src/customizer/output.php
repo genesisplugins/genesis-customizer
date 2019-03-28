@@ -42,12 +42,6 @@ function enqueue_gradients() {
 	$css .= _get_elements( 'button' ) . '{' . build_gradients( $button_angle, $button_colors['left'], $button_colors['right'] ) . '}';
 	$css .= _get_elements( 'button', 'hover' ) . '{' . build_gradients( $button_angle, $button_colors['left-hover'], $button_colors['right-hover'] ) . '}';
 
-	// Hero.
-	$hero_colors = _get_value( 'hero_settings_colors' );
-	$hero_angle  = _get_value( 'hero_settings_angle' );
-
-	$css .= '.hero-section:before{' . build_gradients( $hero_angle, $hero_colors['left'], $hero_colors['right'] ) . '}';
-
 	// Site Footer.
 	$site_footer_colors = _get_value( 'footer_site-footer_colors' );
 	$site_footer_angle  = _get_value( 'footer_site-footer_angle' );
@@ -59,6 +53,14 @@ function enqueue_gradients() {
 	$above_footer_angle  = _get_value( 'footer_above-footer_angle' );
 
 	$css .= '.above-footer:before{' . build_gradients( $above_footer_angle, $above_footer_colors['left'], $above_footer_colors['right'] ) . '}';
+
+	// Hero.
+	if ( _is_pro_active() ) {
+		$hero_colors = _get_value( 'hero_settings_colors' );
+		$hero_angle  = _get_value( 'hero_settings_angle' );
+
+		$css .= '.hero-section:before{' . build_gradients( $hero_angle, $hero_colors['left'], $hero_colors['right'] ) . '}';
+	}
 
 	// Print CSS.
 	wp_add_inline_style( _get_handle(), $css );

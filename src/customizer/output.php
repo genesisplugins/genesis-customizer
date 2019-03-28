@@ -49,7 +49,7 @@ function enqueue_gradients() {
 	$css .= '.site-footer:before{' . build_gradients( $site_footer_angle, $site_footer_colors['left'], $site_footer_colors['right'] ) . '}';
 
 	if ( _is_pro_active() ) {
-		
+
 		// Hero.
 		$hero_colors = _get_value( 'hero_settings_colors' );
 		$hero_angle  = _get_value( 'hero_settings_angle' );

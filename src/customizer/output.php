@@ -48,18 +48,19 @@ function enqueue_gradients() {
 
 	$css .= '.site-footer:before{' . build_gradients( $site_footer_angle, $site_footer_colors['left'], $site_footer_colors['right'] ) . '}';
 
-	// Above Footer.
-	$above_footer_colors = _get_value( 'footer_above-footer_colors' );
-	$above_footer_angle  = _get_value( 'footer_above-footer_angle' );
-
-	$css .= '.above-footer:before{' . build_gradients( $above_footer_angle, $above_footer_colors['left'], $above_footer_colors['right'] ) . '}';
-
-	// Hero.
 	if ( _is_pro_active() ) {
+		
+		// Hero.
 		$hero_colors = _get_value( 'hero_settings_colors' );
 		$hero_angle  = _get_value( 'hero_settings_angle' );
 
 		$css .= '.hero-section:before{' . build_gradients( $hero_angle, $hero_colors['left'], $hero_colors['right'] ) . '}';
+
+		// Above Footer.
+		$above_footer_colors = _get_value( 'footer_above-footer_colors' );
+		$above_footer_angle  = _get_value( 'footer_above-footer_angle' );
+
+		$css .= '.above-footer:before{' . build_gradients( $above_footer_angle, $above_footer_colors['left'], $above_footer_colors['right'] ) . '}';
 	}
 
 	// Print CSS.

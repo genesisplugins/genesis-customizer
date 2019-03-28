@@ -25,10 +25,11 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\register_widget_areas', 20 );
  * @return void
  */
 function register_widget_areas() {
-	$widget_areas = [
+	$widget_areas = apply_filters( 'genesis_customizer_widget_areas', [
 		'above-header'        => [
 			'name'        => __( 'Above Header', 'genesis-customizer' ),
 			'description' => __( 'This is the Above Header widget area.', 'genesis-customizer' ),
+			'pro'         => true,
 		],
 		'header-left-widget'  => [
 			'name'        => __( 'Header Left', 'genesis-customizer' ),
@@ -37,6 +38,16 @@ function register_widget_areas() {
 		'header-right-widget' => [
 			'name'        => __( 'Header Right', 'genesis-customizer' ),
 			'description' => __( 'This is the Header Right widget area. It typically appears next to the site title or logo. This widget area is not suitable to display every type of widget, and works best with a custom menu, a search form, or possibly a text widget.', 'genesis-customizer' ),
+		],
+		'mobile-menu'         => [
+			'name'        => __( 'Mobile Menu', 'genesis-customizer' ),
+			'description' => __( 'This is the Mobile Menu widget area. It is displayed inside the responsive mobile menu on smaller screens.', 'genesis-customizer' ),
+			'pro'         => true,
+		],
+		'mega-menu'           => [
+			'name'        => __( 'Mega Menu', 'genesis-customizer' ),
+			'description' => __( 'This is the Mega Menu widget area.', 'genesis-customizer' ),
+			'pro'         => true,
 		],
 		'after-entry'         => [
 			'name'        => __( 'After Entry', 'genesis-customizer' ),
@@ -49,10 +60,15 @@ function register_widget_areas() {
 		'above-footer'        => [
 			'name'        => __( 'Above Footer', 'genesis-customizer' ),
 			'description' => __( 'This is the Above Footer widget area.', 'genesis-customizer' ),
-		]
-	];
+			'pro'         => true,
+		],
+	] );
 
 	foreach ( $widget_areas as $id => $args ) {
+		if ( isset( $args['pro'] ) && true === $args['pro'] && ! _is_pro_active() ) {
+			continue;
+		}
+
 		genesis_register_sidebar( [
 			'id'          => $id,
 			'name'        => $args['name'],
@@ -60,28 +76,6 @@ function register_widget_areas() {
 		] );
 	}
 }
-
-add_action( 'genesis_before_header_wrap', __NAMESPACE__ . '\above_header' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function above_header() {
-	$enabled = _get_value( 'header_above-header_enabled' );
-
-	if ( 'hide' === $enabled ) {
-		return;
-	}
-
-	genesis_widget_area( 'above-header', [
-		'before' => sprintf( '<div class="above-header widget-area %s"><div class="wrap">', $enabled ),
-		'after'  => '</div></div>',
-	] );
-}
-
 
 add_action( 'genesis_before_title_area', __NAMESPACE__ . '\header_left', 5 );
 /**
@@ -138,31 +132,10 @@ function after_entry() {
 		return;
 	}
 
-	genesis_widget_area( 'after-entry', array(
+	genesis_widget_area( 'after-entry', [
 		'before' => '<div class="after-entry widget-area">',
 		'after'  => '</div>',
-	) );
-}
-
-add_action( 'genesis_footer', __NAMESPACE__ . '\above_footer', 11 );
-/**
- * Display the Above Footer widget area.
- *
- * @since 1.1.0
- *
- * @return void
- */
-function above_footer() {
-	$enabled = _get_value( 'footer_above-footer_enabled' );
-
-	if ( ! $enabled ) {
-		return;
-	}
-
-	genesis_widget_area( 'above-footer', array(
-		'before' => '<div class="above-footer widget-area"><div class="wrap">',
-		'after'  => '</div></div>',
-	) );
+	] );
 }
 
 /**
@@ -173,10 +146,10 @@ function above_footer() {
  * @return void
  */
 function display_footer_credits() {
-	genesis_widget_area( 'footer-credits', array(
+	genesis_widget_area( 'footer-credits', [
 		'before' => '',
 		'after'  => '',
-	) );
+	] );
 }
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\register_footer_widgets', 20 );

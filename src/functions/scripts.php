@@ -11,6 +11,9 @@ add_action( 'genesis_before', __NAMESPACE__ . '\js_no_js', 0 );
  * @return void
  */
 function js_no_js() {
+    // Add breakpoint
+    $size = _get_value( 'general_breakpoints_menu', _get_breakpoint() );
+
 	?>
     <script>
         //<![CDATA[
@@ -18,6 +21,11 @@ function js_no_js() {
             var c = document.body.classList;
             c.remove('no-js');
             c.add('js');
+            if ( window.innerWidth < <?php echo $size ?> ) {
+                c.add('mobile');
+            } else {
+                c.add('desktop');
+            }
         })();
         //]]>
     </script>

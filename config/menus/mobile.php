@@ -83,7 +83,7 @@ return [
 		'settings'        => 'tip-1',
 		'default'         => sprintf(
 			'<p>%s <strong>%s</strong>%s </p><a href="%s" target="_blank" class="button-primary">%s</a>',
-			esc_html__( 'More options available in', 'genesis-customizer' ),
+			esc_html__( 'More mobile menu options available in', 'genesis-customizer' ),
 			esc_html__( 'Genesis Customizer Pro', 'genesis-customizer' ),
 			esc_html__( '!', 'genesis-customizer' ),
 			esc_url( 'https://genesiscustomizer.com/pro' ),

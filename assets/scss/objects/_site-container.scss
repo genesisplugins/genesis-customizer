@@ -10,6 +10,13 @@
 	word-wrap: break-word;
 	-webkit-animation: fadein 1s;
 	animation: fadein 1s;
+
+	@include mq(m) {
+
+		.has-logo-side & {
+			padding-left: 30rem;
+		}
+	}
 }
 
 @keyframes fadein {

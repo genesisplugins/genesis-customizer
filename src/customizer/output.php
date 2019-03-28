@@ -63,5 +63,5 @@ function enqueue_gradients() {
 	}
 
 	// Print CSS.
-	wp_add_inline_style( _get_handle(), $css );
+	wp_add_inline_style( _get_handle() . '-all', $css );
 }

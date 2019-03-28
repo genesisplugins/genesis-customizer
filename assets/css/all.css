@@ -800,11 +800,6 @@ iframe {
   justify-content: flex-start;
 }
 
-.has-logo-above .nav-secondary .wrap,
-.has-logo-center .nav-secondary .wrap {
-  justify-content: center;
-}
-
 .has-logo-side .nav-secondary {
   height: auto;
 }

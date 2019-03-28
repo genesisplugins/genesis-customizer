@@ -40,6 +40,10 @@
 			.has-logo-right & {
 				flex-wrap: nowrap;
 			}
+
+			.has-logo-center & {
+				justify-content: center;
+			}
 		}
 	}
 }

@@ -21,6 +21,10 @@
 
 	@include mq(m) {
 
+		.has-logo-side & {
+			width: 30rem;
+		}
+
 		.has-logo-side &,
 		.has-logo-side.has-sticky-header &,
 		.has-logo-side.has-sticky-header-desktop & {
@@ -44,12 +48,5 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-
-		@include mq(m) {
-
-			.has-logo-center & {
-				justify-content: center;
-			}
-		}
 	}
 }

@@ -8,19 +8,42 @@ return [
 		'settings'    => 'layout',
 		'label'       => __( 'Desktop Layout', 'genesis-customizer' ),
 		'default'     => 'has-logo-left',
-		'collapsible' => true,
-		'choices'     => [
-			'has-logo-left'   => _get_url() . 'assets/img/logo-left.gif',
-			'has-logo-center' => _get_url() . 'assets/img/logo-center.gif',
-			'has-logo-right'  => _get_url() . 'assets/img/logo-right.gif',
-			'has-logo-above'  => _get_url() . 'assets/img/logo-above.gif',
-			'has-logo-side'   => _get_url() . 'assets/img/logo-side.gif',
-		],
+		'choices'     => apply_filters( 'genesis_customizer_header_layouts', [
+			'has-logo-left'  => _get_url() . 'assets/img/logo-left.gif',
+			'has-logo-above' => _get_url() . 'assets/img/logo-above.gif',
+			'has-logo-right' => _get_url() . 'assets/img/logo-right.gif',
+		] ),
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-0',
+		'default'  => '<hr>',
+		'active_callback' => function () {
+			return _is_pro_active();
+		},
+	],
+	[
+		'type'            => 'custom',
+		'settings'        => 'tip-1',
+		'default'         => sprintf(
+			'%s <strong>%s</strong>%s <br>&nbsp;<br><a href="%s" target="_blank" class="button-primary">%s</a><hr>',
+			esc_html__( 'More header layout options available in', 'genesis-customizer' ),
+			esc_html__( 'Genesis Customizer Pro', 'genesis-customizer' ),
+			esc_html__( '!', 'genesis-customizer' ),
+			esc_url( 'https://genesiscustomizer.com/pro' ),
+			esc_html__( 'Go Pro →', 'genesis-customizer' )
+		),
+		'active_callback' => function () {
+			return ! _is_pro_active();
+		},
 	],
 	[
 		'type'     => 'custom',
 		'settings' => 'divider-1',
 		'default'  => '<hr>',
+		'active_callback' => function () {
+			return ! _is_pro_active();
+		},
 	],
 	[
 		'type'     => 'radio-image',
@@ -35,7 +58,7 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-0',
+		'settings' => 'tip-2',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong> %s <strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip:', 'genesis-customizer' ),
@@ -67,23 +90,23 @@ return [
 			[
 				'choice'   => 'background',
 				'element'  => '.primary-header, .has-logo-side .site-header',
-				'property' => 'background-color'
+				'property' => 'background-color',
 			],
 			[
 				'choice'   => 'border-top',
 				'element'  => '.primary-header',
-				'property' => 'border-top-color'
+				'property' => 'border-top-color',
 			],
 			[
 				'choice'   => 'border-bottom',
 				'element'  => '.primary-header',
-				'property' => 'border-bottom-color'
+				'property' => 'border-bottom-color',
 			],
 		],
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'tip-1',
+		'settings' => 'tip-3',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong>%s<a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),

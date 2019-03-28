@@ -1,3 +1,11 @@
+.has-logo-side .site-container {
+  padding-left: 30rem;
+}
+
+.has-logo-side .site-header {
+  width: 30rem;
+}
+
 .has-logo-side .site-header,
 .has-logo-side.has-sticky-header .site-header,
 .has-logo-side.has-sticky-header-desktop .site-header {
@@ -17,10 +25,6 @@
 .admin-bar.has-sticky-header .site-header,
 .admin-bar.has-sticky-header-desktop .site-header {
   top: 32px !important;
-}
-
-.has-logo-center .site-header .wrap {
-  justify-content: center;
 }
 
 .wrap {
@@ -44,6 +48,10 @@
 .has-logo-left .primary-header > .wrap,
 .has-logo-right .primary-header > .wrap {
   flex-wrap: nowrap;
+}
+
+.has-logo-center .primary-header > .wrap {
+  justify-content: center;
 }
 
 .has-logo-above .title-area {

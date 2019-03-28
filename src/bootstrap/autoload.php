@@ -41,7 +41,6 @@ function load_files() {
 	$files = apply_filters( 'genesis_customizer_files', [
 		'src/utilities/*',
 		'src/functions/*',
-		'src/admin/*',
 		'src/structure/*',
 		'src/compat/*',
 		'src/customizer/*',
@@ -49,6 +48,14 @@ function load_files() {
 
 	foreach ( $files as $file ) {
 		foreach ( glob( _get_path() . $file . '.php' ) as $file_name ) {
+			if ( file_exists( $file_name ) ) {
+				require_once $file_name;
+			}
+		}
+	}
+
+	if ( is_admin() ) {
+		foreach ( glob( _get_path() . 'src/admin/*.php' ) as $file_name ) {
 			if ( file_exists( $file_name ) ) {
 				require_once $file_name;
 			}

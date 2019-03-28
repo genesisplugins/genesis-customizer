@@ -10,10 +10,6 @@
 	word-wrap: break-word;
 	-webkit-animation: fadein 1s;
 	animation: fadein 1s;
-
-	.page-template-blocks & {
-		background-color: $color--white;
-	}
 }
 
 @keyframes fadein {

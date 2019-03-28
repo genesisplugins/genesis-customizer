@@ -65,7 +65,7 @@ function _get_author() {
  * @return string
  */
 function _get_version() {
-	return '0.1.5';
+	return '0.1.6';
 }
 
 /**
@@ -104,7 +104,7 @@ function _get_breakpoint() {
  * @return mixed
  */
 function _get_media_query( $query = 'min' ) {
-	$breakpoint = _get_value( 'general_breakpoints_global' );
+	$breakpoint = _get_value( 'general_breakpoints_global', _get_breakpoint() );
 
 	return sprintf( "@media (%s-width:%spx)", $query, $breakpoint );
 }
@@ -287,32 +287,3 @@ function _get_elements( $element, $hover = false ) {
 	return implode( ',', $elements[ $element ] );
 }
 
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @param $plugin
- *
- * @return bool
- */
-function _is_plugin_active( $plugin = 'pro' ) {
-	$plugins = [
-		'pro'         => 'genesis_customizer_pro',
-		'woocommerce' => 'WooCommerce',
-		'edd'         => 'Easy_Digital_Downloads',
-	];
-
-	if ( class_exists( $plugins[ $plugin ] ) ) {
-		return true;
-
-	} else if ( function_exists( $plugins[ $plugin ] ) ) {
-		return true;
-
-	} else if ( defined( $plugins[ $plugin ] ) ) {
-		return true;
-
-	} else {
-		return false;
-	}
-}

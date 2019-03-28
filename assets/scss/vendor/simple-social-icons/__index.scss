@@ -1,3 +1,8 @@
+// Abstracts
+@import "../../../../node_modules/bourbon/core/bourbon";
+@import "../../settings/_index";
+@import "../../tools/_index";
+
 .simple-social-icons svg[class^="social-"],
 .simple-social-icons svg[class*=" social-"] {
 	display: inline-block;

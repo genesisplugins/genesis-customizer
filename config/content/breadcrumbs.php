@@ -8,16 +8,37 @@ $fields = [
 		'settings' => 'colors',
 		'label'    => __( 'Colors', 'genesis-customizer' ),
 		'choices'  => [
-			'background' => __( 'Background', 'genesis-customizer' ),
+			'background'  => __( 'Background', 'genesis-customizer' ),
+			'text'        => __( 'Text', 'genesis-customizer' ),
+			'links'       => __( 'Links', 'genesis-customizer' ),
+			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
 		],
 		'default'  => [
-			'background' => _get_color( 'white' ),
+			'background'  => _get_color( 'white' ),
+			'text'        => '',
+			'links'       => '',
+			'links-hover' => '',
 		],
 		'output'   => [
 			[
 				'choice'   => 'background',
 				'element'  => '.breadcrumb',
 				'property' => 'background-color',
+			],
+			[
+				'choice'   => 'text',
+				'element'  => '.breadcrumb',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'links',
+				'element'  => '.breadcrumb a',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'links-hover',
+				'element'  => '.breadcrumb a:hover, .breadcrumb a:focus',
+				'property' => 'color',
 			],
 		],
 	],

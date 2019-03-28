@@ -20,6 +20,7 @@ function header_body_classes( $classes ) {
 	$sticky_enabled         = _get_value( 'header_sticky_enabled' );
 	$page_builder_templates = [
 		'blocks.php',
+		'beaver-builder.php',
 		'elementor_header_footer',
 	];
 

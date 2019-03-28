@@ -7,9 +7,9 @@ return [
 		'type'     => 'select',
 		'settings' => 'style',
 		'label'    => __( 'Read More Style', 'genesis-customizer' ),
-		'default'  => 'inline',
+		'default'  => 'text',
 		'choices'  => [
-			'inline' => __( 'Inline', 'genesis-customizer' ),
+			'text'   => __( 'Text', 'genesis-customizer' ),
 			'button' => __( 'Button', 'genesis-customizer' ),
 			'hide'   => __( 'Hidden', 'genesis-customizer' ),
 		],

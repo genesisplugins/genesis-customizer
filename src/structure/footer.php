@@ -46,16 +46,20 @@ function footer_credits_div() {
 		printf( '<p>%s</p>', do_shortcode( $text ) );
 	}
 
-	$back_to_top = _get_value( 'footer_back-to-top_enabled' );
+	$scroll_to_top = _get_value( 'footer_scroll-to-top_enabled' );
 
-	if ( $back_to_top ) {
-		$style = _get_value( 'footer_back-to-top_style' );
-		$text  = _get_value( 'footer_back-to-top_text' );
-		$link  = '<a href="#" rel="nofollow" class="back-to-top%s">%s</a>';
+	if ( $scroll_to_top ) {
+		$style = _get_value( 'footer_scroll-to-top_style' );
+		$html  = _get_value( 'footer_scroll-to-top_html' );
+		$text  = _get_value( 'footer_scroll-to-top_text' );
+		$link  = '<a href="#top" rel="nofollow" class="scroll-to-top%s">%s</a>';
 		$icon  = '<svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><path fill="none" d="M0,0h24v24H0V0z"></path></g><g><path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z"></path></g></svg>';
 
 		if ( $style === 'button' ) {
 			printf( $link, '-icon', $icon );
+
+		} elseif ( $style === 'html' ) {
+			printf( $html );
 
 		} else {
 			printf( $link, '', $text );

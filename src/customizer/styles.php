@@ -11,35 +11,10 @@ add_action( 'customize_controls_print_styles', __NAMESPACE__ . '\kirki_styles', 
  * @return void
  */
 function kirki_styles() {
-	$devices = apply_filters( 'genesis_customizer_breakpoints', [
-		'mobile'  => [
-			'width'  => 'all',
-			'height' => 'all',
-		],
-		'tablet'  => [
-			'width'  => '375',
-			'height' => '667',
-		],
-		'desktop' => [
-			'width'  => '768',
-			'height' => '1024',
-		]
-	] );
-
 	echo '
 		<style id="genesis-customizer-inline-css">
 		.kirki-host-font-locally{
 			display:none;
-		}
-		.wp-customizer .preview-mobile .wp-full-overlay-main {
-			width: ' . ( (int) $devices['tablet']['width'] - 1 ) . 'px;
-			height: ' . ( (int) $devices['tablet']['height'] - 1 ) . 'px;
-			margin-left: -' . ( (int) $devices['tablet']['width'] / 2 - 0.5 ) . 'px;
-		}
-		.wp-customizer .preview-tablet .wp-full-overlay-main {
-			width: ' . ( (int) $devices['desktop']['width'] - 1 ) . 'px;
-			height: ' . ( (int) $devices['desktop']['height'] - 1 ) . 'px;
-			margin-left: -' . ( (int) $devices['desktop']['width'] / 2 - 0.5 ) . 'px;
 		}
 		.wp-color-result .color-alpha {
 			height: 22px !important;
@@ -122,7 +97,18 @@ function kirki_styles() {
 			margin-bottom: 0;
 		}
 		.customize-control-code_editor .CodeMirror {
-    		height: calc(100vh - 250px);
+    		height: calc(100vh - 320px);
+		}
+		.CodeMirror-sizer {
+		    margin-left: 46px !important;
+		    margin-bottom: 0px !important;
+		    border-right-width: 30px !important;
+		    min-height: 62px !important;
+		    padding-right: 0px !important;
+		    padding-bottom: 0px !important;
+		}
+		.CodeMirror-gutter.CodeMirror-linenumbers {
+			width: 29px !important;
 		}
 		#customize-control-genesis-customizer_footer_footer-widgets_columns img,
 		#customize-control-genesis-customizer_header_above-header_layout img,

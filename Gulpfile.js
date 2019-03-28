@@ -3,12 +3,16 @@ process.env.DISABLE_NOTIFIER = true;
 'use strict';
 
 var pkg = require('./package.json'),
+    del = require('del'),
     gulp = require('gulp'),
-    clean = require('gulp-clean-css'),
+    cleanCss = require('gulp-clean-css'),
     globs = require('gulp-src-ordered-globs'),
     g = require("gulp-load-plugins")(),
     json = require('gulp-sass-json'),
+    rename = require("gulp-rename"),
+    run = require('run-sequence'),
     toolkit = require('gulp-wp-toolkit'),
+    wait = require('gulp-wait'),
     zip = require('gulp-zip');
 
 toolkit.extendConfig(
@@ -42,11 +46,12 @@ toolkit.extendConfig(
         js: {
             'genesis-customizer': [
                 'assets/js/general.js',
+                'assets/js/compat.js',
                 'assets/js/responsive-menus.js',
                 'assets/js/split-nav.js',
                 'assets/js/sticky-header.js',
                 'assets/js/transparent-header.js',
-                'assets/js/back-to-top.js',
+                'assets/js/scroll-to-top.js',
                 'assets/js/header-search.js'
             ],
         },
@@ -63,17 +68,22 @@ toolkit.extendConfig(
                 'all': {
                     src: 'assets/scss/style.scss',
                     dest: 'assets/css/',
-                    outputStyle: 'compact'
+                    outputStyle: 'expanded'
+                },
+                'beaver-builder': {
+                    src: 'assets/scss/vendor/beaver-builder/__index.scss',
+                    dest: 'assets/css/',
+                    outputStyle: 'expanded'
                 },
                 'elementor': {
                     src: 'assets/scss/vendor/elementor/__index.scss',
                     dest: 'assets/css/',
-                    outputStyle: 'compact'
+                    outputStyle: 'expanded'
                 },
                 'simple-social-icons': {
                     src: 'assets/scss/vendor/simple-social-icons/__index.scss',
                     dest: 'assets/css/',
-                    outputStyle: 'compact'
+                    outputStyle: 'expanded'
                 },
             }
         },
@@ -110,10 +120,28 @@ toolkit.extendTasks(gulp, {
     },
     'clean-css': function () {
         return gulp.src(toolkit.config.src.mq)
-            .pipe(clean({compatibility: 'ie8'}))
+            .pipe(cleanCss({compatibility: 'ie8'}))
             .pipe(gulp.dest('./assets/css'));
     },
-    mq: [['build:css','extract']],
+    'rename-mobile': function () {
+        return gulp.src('./assets/css/max-width-896px.css')
+            .pipe(rename('./assets/css/mobile.css'))
+            .pipe(gulp.dest('./'));
+    },
+    'rename-desktop': function () {
+        return gulp.src('./assets/css/min-width-896px.css')
+            .pipe(rename('./assets/css/desktop.css'))
+            .pipe(gulp.dest('./'))
+    },
+    'clean-up': function () {
+        return del([
+            './assets/css/max-width-896px.css',
+            './assets/css/min-width-896px.css',
+        ]);
+    },
+    'css': function () {
+        run('build', 'extract', 'rename-mobile', 'rename-desktop','clean-up')
+    },
 });
 
 

@@ -15,6 +15,7 @@ namespace GenesisPlugins\GenesisCustomizer;
  */
 function custom_header() {
 	$id      = '';
+	$url     = '';
 	$custom  = _get_value( 'header_hero-section_background' );
 	$default = isset( $custom['background-image'] ) ? $custom['background-image'] : get_theme_support( 'custom-header', 'default_image' );
 
@@ -22,30 +23,29 @@ function custom_header() {
 	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 		$id = wc_get_page_id( 'shop' );
 
-	} elseif ( is_post_type_archive() ) {
-		$id = get_page_by_path( get_query_var( 'post_type' ) );
-		$id = $id && has_post_thumbnail( $id ) ? $id : false;
-
-	} elseif ( is_category() ) {
-		$id = get_page_by_title( 'category-' . get_query_var( 'category_name' ), OBJECT, 'attachment' );
-
-	} elseif ( is_tag() ) {
-		$id = get_page_by_title( 'tag-' . get_query_var( 'tag' ), OBJECT, 'attachment' );
-
-	} elseif ( is_tax() ) {
-		$id = get_page_by_title( 'term-' . get_query_var( 'term' ), OBJECT, 'attachment' );
-
 	} elseif ( is_front_page() ) {
 		$id = get_option( 'page_on_front' );
 
 	} elseif ( 'posts' === get_option( 'show_on_front' ) && is_home() ) {
 		$id = get_option( 'page_for_posts' );
 
+	} elseif ( is_post_type_archive() ) {
+		$url = get_theme_mod(get_query_var( 'post_type' ) . '-image', $default );
+
+	} elseif ( is_category() ) {
+		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+
+	} elseif ( is_tag() ) {
+		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+
+	} elseif ( is_tax() ) {
+		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+
 	} elseif ( is_search() ) {
-		$id = get_page_by_path( 'search' );
+		$url = get_theme_mod('search-image', $default );
 
 	} elseif ( is_404() ) {
-		$id = get_page_by_path( 'error' );
+		$url = get_theme_mod('404-image', $default );
 
 	} elseif ( is_singular() ) {
 		$id = get_the_id();
@@ -57,7 +57,7 @@ function custom_header() {
 	} elseif ( $id ) {
 		$url = get_the_post_thumbnail_url( $id, 'hero-section' );
 
-	} else {
+	} elseif ( ! $url ) {
 		$url = $default;
 	}
 

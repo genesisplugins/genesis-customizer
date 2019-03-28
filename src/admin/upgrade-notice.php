@@ -1,5 +1,7 @@
 <?php
 
+namespace GenesisPlugins\GenesisCustomizer;
+
 add_action( 'admin_notices', __NAMESPACE__ . '\upgrade_notice' );
 /**
  * Description of expected behavior.
@@ -9,6 +11,10 @@ add_action( 'admin_notices', __NAMESPACE__ . '\upgrade_notice' );
  * @return void
  */
 function upgrade_notice() {
+	if ( _is_pro_active() ) {
+		return;
+	}
+
 	printf(
 		'<div class="notice notice-info is-dismissible">
 					<p>%s <strong>%s</strong> %s <a href="%s" target="_blank">%s</a></p>

@@ -39,45 +39,19 @@ add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\load_files', 5 );
  */
 function load_files() {
 	$files = apply_filters( 'genesis_customizer_files', [
-		'functions/theme-support',
-		'functions/updater',
-		'functions/shortcodes',
-		'functions/template',
-		'functions/widget-areas',
-		'functions/scripts',
-		'functions/styles',
-		'functions/custom-header',
-		'admin/hero-settings',
-		'admin/child-theme-compat',
-		'admin/upgrade-notice',
-		'structure/header',
-		'structure/menus',
-		'structure/hero',
-		'structure/content',
-		'structure/footer',
-		'structure/wrap',
-		'structure/layout',
-		'structure/archive',
-		'structure/single',
-		'structure/comments',
-		'compat/simple-social-icons',
-		'customizer/customizer',
-		'customizer/kirki',
-		'customizer/scripts',
-		'customizer/styles',
-		'customizer/panels',
-		'customizer/sections',
-		'customizer/fields',
-		'customizer/output',
-		'modules/responsive-css',
-		'modules/additional-js',
+		'src/utilities/*',
+		'src/functions/*',
+		'src/admin/*',
+		'src/structure/*',
+		'src/compat/*',
+		'src/customizer/*',
 	] );
 
 	foreach ( $files as $file ) {
-		$filename = _get_path() . 'src/' . $file . '.php';
-
-		if ( file_exists( $filename ) ) {
-			require_once $filename;
+		foreach ( glob( _get_path() . $file . '.php' ) as $file_name ) {
+			if ( file_exists( $file_name ) ) {
+				require_once $file_name;
+			}
 		}
 	}
 }

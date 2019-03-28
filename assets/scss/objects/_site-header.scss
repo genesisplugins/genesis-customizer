@@ -23,7 +23,7 @@
 
 		.has-logo-side &,
 		.has-logo-side.has-sticky-header &,
-		.has-logo-side.has-sticky-header-dekstop & {
+		.has-logo-side.has-sticky-header-desktop & {
 
 			@include position(fixed, 0 null 0 0);
 
@@ -33,6 +33,7 @@
 			}
 		}
 
+		.admin-bar.has-sticky-header &,
 		.admin-bar.has-sticky-header-desktop & {
 			top: 32px !important;
 		}

@@ -10,21 +10,21 @@
 
 	&-primary {
 
-		@include mq(m) {
+		.desktop & {
 			display: flex;
+		}
 
-			.has-logo-side & {
+		.desktop.has-logo-side & {
+			width: 100%;
+
+			.menu {
 				width: 100%;
-
-				.menu {
-					width: 100%;
-				}
 			}
+		}
 
-			.has-logo-above & {
-				width: 100%;
-				justify-content: center;
-			}
+		.desktop.has-logo-above & {
+			width: 100%;
+			justify-content: center;
 		}
 
 		.mobile & {

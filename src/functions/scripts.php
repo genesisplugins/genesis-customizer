@@ -62,14 +62,12 @@ function enqueue_scripts() {
 				'combine' => [
 					'.nav-primary',
 					'.nav-secondary',
-					'.nav-left',
-					'.nav-right',
 				],
 				'others'  => [],
 			],
 			'menuIconClass'    => '',
-			'breakpoint'       => _get_value( 'menus_mobile_breakpoint' ),
-			'headerBreakpoint' => _get_value( 'general_breakpoints_global' ),
+			'breakpoint'       => _get_value( 'general_breakpoints_menu', _get_breakpoint() ),
+			'headerBreakpoint' => _get_value( 'general_breakpoints_global', _get_breakpoint() ),
 		]
 	);
 }

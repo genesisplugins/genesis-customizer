@@ -3,7 +3,7 @@
  * Genesis Customizer
  *
  * Plugin Name: Genesis Customizer
- * Version:     0.1.5
+ * Version:     0.1.6
  * Text Domain: genesis-customizer
  * Plugin URI:  https://genesiscustomizer.com/
  * Description: Core functionality plugin for the Genesis Customizer theme.
@@ -22,7 +22,7 @@
  */
 
 // Check compatibility.
-if ( ! $compat = require_once __DIR__ . '/src/bootstrap/compat.php' ) {
+if ( ! require_once __DIR__ . '/src/bootstrap/compat.php' ) {
 	return;
 }
 

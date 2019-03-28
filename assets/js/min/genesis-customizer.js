@@ -18,6 +18,35 @@
         menuItem.find('span').addClass('ghost');
     }
 
+    /**
+     * Remove ghost button class in sticky header.
+     */
+    if ($('body').hasClass('has-sticky-header') || $('body').hasClass('has-sticky-header-mobile') || $('body').hasClass('has-sticky-header-desktop')) {
+        var stickyGhostButton = $('.site-header .ghost');
+
+        $(window).on("load resize scroll", function () {
+            if ($('.site-header').hasClass('shrink')) {
+                stickyGhostButton.removeClass('ghost');
+            } else {
+                stickyGhostButton.addClass('ghost');
+            }
+        });
+    }
+
+})(document, jQuery);
+
+
+
+(function (document, $) {
+    $(function () {
+        var button = $('.fl-builder-toggle-header-button');
+        var header = $('.site-header');
+
+        button.on('click', function () {
+            header.fadeToggle(100);
+        });
+    });
+
 })(document, jQuery);
 
 
@@ -733,27 +762,6 @@
             $('.hero-section > .wrap').css('margin-top', 0);
         }
 
-    });
-
-})(document, jQuery);
-
-(function (document, $) {
-
-    $(window).on("load resize scroll", function () {
-        var header = $('.site-header');
-        var height = header.outerHeight();
-        var scroll = $(window).scrollTop();
-
-        // TODO: move function.
-        if (scroll >= height) {
-            $('.back-to-top-icon').css({
-                'opacity': '1',
-            })
-        } else {
-            $('.back-to-top-icon').css({
-                'opacity': '0',
-            })
-        }
     });
 
 })(document, jQuery);

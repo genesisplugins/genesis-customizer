@@ -24,17 +24,17 @@ function enqueue_main_styles() {
 
 	wp_register_style(
 		$handle . '-mobile',
-		_get_url() . 'assets/css/max-width-896px.css',
+		_get_url() . 'assets/css/mobile.css',
 		[],
-		_get_asset_version( 'css/max-width-896px.css' ),
+		_get_asset_version( 'css/mobile.css' ),
 		'(max-width:' . $breakpoint . 'px)'
 	);
 
 	wp_register_style(
 		$handle . '-desktop',
-		_get_url() . 'assets/css/min-width-896px.css',
+		_get_url() . 'assets/css/desktop.css',
 		[],
-		_get_asset_version( 'css/min-width-896px.css' ),
+		_get_asset_version( 'css/desktop.css' ),
 		'(min-width:' . $breakpoint . 'px)'
 	);
 
@@ -53,22 +53,23 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_vendor_styles' );
  * @return void
  */
 function enqueue_vendor_styles() {
-	$handle = _get_handle();
-	$styles = apply_filters( 'genesis_customizer_stylesheets', [
-		'woocommerce'         => 'WooCommerce',
-		'elementor'           => 'Elementor\Plugin',
-		'simple-social-icons' => 'Simple_Social_Icons_Widget',
+	$handle  = _get_handle();
+	$plugins = apply_filters( 'genesis_customizer_stylesheets', [
+		'beaver-builder',
+		'woocommerce',
+		'elementor',
+		'simple-social-icons',
 	] );
 
-	foreach ( $styles as $file => $class ) {
-		if ( genesis_detect_plugin( [ 'classes' => [ $class ] ] ) ) {
-			$style = $handle . '-' . $file;
+	foreach ( $plugins as $plugin ) {
+		if ( _is_plugin_active( $plugin ) ) {
+			$style = $handle . '-' . $plugin;
 
 			wp_register_style(
 				$style,
-				_get_url() . 'assets/css/' . $file . '.css',
+				_get_url() . 'assets/css/' . $plugin . '.css',
 				[],
-				_get_asset_version( 'css/' . $file . '.css' )
+				_get_asset_version( 'css/' . $plugin . '.css' )
 			);
 
 			wp_enqueue_style( $style );

@@ -13,7 +13,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\menu_body_classes', 100, 1 );
  * @return array
  */
 function menu_body_classes( $classes ) {
-	$classes[] = _get_value( 'menus_mobile_animation' );
+	$classes[] = _get_value( 'menus_mobile_animation', 'has-mobile-menu-top' );
 
 	return $classes;
 }

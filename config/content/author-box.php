@@ -12,12 +12,24 @@ return [
 		],
 		'default'  => [
 			'background' => _get_color( 'white' ),
+			'title'      => '',
+			'content'    => '',
 		],
 		'output'   => [
 			[
 				'choice'   => 'background',
 				'element'  => '.author-box',
 				'property' => 'background-color',
+			],
+			[
+				'choice'   => 'title',
+				'element'  => '.author-box-title',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'content',
+				'element'  => '.author-box-content p',
+				'property' => 'color',
 			],
 		],
 	],

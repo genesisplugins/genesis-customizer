@@ -20,6 +20,7 @@ function add_panels() {
 		'menus'       => __( 'Menus', 'genesis-customizer' ),
 		'hero'        => __( 'Hero Section', 'genesis-customizer' ),
 		'content'     => __( 'Content Area', 'genesis-customizer' ),
+		'single'      => __( 'Single Post / Page', 'genesis-customizer' ),
 		'archive'     => __( 'Blog / Archive', 'genesis-customizer' ),
 		'footer'      => __( 'Footer', 'genesis-customizer' ),
 		'code'        => __( 'Custom Code', 'genesis-customizer' ),

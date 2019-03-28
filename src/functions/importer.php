@@ -32,3 +32,44 @@ function merlin_local_import_files() {
 
 	return $demos;
 }
+
+add_filter( 'genesis_customizer_tgmpa_config', __NAMESPACE__ . '\add_tgmpa_config' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function add_tgmpa_config() {
+	return [
+		'id'           => _get_handle(),
+		'default_path' => '',
+		'menu'         => 'genesis-customizer-plugins',
+		'parent_slug'  => 'genesis',
+		'capability'   => 'edit_theme_options',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	];
+}
+
+add_filter( 'genesis_customizer_tgmpa_plugins', __NAMESPACE__ . '\add_tgmpa_plugins' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function add_tgmpa_plugins() {
+	$plugins[] = [
+		'name'     => 'Simple Social Icons',
+		'slug'     => 'simple-social-icons',
+		'required' => false,
+	];
+
+	return $plugins;
+}

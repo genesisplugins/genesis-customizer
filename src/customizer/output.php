@@ -43,8 +43,8 @@ function enqueue_gradients() {
 	$css .= _get_elements( 'button', 'hover' ) . '{' . build_gradients( $button_angle, $button_colors['left-hover'], $button_colors['right-hover'] ) . '}';
 
 	// Hero.
-	$hero_colors = _get_value( 'hero_hero-section_colors' );
-	$hero_angle  = _get_value( 'hero_hero-section_angle' );
+	$hero_colors = _get_value( 'hero_settings_colors' );
+	$hero_angle  = _get_value( 'hero_settings_angle' );
 
 	$css .= '.hero-section:before{' . build_gradients( $hero_angle, $hero_colors['left'], $hero_colors['right'] ) . '}';
 

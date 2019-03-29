@@ -596,7 +596,7 @@
         var navSecondary = $('.nav-secondary');
         var navSecondaryHeight = navSecondary.outerHeight();
         var siteHeader = $('.site-header');
-        var height = siteHeader.outerHeight();
+        var siteHeaderHeight = siteHeader.outerHeight();
         var scroll = $(window).scrollTop();
         var navSecondaryScroll = scroll - aboveHeaderHeight;
         var headerSearch = $('.header-search');
@@ -609,8 +609,8 @@
             aboveHeaderHeight = 0;
         }
 
-        if (navSecondaryScroll > height) {
-            navSecondaryScroll = height;
+        if (navSecondaryScroll > siteHeaderHeight) {
+            navSecondaryScroll = siteHeaderHeight;
         }
 
         if (headerSearchScroll > navSecondaryHeight) {
@@ -660,7 +660,7 @@
         }
 
         // Has sticky above header.
-        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side') && ( body.hasClass('has-sticky-header') || body.hasClass('has-sticky-header-desktop') && windowWidth >= breakpoint || body.hasClass('has-sticky-header-mobile') && windowWidth <= breakpoint ) ) {
+        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side') && (body.hasClass('has-sticky-header') || body.hasClass('has-sticky-header-desktop') && windowWidth >= breakpoint || body.hasClass('has-sticky-header-mobile') && windowWidth <= breakpoint)) {
 
             // Default.
             if (scroll >= aboveHeaderHeight && aboveHeader.is(':visible')) {

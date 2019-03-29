@@ -103,11 +103,11 @@ return [
 					_get_elements( 'button', false, true ),
 					_get_elements( 'input', false, true ),
 					[
-						'.above-header',
-						'.site-header',
-						'.nav-secondary',
-						'.menu-overlay',
-						'.header-search.full-screen',
+						'a',
+						'.title-area',
+						'.primary-header',
+						'.nav-primary',
+						'.scroll-to-top-icon',
 					]
 				),
 				'property'      => 'transition-property',

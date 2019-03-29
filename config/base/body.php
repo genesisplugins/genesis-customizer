@@ -19,12 +19,12 @@ return [
 			[
 				'choice'   => 'text',
 				'element'  => 'body',
-				'property' => 'color'
+				'property' => 'color',
 			],
 			[
 				'choice'   => 'background',
 				'element'  => 'body',
-				'property' => 'background-color'
+				'property' => 'background-color',
 			],
 		],
 	],
@@ -48,7 +48,7 @@ return [
 		'output'   => [
 			[
 				'element' => 'body',
-			]
+			],
 		],
 	],
 	[
@@ -72,7 +72,14 @@ return [
 		],
 		'output'   => [
 			[
-				'element' => 'p',
+				'choice'   => 'margin-top',
+				'property' => 'margin-top',
+				'element'  => 'p',
+			],
+			[
+				'choice'   => 'margin-bottom',
+				'property' => 'margin-bottom',
+				'element'  => 'p',
 			],
 		],
 	],

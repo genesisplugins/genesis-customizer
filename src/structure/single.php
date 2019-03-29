@@ -19,7 +19,7 @@ function single_setup() {
 	add_filter( 'genesis_post_info', __NAMESPACE__ . '\single_post_info' );
 	add_filter( 'genesis_post_meta', __NAMESPACE__ . '\single_post_meta' );
 
-	$post_types = _get_value( 'content_featured-image_enabled' );
+	$post_types = _get_value( 'single_featured-image_enabled' );
 
 	if ( ! is_array( $post_types ) ) {
 		return;
@@ -27,7 +27,7 @@ function single_setup() {
 
 	foreach ( $post_types as $post_type ) {
 		if ( is_singular( $post_type ) ) {
-			$hook = _get_value( 'content_featured-image_position' );
+			$hook = _get_value( 'single_featured-image_position' );
 
 			add_action( $hook, __NAMESPACE__ . '\display_featured_image' );
 		}
@@ -44,7 +44,7 @@ function single_setup() {
 function display_featured_image() {
 	$img = genesis_get_image( [
 		'format'  => 'html',
-		'size'    => _get_value( 'content_featured-image_size' ),
+		'size'    => _get_value( 'single_featured-image_size' ),
 		'context' => 'single',
 		'attr'    => genesis_parse_attr( 'entry-image', [] ),
 	] );

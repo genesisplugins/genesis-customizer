@@ -45,42 +45,64 @@ return [
 		],
 	],
 	[
-		'type'     => 'dimensions',
-		'settings' => 'headings-margin',
-		'default'  => [
-			'margin-top'    => '0',
-			'margin-bottom' => _get_size( 'm' ),
-		],
-		'choices'  => [
-			'labels' => [
-				'margin-top'    => __( 'Margin Top', 'genesis-customizer' ),
-				'margin-bottom' => __( 'Margin Bottom', 'genesis-customizer' ),
-			],
-		],
-		'output'   => [
-			[
-				'element' => _get_elements( 'heading' ),
-			],
-		],
-	],
-	[
 		'type'     => 'custom',
 		'settings' => 'tip-1',
 		'default'  => sprintf(
 			'<hr><p><strong>%s</strong>%s<a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip: ', 'genesis-customizer' ),
 			esc_html__( 'Entry title typography settings can be customized from the ', 'genesis-customizer' ),
-			esc_attr( '"genesis-customizer_content_entry"' ),
+			esc_attr( '"genesis-customizer_single_entry"' ),
 			esc_html__( 'Entry Section', 'genesis-customizer' )
 		),
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'headings-margin-top',
+		'label'    => __( 'Top Spacing', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => _get_elements( 'heading' ),
+				'property' => 'margin-top',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'headings-margin-bottom',
+		'label'    => __( 'Bottom Spacing', 'genesis-customizer' ),
+		'default'  => '16',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => _get_elements( 'heading' ),
+				'property' => 'margin-bottom',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-1389',
+		'default'  => '<hr>',
 	],
 	[
 		'type'     => 'dimensions',
 		'settings' => 'h1',
 		'label'    => __( 'H1 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '2.3em',
-			'Desktop' => '2.3em',
+			'Mobile'  => '36px',
+			'Desktop' => '36px',
 		],
 		'output'   => [
 			[
@@ -106,8 +128,8 @@ return [
 		'settings' => 'h2',
 		'label'    => __( 'H2 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '1.8em',
-			'Desktop' => '1.8em',
+			'Mobile'  => '28px',
+			'Desktop' => '28px',
 		],
 		'output'   => [
 			[
@@ -133,8 +155,8 @@ return [
 		'settings' => 'h3',
 		'label'    => __( 'H3 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '1.5em',
-			'Desktop' => '1.5em',
+			'Mobile'  => '24px',
+			'Desktop' => '24px',
 		],
 		'output'   => [
 			[
@@ -160,8 +182,8 @@ return [
 		'settings' => 'h4',
 		'label'    => __( 'H4 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '1.3em',
-			'Desktop' => '1.3em',
+			'Mobile'  => '22px',
+			'Desktop' => '22px',
 		],
 		'output'   => [
 			[
@@ -187,8 +209,8 @@ return [
 		'settings' => 'h5',
 		'label'    => __( 'H5 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '1.2em',
-			'Desktop' => '1.2em',
+			'Mobile'  => '20px',
+			'Desktop' => '20px',
 		],
 		'output'   => [
 			[
@@ -214,8 +236,8 @@ return [
 		'settings' => 'h6',
 		'label'    => __( 'H6 Font Size', 'genesis-customizer' ),
 		'default'  => [
-			'Mobile'  => '1.1em',
-			'Desktop' => '1.1em',
+			'Mobile'  => '18px',
+			'Desktop' => '18px',
 		],
 		'output'   => [
 			[

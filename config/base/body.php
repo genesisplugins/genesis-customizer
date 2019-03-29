@@ -38,7 +38,7 @@ return [
 		'settings' => 'typography',
 		'label'    => __( 'Typography', 'genesis-customizer' ),
 		'default'  => [
-			'font-family'    => '',
+			'font-family'    => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
 			'font-size'      => _get_size( 'm' ),
 			'variant'        => '400',
 			'line-height'    => '1.6',

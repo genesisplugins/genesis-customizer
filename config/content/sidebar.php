@@ -133,24 +133,6 @@ return [
 		],
 	],
 	[
-		'type'     => 'slider',
-		'settings' => 'widget-border-radius',
-		'label'    => __( 'Widget Border Radius', 'genesis-customizer' ),
-		'default'  => '2',
-		'choices'  => [
-			'min'  => 0,
-			'max'  => 20,
-			'step' => 1,
-		],
-		'output'   => [
-			[
-				'element'  => '.sidebar-primary .widget',
-				'property' => 'border-radius',
-				'units'    => 'px',
-			],
-		],
-	],
-	[
 		'type'     => 'custom',
 		'settings' => 'divider-4',
 		'default'  => '<hr>',
@@ -162,7 +144,7 @@ return [
 		'default'  => '0px 3px 6px 0px rgba(0,10,20,0.01)',
 		'output'   => [
 			[
-				'element'  => '.sidebar-primary .widget',
+				'element'  => '.sidebar .widget',
 				'property' => 'box-shadow',
 			],
 		],

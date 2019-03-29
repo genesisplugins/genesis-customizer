@@ -20,6 +20,7 @@ function add_sections() {
 			'typekit'     => __( 'Typekit', 'genesis-customizer' ),
 		],
 		'base'        => [
+			'global'      => __( 'Global', 'genesis-customizer' ),
 			'body'        => __( 'Body', 'genesis-customizer' ),
 			'headings'    => __( 'Headings', 'genesis-customizer' ),
 			'links'       => __( 'Links', 'genesis-customizer' ),
@@ -57,16 +58,17 @@ function add_sections() {
 			'author-box'     => __( 'Author Box', 'genesis-customizer' ),
 			'featured-image' => __( 'Featured Image', 'genesis-customizer' ),
 			'avatar'         => __( 'Avatar', 'genesis-customizer' ),
-			'comments'       => __( 'Comments', 'genesis-customizer' ),
 			'sidebar'        => __( 'Sidebar', 'genesis-customizer' ),
 		],
 		'single'      => [
 			'entry'          => __( 'Entry', 'genesis-customizer' ),
 			'after-entry'    => __( 'After Entry', 'genesis-customizer' ),
 			'featured-image' => __( 'Featured Image', 'genesis-customizer' ),
-			'post-meta'   => __( 'Post Meta', 'genesis-customizer' ),
+			'post-meta'      => __( 'Post Meta', 'genesis-customizer' ),
+			'comments'       => __( 'Comments', 'genesis-customizer' ),
 		],
 		'archive'     => [
+			'entry'       => __( 'Entry', 'genesis-customizer' ),
 			'description' => __( 'Archive Description', 'genesis-customizer' ),
 			'post-meta'   => __( 'Post Meta', 'genesis-customizer' ),
 			'read-more'   => __( 'Read More', 'genesis-customizer' ),

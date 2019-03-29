@@ -221,7 +221,6 @@ body {
 
 a {
   text-decoration: none;
-  transition: all 0.2s 0s ease;
 }
 
 a:hover,
@@ -331,7 +330,6 @@ button,
   display: inline-block;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s 0s ease;
   white-space: normal;
   width: auto;
 }
@@ -425,7 +423,6 @@ select,
 textarea {
   background-clip: padding-box;
   margin: 0 0 0.8rem;
-  transition: all 0.2s 0s ease;
   width: 100%;
 }
 
@@ -582,6 +579,10 @@ iframe {
   position: relative;
 }
 
+.site-footer > div {
+  position: relative;
+}
+
 .site-footer:before {
   bottom: 0;
   content: "";
@@ -623,11 +624,8 @@ iframe {
 }
 
 .primary-header {
-  border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
   display: flex;
   position: relative;
-  transition: all 0.2s 0s ease;
   z-index: 3;
   flex-wrap: wrap;
   align-items: center;
@@ -640,7 +638,6 @@ iframe {
 .title-area {
   line-height: 1.2944;
   position: relative;
-  transition: all 0.2s 0s ease;
 }
 
 .title-area .site-title {
@@ -732,7 +729,6 @@ iframe {
   position: fixed;
   right: 0;
   top: 0;
-  transition: all 0.2s 0s ease;
   width: 100%;
   align-items: center;
 }
@@ -813,6 +809,10 @@ iframe {
   width: 100%;
 }
 
+.menu > div {
+  position: relative;
+}
+
 .menu:before {
   bottom: 0;
   content: "";
@@ -841,7 +841,6 @@ iframe {
 
 .no-js .menu {
   border: 0;
-  transition: all 0.2s ease;
   width: 100%;
 }
 
@@ -1118,6 +1117,10 @@ iframe {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.hero-section > div {
+  position: relative;
 }
 
 .hero-section:before {
@@ -1504,6 +1507,10 @@ iframe {
   position: relative;
 }
 
+.above-footer > div {
+  position: relative;
+}
+
 .above-footer:before {
   bottom: 0;
   content: "";
@@ -1525,6 +1532,10 @@ iframe {
 }
 
 .footer-widgets {
+  position: relative;
+}
+
+.footer-widgets > div {
   position: relative;
 }
 
@@ -1560,7 +1571,6 @@ iframe {
   right: 4.8rem;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
-  transition: all 0.2s 0s ease;
   align-items: center;
   justify-content: center;
 }

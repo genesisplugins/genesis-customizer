@@ -22,8 +22,6 @@ textarea {
 	margin: 0 0 $spacing--s;
 	background-clip: padding-box; // Remove iOS box shadow.
 
-	@include transition;
-
 	&:focus {
 		border-color: $color--primary;
 		outline: none;

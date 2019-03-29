@@ -1,5 +1,24 @@
 (function (document, $) {
 
+    /**
+     * Hide/show mega menu.
+     */
+    var megaMenuLink = $('.has-mega-menu');
+    var megaMenu = $('.mega-menu');
+
+    megaMenuLink.hover(function () {
+        megaMenu.fadeIn(300);
+    });
+
+    megaMenu.hover(
+        function () {
+            megaMenu.fadeIn(300);
+        },
+        function () {
+            megaMenu.fadeOut(300);
+        }
+    );
+
     /*
      * Add button class to menu item spans.
      */
@@ -641,7 +660,7 @@
         }
 
         // Has sticky above header.
-        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side')) {
+        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side') && ( body.hasClass('has-sticky-header') || body.hasClass('has-sticky-header-desktop') && windowWidth >= breakpoint || body.hasClass('has-sticky-header-mobile') && windowWidth <= breakpoint ) ) {
 
             // Default.
             if (scroll >= aboveHeaderHeight && aboveHeader.is(':visible')) {

@@ -37,12 +37,32 @@
 	@include _directional-property(border, null, $values);
 }
 
+////
+/// Transition mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
 @mixin transition() {
 	transition: $base--transition;
 }
 
+////
+/// Overlay mixin
+///
+/// @group  Tools
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
 @mixin overlay($default_color: '') {
 	position: relative;
+	
+	> div {
+		position: relative;
+	}
 
 	&:before {
 		content: '';

@@ -14,8 +14,6 @@
 	cursor: pointer;
 	font-weight: $font-weight--semibold;
 
-	@include transition;
-
 	@include hover-focus {
 		outline: none;
 		text-decoration: none;

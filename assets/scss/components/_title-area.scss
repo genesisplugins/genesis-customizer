@@ -10,8 +10,6 @@
 	line-height: $line-height--heading;
 	position: relative;
 
-	@include transition;
-
 	@include mq(0, m) {
 
 		.has-logo-left-mobile & {

@@ -160,7 +160,7 @@ function _get_value( $field, $default = null ) {
 	// Prefix the field with plugin handle.
 	$field = _get_handle() . '_' . $field;
 
-	if ( null === $default) {
+	if ( null === $default ) {
 		$default = _get_default( $field );
 	}
 
@@ -243,12 +243,13 @@ function _get_size( $size = 'm', $suffix = 'px' ) {
  *
  * @since 1.0.0
  *
- * @param      $element
- * @param bool $hover
+ * @param string $element Elements to return (button, input, heading).
+ * @param bool   $hover
+ * @param bool   $array
  *
  * @return string
  */
-function _get_elements( $element, $hover = false ) {
+function _get_elements( $element, $hover = false, $array = false ) {
 	$elements = apply_filters( 'genesis_customizer_elements', [
 		'button'  => [
 			'.button',
@@ -284,6 +285,11 @@ function _get_elements( $element, $hover = false ) {
 		$elements[ $element ] = $elements_hover;
 	}
 
-	return implode( ',', $elements[ $element ] );
+	if ( $array ) {
+		return $elements[ $element ];
+
+	} else {
+		return implode( ',', $elements[ $element ] );
+	}
 }
 

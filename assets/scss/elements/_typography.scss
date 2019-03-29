@@ -14,8 +14,6 @@ body {
 a {
 	text-decoration: none;
 
-	@include transition;
-
 	@include hover-focus {
 		text-decoration: underline;
 	}

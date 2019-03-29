@@ -7,22 +7,13 @@ return [
 		'type'      => 'multicolor',
 		'settings'  => 'colors',
 		'label'     => __( 'Colors', 'genesis-customizer' ),
-		'transport' => 'refresh',
 		'choices'   => [
-			'left'         => __( 'Left', 'genesis-customizer' ),
-			'right'        => __( 'Right', 'genesis-customizer' ),
-			'left-hover'   => __( 'Left Hover', 'genesis-customizer' ),
-			'right-hover'  => __( 'Right Hover', 'genesis-customizer' ),
 			'text'         => __( 'Text', 'genesis-customizer' ),
 			'text-hover'   => __( 'Text Hover', 'genesis-customizer' ),
 			'border'       => __( 'Border', 'genesis-customizer' ),
 			'border-hover' => __( 'Border Hover', 'genesis-customizer' ),
 		],
 		'default'   => [
-			'left'         => _get_color( 'heading' ),
-			'right'        => _get_color( 'text' ),
-			'left-hover'   => _get_color( 'heading' ),
-			'right-hover'  => _get_color( 'text' ),
 			'text'         => _get_color( 'white' ),
 			'text-hover'   => _get_color( 'white' ),
 			'border'       => '',
@@ -49,7 +40,35 @@ return [
 				'element'  => _get_elements( 'button', 'hover' ),
 				'property' => 'border-color',
 			],
-
+		],
+	],
+	[
+		'type'      => 'multicolor',
+		'settings'  => 'gradient',
+		'label'     => __( 'Gradient', 'genesis-customizer' ),
+		'transport' => 'refresh',
+		'choices'   => [
+			'left'         => __( 'Left', 'genesis-customizer' ),
+			'right'        => __( 'Right', 'genesis-customizer' ),
+			'left-hover'   => __( 'Left Hover', 'genesis-customizer' ),
+			'right-hover'  => __( 'Right Hover', 'genesis-customizer' ),
+		],
+		'default'   => [
+			'left'         => _get_color( 'heading' ),
+			'right'        => _get_color( 'text' ),
+			'left-hover'   => _get_color( 'heading' ),
+			'right-hover'  => _get_color( 'text' ),
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'angle',
+		'label'    => __( 'Gradient Angle', 'genesis-customizer' ),
+		'default'  => 135,
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 360,
+			'step' => 1,
 		],
 	],
 	[
@@ -186,17 +205,6 @@ return [
 				'value_pattern' => 'solid',
 				'exclude'       => [ '0' ],
 			],
-		],
-	],
-	[
-		'type'     => 'slider',
-		'settings' => 'angle',
-		'label'    => __( 'Gradient Angle', 'genesis-customizer' ),
-		'default'  => 135,
-		'choices'  => [
-			'min'  => 0,
-			'max'  => 360,
-			'step' => 1,
 		],
 	],
 	[

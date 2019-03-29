@@ -45,6 +45,32 @@ return [
 		],
 	],
 	[
+		'type'     => 'dimensions',
+		'settings' => 'headings-margin',
+		'default'  => [
+			'margin-top'    => '0',
+			'margin-bottom' => _get_size( 'm' ),
+		],
+		'choices'  => [
+			'labels' => [
+				'margin-top'    => __( 'Margin Top', 'genesis-customizer' ),
+				'margin-bottom' => __( 'Margin Bottom', 'genesis-customizer' ),
+			],
+		],
+		'output'   => [
+			[
+				'element'  => _get_elements( 'heading' ),
+				'choice'   => 'margin-top',
+				'property' => 'margin-top',
+			],
+			[
+				'element'  => _get_elements( 'heading' ),
+				'choice'   => 'margin-bottom',
+				'property' => 'margin-bottom',
+			],
+		],
+	],
+	[
 		'type'     => 'custom',
 		'settings' => 'tip-1',
 		'default'  => sprintf(
@@ -54,47 +80,6 @@ return [
 			esc_attr( '"genesis-customizer_single_entry"' ),
 			esc_html__( 'Entry Section', 'genesis-customizer' )
 		),
-	],
-	[
-		'type'     => 'slider',
-		'settings' => 'headings-margin-top',
-		'label'    => __( 'Top Spacing', 'genesis-customizer' ),
-		'default'  => '0',
-		'choices'  => [
-			'min'  => 0,
-			'max'  => 100,
-			'step' => 1,
-		],
-		'output'   => [
-			[
-				'element'  => _get_elements( 'heading' ),
-				'property' => 'margin-top',
-				'units'    => 'px',
-			],
-		],
-	],
-	[
-		'type'     => 'slider',
-		'settings' => 'headings-margin-bottom',
-		'label'    => __( 'Bottom Spacing', 'genesis-customizer' ),
-		'default'  => '16',
-		'choices'  => [
-			'min'  => 0,
-			'max'  => 100,
-			'step' => 1,
-		],
-		'output'   => [
-			[
-				'element'  => _get_elements( 'heading' ),
-				'property' => 'margin-bottom',
-				'units'    => 'px',
-			],
-		],
-	],
-	[
-		'type'     => 'custom',
-		'settings' => 'divider-1389',
-		'default'  => '<hr>',
 	],
 	[
 		'type'     => 'dimensions',

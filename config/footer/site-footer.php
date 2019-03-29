@@ -7,18 +7,13 @@ return [
 		'type'      => 'multicolor',
 		'settings'  => 'colors',
 		'label'     => __( 'Colors', 'genesis-customizer' ),
-		'transport' => 'refresh',
 		'choices'   => [
-			'left'        => __( 'Background Left', 'genesis-customizer' ),
-			'right'       => __( 'Background Right', 'genesis-customizer' ),
 			'text'        => __( 'Text', 'genesis-customizer' ),
 			'headings'    => __( 'Headings', 'genesis-customizer' ),
 			'links'       => __( 'Links', 'genesis-customizer' ),
 			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
 		],
 		'default'   => [
-			'left'        => _get_color( 'white' ),
-			'right'       => _get_color( 'white' ),
 			'text'        => '',
 			'headings'    => '',
 			'links'       => '',
@@ -55,9 +50,18 @@ return [
 		],
 	],
 	[
-		'type'     => 'custom',
-		'settings' => 'divider-1',
-		'default'  => '<hr>',
+		'type'      => 'multicolor',
+		'settings'  => 'gradient',
+		'label'     => __( 'Gradient', 'genesis-customizer' ),
+		'transport' => 'refresh',
+		'choices'   => [
+			'left'        => __( 'Background Left', 'genesis-customizer' ),
+			'right'       => __( 'Background Right', 'genesis-customizer' ),
+		],
+		'default'   => [
+			'left'        => _get_color( 'white' ),
+			'right'       => _get_color( 'white' ),
+		],
 	],
 	[
 		'type'     => 'slider',

@@ -51,7 +51,7 @@ return [
 				'element'  => [
 					'.menu-secondary a:hover',
 					'.menu-secondary a:focus',
-					'.menu-secondary .current-menu-item > a'
+					'.menu-secondary .current-menu-item > a',
 				],
 				'property' => 'color',
 			],
@@ -179,11 +179,18 @@ return [
 			'labels' => [
 				'border-top-width'    => __( 'Border Top Width', 'genesis-customizer' ),
 				'border-bottom-width' => __( 'Border Bottom Width', 'genesis-customizer' ),
-			]
+			],
 		],
 		'output'   => [
 			[
-				'element' => '.nav-secondary',
+				'choice'   => 'border-top-width',
+				'property' => 'border-top-width',
+				'element'  => '.nav-secondary',
+			],
+			[
+				'choice'   => 'border-bottom-width',
+				'property' => 'border-bottom-width',
+				'element'  => '.nav-secondary',
 			],
 		],
 	],

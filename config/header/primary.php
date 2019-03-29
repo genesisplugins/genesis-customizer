@@ -60,31 +60,31 @@ return [
 		'type'     => 'custom',
 		'settings' => 'tip-2',
 		'default'  => sprintf(
-			'<hr><p><strong>%s</strong> %s <strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
+			'<hr><p><strong>%s</strong> %s <strong>%s</strong> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a> %s <a href="javascript:wp.customize.section( %s ).focus();">%s</a></p><hr>',
 			esc_html__( 'Tip:', 'genesis-customizer' ),
 			esc_html__( 'Menu not aligning correctly? Try adjusting the', 'genesis-customizer' ),
-			esc_html__( 'Align Menu', 'genesis-customizer' ),
-			esc_html__( 'setting in the', 'genesis-customizer' ),
+			esc_html__( 'Alignment', 'genesis-customizer' ),
+			esc_html__( 'in the', 'genesis-customizer' ),
 			esc_attr( '"genesis-customizer_menus_primary"' ),
-			esc_html__( 'Primary Menu Section', 'genesis-customizer' )
+			esc_html__( 'Primary Menu Section', 'genesis-customizer' ),
+			esc_html__( 'or the', 'genesis-customizer' ),
+			esc_attr( '"genesis-customizer_menus_secondary"' ),
+			esc_html__( 'Secondary Menu Section', 'genesis-customizer' )
 		),
 	],
 	[
 		'type'      => 'multicolor',
 		'settings'  => 'colors',
 		'label'     => __( 'Colors', 'genesis-customizer' ),
-		'transport' => 'refresh',
 		'choices'   => [
 			'background'    => __( 'Background', 'genesis-customizer' ),
 			'border-top'    => __( 'Border Top', 'genesis-customizer' ),
 			'border-bottom' => __( 'Border Bottom', 'genesis-customizer' ),
-			'shadow'        => __( 'Shadow', 'genesis-customizer' ),
 		],
 		'default'   => [
 			'background'    => _get_color( 'white' ),
 			'border-top'    => _get_color( 'transparent' ),
 			'border-bottom' => _get_color( 'transparent' ),
-			'shadow'        => _get_color( 'shadow' ),
 		],
 		'output'    => [
 			[
@@ -166,14 +166,52 @@ return [
 		],
 	],
 	[
-		'type'     => 'slider',
-		'settings' => 'shadow',
-		'label'    => __( 'Shadow Size', 'genesis-customizer' ),
-		'default'  => '20',
+		'type'     => 'custom',
+		'settings' => 'divider-83398',
+		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'dimensions',
+		'settings' => 'border-width',
+		'label'    => __( 'Border', 'genesis-customizer' ),
+		'default'  => [
+			'border-top-width'    => '1px',
+			'border-bottom-width' => '1px',
+		],
 		'choices'  => [
-			'min'  => 0,
-			'max'  => 100,
-			'step' => 1,
+			'labels' => [
+				'border-top-width'    => __( 'Border Top Width', 'genesis-customizer' ),
+				'border-bottom-width' => __( 'Border Bottom Width', 'genesis-customizer' ),
+			],
+		],
+		'output'   => [
+			[
+				'choice'   => 'border-top-width',
+				'property' => 'border-top-width',
+				'element'  => '.primary-header',
+			],
+			[
+				'choice'   => 'border-bottom-width',
+				'property' => 'border-bottom-width',
+				'element'  => '.primary-header',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-398',
+		'default'  => '<hr>',
+	],
+	[
+		'type'        => 'kirki-box-shadow',
+		'settings'    => 'box-shadow',
+		'label'       => __( 'Drop Shadow', 'genesis-customizer' ),
+		'default'     => '0px 3px 6px 0px rgba(0,10,20,0.01)',
+		'output'      => [
+			[
+				'element'  => '.primary-header',
+				'property' => 'box-shadow',
+			],
 		],
 	],
 ];

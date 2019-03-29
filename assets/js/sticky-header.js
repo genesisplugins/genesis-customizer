@@ -76,7 +76,7 @@
         }
 
         // Has sticky above header.
-        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side')) {
+        if (!body.hasClass('no-sticky-header') && !body.hasClass('has-logo-side') && ( body.hasClass('has-sticky-header') || body.hasClass('has-sticky-header-desktop') && windowWidth >= breakpoint || body.hasClass('has-sticky-header-mobile') && windowWidth <= breakpoint ) ) {
 
             // Default.
             if (scroll >= aboveHeaderHeight && aboveHeader.is(':visible')) {

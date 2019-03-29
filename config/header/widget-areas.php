@@ -52,6 +52,36 @@ return [
 		),
 	],
 	[
+		'type'     => 'multicolor',
+		'settings' => 'colors',
+		'label'    => __( 'Colors', 'genesis-customizer' ),
+		'choices'  => [
+			'widget-title'   => __( 'Widget Title', 'genesis-customizer' ),
+			'widget-content' => __( 'Widget Content', 'genesis-customizer' ),
+		],
+		'default'  => [
+			'widget-title'   => '',
+			'widget-content' => '',
+		],
+		'output'   => [
+			[
+				'choice'   => 'widget-title',
+				'element'  => '.primary-header .widget-title',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'widget-content',
+				'element'  => '.primary-header .widget',
+				'property' => 'color',
+			],
+		],
+	],
+	[
+		'type'     => 'custom',
+		'settings' => 'divider-939831',
+		'default'  => '<hr>',
+	],
+	[
 		'type'     => 'slider',
 		'settings' => 'vertical-spacing',
 		'label'    => __( 'Vertical Spacing', 'genesis-customizer' ),
@@ -64,12 +94,12 @@ return [
 		'output'   => [
 			[
 				'element'  => '.header-left, .header-right',
-				'property' => 'margin-top',
+				'property' => 'padding-top',
 				'units'    => 'px',
 			],
 			[
 				'element'  => '.header-left, .header-right',
-				'property' => 'margin-bottom',
+				'property' => 'padding-bottom',
 				'units'    => 'px',
 			],
 		],
@@ -87,12 +117,12 @@ return [
 		'output'   => [
 			[
 				'element'  => '.header-left, .header-right',
-				'property' => 'margin-left',
+				'property' => 'padding-left',
 				'units'    => 'px',
 			],
 			[
 				'element'  => '.header-left, .header-right',
-				'property' => 'margin-right',
+				'property' => 'padding-right',
 				'units'    => 'px',
 			],
 		],

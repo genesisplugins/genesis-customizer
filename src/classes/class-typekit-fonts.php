@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 class Typekit_Fonts {
 	private $_typekit_id;

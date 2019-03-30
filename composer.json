@@ -1,12 +1,12 @@
 {
-  "name": "genesisplugins/genesis-customizer",
+  "name": "genesiscustomizer/plugin",
   "description": "Core functionality plugin for Genesis Customizer.",
   "type": "wordpress-plugin",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
-      "name": "genesisplugins",
-      "email": "genesisplugins@gmail.com"
+      "name": "seothemes",
+      "email": "seothemes@gmail.com"
     }
   ],
   "minimum-stability": "dev",

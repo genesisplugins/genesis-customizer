@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_filter( 'theme_page_templates', __NAMESPACE__ . '\register_templates' );
 /**

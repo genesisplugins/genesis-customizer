@@ -1,14 +1,14 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer\Tests;
+namespace SeoThemes\GenesisCustomizer\Tests;
 
 use Brain\Monkey\Functions;
-use function GenesisPlugins\GenesisCustomizer\_get_elements;
+use function SeoThemes\GenesisCustomizer\_get_elements;
 
 /**
  * Class Test_GetElements
  *
- * @package \GenesisPlugins\GenesisCustomizer\Tests
+ * @package \SeoThemes\GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetElements extends Test_Case {

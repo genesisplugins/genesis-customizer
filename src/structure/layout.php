@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_action( 'genesis_before', __NAMESPACE__ . '\center_content' );
 /**

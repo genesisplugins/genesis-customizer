@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_action( 'customize_register', __NAMESPACE__ . '\custom_sections' );
 /**

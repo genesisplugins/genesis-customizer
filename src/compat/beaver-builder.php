@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_filter( 'fl_builder_ui_bar_buttons', __NAMESPACE__ . '\beaver_builder_site_header', 10, 1 );
 /**

@@ -12,7 +12,7 @@
  * @link    https://www.studiopress.com/
  */
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 // Removes the entry header markup and page title.
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );

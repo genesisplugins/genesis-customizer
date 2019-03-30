@@ -1,16 +1,38 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 /**
- * Returns the plugin url.
+ * Description of expected behavior.
  *
  * @since 1.0.0
  *
- * @return string
+ * @param $header
+ *
+ * @return array|null
  */
-function _get_url() {
-	return plugin_dir_url( dirname( __DIR__ ) );
+function _get_data( $header = '' ) {
+	static $data = null;
+
+	if ( is_null( $data ) ) {
+		$data = get_file_data( _get_path() . 'genesis-customizer.php', [
+			'Name'        => 'Plugin Name',
+			'Version'     => 'Version',
+			'PluginURI'   => 'Plugin URI',
+			'TextDomain'  => 'Text Domain',
+			'Description' => 'Description',
+			'Author'      => 'Author',
+			'AuthorURI'   => 'Author URI',
+			'DomainPath'  => 'Domain Path',
+			'Network'     => 'Network',
+		], 'plugin' );
+	}
+
+	if ( array_key_exists( $header, $data ) ) {
+		return $data[ $header ];
+	}
+
+	return $data;
 }
 
 /**
@@ -25,6 +47,17 @@ function _get_path() {
 }
 
 /**
+ * Returns the plugin url.
+ *
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function _get_url() {
+	return plugin_dir_url( dirname( __DIR__ ) );
+}
+
+/**
  * Description of expected behavior.
  *
  * @since 1.0.0
@@ -32,7 +65,7 @@ function _get_path() {
  * @return string
  */
 function _get_name() {
-	return 'Genesis Customizer';
+	return _get_data( 'Name' );
 }
 
 /**
@@ -43,7 +76,7 @@ function _get_name() {
  * @return string
  */
 function _get_handle() {
-	return 'genesis-customizer';
+	return _get_data( 'TextDomain' );
 }
 
 /**
@@ -54,7 +87,7 @@ function _get_handle() {
  * @return string
  */
 function _get_author() {
-	return 'Genesis Plugins';
+	return _get_data( 'Author' );
 }
 
 /**
@@ -65,7 +98,7 @@ function _get_author() {
  * @return string
  */
 function _get_version() {
-	return '0.1.13';
+	return _get_data( 'Version' );
 }
 
 /**

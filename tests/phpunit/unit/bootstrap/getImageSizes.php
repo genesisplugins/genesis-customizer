@@ -1,14 +1,14 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer\Tests;
+namespace SeoThemes\GenesisCustomizer\Tests;
 
 use Brain\Monkey\Functions;
-use function GenesisPlugins\GenesisCustomizer\_get_image_sizes;
+use function SeoThemes\GenesisCustomizer\_get_image_sizes;
 
 /**
  * Class Test_GetImageSizes
  *
- * @package \GenesisPlugins\GenesisCustomizer\Tests
+ * @package \SeoThemes\GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetImageSizes extends Test_Case {

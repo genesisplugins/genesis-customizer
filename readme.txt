@@ -1,6 +1,6 @@
 === Genesis Customizer ===
-Contributors: genesisplugins
-Donate link: https://genesisplugins.com
+Contributors: seothemes
+Donate link: https://seothemes.com
 Tags: genesis, customizer
 Requires at least: 5.0
 Tested up to: 5.1

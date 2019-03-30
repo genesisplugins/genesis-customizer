@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_filter( 'merlin_import_files', __NAMESPACE__ . '\merlin_local_import_files' );
 /**

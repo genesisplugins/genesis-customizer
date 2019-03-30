@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 // Remove Simple Social Icons default stylesheet.
 add_action( 'simple_social_default_stylesheet', '__return_false' );

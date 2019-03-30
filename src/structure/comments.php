@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 
 add_filter( 'comment_author_says_text', __NAMESPACE__ . '\comment_author_says' );

@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_filter( 'body_class', __NAMESPACE__ . '\menu_body_classes', 100, 1 );
 /**

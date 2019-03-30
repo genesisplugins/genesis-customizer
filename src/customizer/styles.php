@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_action( 'customize_controls_print_styles', __NAMESPACE__ . '\kirki_styles', 99 );
 /**

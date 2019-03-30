@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\add_init_hook', 15 );
 /**

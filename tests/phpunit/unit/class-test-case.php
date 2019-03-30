@@ -2,12 +2,12 @@
 /**
  * Test Case for the unit tests.
  *
- * @package GenesisPlugins\GenesisCustomizer\Tests
+ * @package SeoThemes\GenesisCustomizer\Tests
  *
  * @since   1.5.0
  */
 
-namespace GenesisPlugins\GenesisCustomizer\Tests;
+namespace SeoThemes\GenesisCustomizer\Tests;
 
 use Brain\Monkey;
 use Brain\Monkey\Functions;

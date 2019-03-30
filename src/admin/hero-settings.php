@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_action( 'add_meta_boxes', __NAMESPACE__ . '\add_hero_meta_box' );
 /**

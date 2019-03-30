@@ -1,6 +1,6 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer;
+namespace SeoThemes\GenesisCustomizer;
 
 add_filter( 'genesis_attr_site-container', __NAMESPACE__ . '\site_container_id' );
 /**

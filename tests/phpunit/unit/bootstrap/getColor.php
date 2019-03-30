@@ -1,14 +1,14 @@
 <?php
 
-namespace GenesisPlugins\GenesisCustomizer\Tests;
+namespace SeoThemes\GenesisCustomizer\Tests;
 
 use Brain\Monkey\Functions;
-use function GenesisPlugins\GenesisCustomizer\_get_color;
+use function SeoThemes\GenesisCustomizer\_get_color;
 
 /**
  * Class Test_GetColor
  *
- * @package \GenesisPlugins\GenesisCustomizer\Tests
+ * @package \SeoThemes\GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetColor extends Test_Case {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 /**
  * Adds admin notice if requirements are not met.

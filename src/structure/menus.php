@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_filter( 'body_class', __NAMESPACE__ . '\menu_body_classes', 100, 1 );
 /**
@@ -56,8 +56,12 @@ add_filter( 'genesis_attr_nav-primary', __NAMESPACE__ . '\menu_alignment' );
  * @return array
  */
 function menu_alignment( $atts ) {
-	$atts['class'] .= ' ' . _get_value( 'menus_mobile_alignment' );
-	$atts['class'] .= ' ' . _get_value( 'menus_primary_alignment' );
+	$mobile  = _get_value( 'menus_mobile_alignment' );
+	$desktop = _get_value( 'menus_primary_alignment' );
+	$desktop = str_replace( 'flex-', '', $desktop );
+	$space   = $mobile ? ' ' : '';
+
+	$atts['class'] .= $space . $mobile . ' flex-' . $desktop . '-desktop';
 
 	return $atts;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -79,7 +79,13 @@ return [
 			[
 				'choice'   => 'margin-bottom',
 				'property' => 'margin-bottom',
-				'element'  => 'p',
+				'element'  => [
+					'p',
+					'.entry-image-link',
+					'.entry pre',
+					'.entry form',
+					'.entry table',
+				],
 			],
 		],
 	],

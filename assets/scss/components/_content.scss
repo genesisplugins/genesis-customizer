@@ -3,29 +3,16 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .content {
 	width: 100%;
 	position: relative;
 
-	@include margin($gutter null);
-
 	@include mq(m) {
 		display: flex;
 		flex-wrap: wrap;
-
-		@include margin($spacing--xl null);
-	}
-
-	.center-content &,
-	.sidebar-content &,
-	.content-sidebar & {
-
-		@include mq(m) {
-			width: $layout--width--content;
-		}
 	}
 
 	.sidebar-content & {
@@ -50,7 +37,6 @@
 
 	&.masonry {
 		display: block;
-		column-gap: $gutter;
 
 		@include mq(m) {
 

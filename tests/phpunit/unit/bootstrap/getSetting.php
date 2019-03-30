@@ -1,13 +1,13 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer\Tests;
+namespace GenesisCustomizer\Tests;
 
-use function SeoThemes\GenesisCustomizer\_get_setting;
+use function GenesisCustomizer\_get_setting;
 
 /**
  * Class Test_GetSetting
  *
- * @package \SeoThemes\GenesisCustomizer\Tests
+ * @package GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetSetting extends Test_Case {

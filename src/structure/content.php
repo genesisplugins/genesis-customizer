@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_filter( 'genesis_breadcrumb_args', __NAMESPACE__ . '\breadcrumb_args' );
 /**

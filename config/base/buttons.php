@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -54,10 +54,10 @@ return [
 			'right-hover'  => __( 'Right Hover', 'genesis-customizer' ),
 		],
 		'default'   => [
-			'left'         => _get_color( 'heading' ),
+			'left'         => _get_color( 'text' ),
 			'right'        => _get_color( 'text' ),
 			'left-hover'   => _get_color( 'heading' ),
-			'right-hover'  => _get_color( 'text' ),
+			'right-hover'  => _get_color( 'heading' ),
 		],
 	],
 	[

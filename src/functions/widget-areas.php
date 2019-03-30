@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\unregister_widget_areas', 19 );
 /**

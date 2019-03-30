@@ -1,7 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
-
+namespace GenesisCustomizer;
 
 add_filter( 'comment_author_says_text', __NAMESPACE__ . '\comment_author_says' );
 /**
@@ -12,7 +11,7 @@ add_filter( 'comment_author_says_text', __NAMESPACE__ . '\comment_author_says' )
  * @return string
  */
 function comment_author_says() {
-	return _get_value( 'content_comments_says' );
+	return _get_value( 'single_comments_says' );
 }
 
 add_filter( 'genesis_title_comments', __NAMESPACE__ . '\comments_title' );
@@ -24,7 +23,7 @@ add_filter( 'genesis_title_comments', __NAMESPACE__ . '\comments_title' );
  * @return string
  */
 function comments_title() {
-	return '<h3>' . _get_value( 'content_comments_title' ) . '</h3>';
+	return '<h3>' . _get_value( 'single_comments_title' ) . '</h3>';
 }
 
 add_filter( 'comment_form_defaults', __NAMESPACE__ . '\comment_title_reply' );
@@ -38,7 +37,7 @@ add_filter( 'comment_form_defaults', __NAMESPACE__ . '\comment_title_reply' );
  * @return mixed
  */
 function comment_title_reply( $defaults ) {
-	$defaults['title_reply'] = _get_value( 'content_comments_reply' );
+	$defaults['title_reply'] = _get_value( 'single_comments_reply' );
 
 	return $defaults;
 }
@@ -54,7 +53,7 @@ add_filter( 'comment_form_defaults', __NAMESPACE__ . '\comment_submit_button' );
  * @return mixed
  */
 function comment_submit_button( $defaults ) {
-	$defaults['label_submit'] = _get_value( 'content_comments_submit' );
+	$defaults['label_submit'] = _get_value( 'single_comments_submit' );
 
 	return $defaults;
 }

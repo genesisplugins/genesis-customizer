@@ -3,7 +3,7 @@
 ///
 /// @group  Utilities
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .align {
@@ -57,7 +57,7 @@
 .flex {
 	display: flex;
 
-	&-left {
+	&-start {
 		margin-right: auto;
 
 		&-desktop {
@@ -81,7 +81,7 @@
 		}
 	}
 
-	&-right {
+	&-end {
 		margin-left: auto;
 
 		&-desktop {

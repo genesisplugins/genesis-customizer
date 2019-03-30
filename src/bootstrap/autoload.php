@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 spl_autoload_register( __NAMESPACE__ . '\autoload_register' );
 /**

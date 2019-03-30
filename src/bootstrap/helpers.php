@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 /**
  * Description of expected behavior.
@@ -261,11 +261,13 @@ function _get_color( $color = 'accent' ) {
  */
 function _get_size( $size = 'm', $suffix = 'px' ) {
 	$spacing = apply_filters( 'genesis_customizer_spacing', [
-		'xs' => '10',
-		's'  => '14',
-		'm'  => '16',
-		'l'  => '18',
-		'xl' => '32',
+		'xxs' => '8',
+		'xs'  => '10',
+		's'   => '14',
+		'm'   => '16',
+		'l'   => '18',
+		'xl'  => '32',
+		'xxl' => '48',
 	] );
 
 	return $spacing[ $size ] . $suffix;

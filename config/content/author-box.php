@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -63,6 +63,24 @@ return [
 			[
 				'element'  => '.author-box',
 				'property' => 'padding',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'title-spacing',
+		'label'    => __( 'Title Bottom Spacing', 'genesis-customizer' ),
+		'default'  => _get_size( 'xxs', '' ),
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.author-box-title',
+				'property' => 'padding-bottom',
 				'units'    => 'px',
 			],
 		],

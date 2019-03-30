@@ -598,7 +598,6 @@ iframe {
 .wrap {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
 }
 
 .wrap .wrap {
@@ -658,10 +657,6 @@ iframe {
   clip-path: inset(100%);
 }
 
-.title-area .site-title a {
-  padding: 0;
-}
-
 .site-description {
   font-weight: 600;
   margin: 0;
@@ -709,10 +704,21 @@ iframe {
   justify-content: center;
 }
 
+.desktop.has-logo-above .nav-primary.flex-start-desktop {
+  justify-content: flex-start;
+}
+
+.desktop.has-logo-above .nav-primary.flex-center-desktop {
+  justify-content: center;
+}
+
+.desktop.has-logo-above .nav-primary.flex-end-desktop {
+  justify-content: flex-end;
+}
+
 .mobile .nav-primary {
   display: none;
   left: 0;
-  position: absolute;
   top: 100%;
   width: 100vw;
   z-index: 4;
@@ -761,7 +767,8 @@ iframe {
 }
 
 .mobile.has-mobile-menu-top .nav-primary {
-  left: -5vw;
+  transition: none;
+  order: 4;
 }
 
 .no-js .nav-primary {
@@ -1162,7 +1169,6 @@ iframe {
 .content-sidebar-wrap {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
 }
 
 .content-sidebar-wrap .wrap {
@@ -1186,7 +1192,6 @@ iframe {
 .archive-description {
   -webkit-column-span: all;
   column-span: all;
-  margin-bottom: 3.2rem;
   width: 100%;
 }
 
@@ -1199,8 +1204,6 @@ iframe {
 }
 
 .content {
-  margin-bottom: 3rem;
-  margin-top: 3rem;
   position: relative;
   width: 100%;
 }
@@ -1211,8 +1214,6 @@ iframe {
 }
 
 .content.masonry {
-  -webkit-column-gap: 3rem;
-  column-gap: 3rem;
   display: block;
 }
 
@@ -1220,9 +1221,16 @@ iframe {
   margin-top: 1.6rem;
 }
 
-.sidebar-primary {
-  margin-bottom: 3.2rem;
-  margin-top: 3.2rem;
+.sidebar-sidebar-content .sidebar-primary {
+  order: -1;
+}
+
+.sidebar-sidebar-content .sidebar-secondary {
+  order: -2;
+}
+
+.sidebar-content-sidebar .sidebar-secondary {
+  order: -1;
 }
 
 .sidebar ul {
@@ -1237,16 +1245,7 @@ iframe {
 .author-box {
   -webkit-column-span: all;
   column-span: all;
-  margin: 3.2rem 0;
   width: 100%;
-}
-
-.archive .author-box {
-  margin: 0 0 3.2rem;
-}
-
-.author-box-title {
-  margin-bottom: 0.53333rem;
 }
 
 .author-box-content {
@@ -1271,10 +1270,7 @@ iframe {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-}
-
-.archive .entry {
-  margin-bottom: 3rem;
+  align-content: flex-start;
 }
 
 .archive .entry > *:last-child {
@@ -1291,7 +1287,6 @@ iframe {
 
 .entry-image-link {
   display: block;
-  margin-bottom: 3.2rem;
 }
 
 .entry-image-link img {
@@ -1302,19 +1297,9 @@ iframe {
   width: 100%;
 }
 
-.entry-content form,
-.entry-content pre,
-.entry-content table {
-  margin-bottom: 3rem;
-}
-
 .archive .entry-content p {
   display: flex;
   flex-wrap: wrap;
-}
-
-.entry-comments {
-  padding: 3rem;
 }
 
 .after-entry {
@@ -1380,11 +1365,17 @@ iframe {
 }
 
 .gallery-item {
-  margin-bottom: 3rem;
-  width: calc((100% - (3rem * 1)) / 2 - 0.2px);
+  margin-bottom: 1em;
+  margin-left: 1em;
+  width: calc(50% - 1em);
+}
+
+.gallery-item:nth-of-type(2n + 1) {
+  margin-left: 0;
 }
 
 .gallery-columns-1 .gallery-item {
+  margin-left: 0;
   width: 100%;
 }
 
@@ -1395,7 +1386,6 @@ iframe {
 .pagination {
   -webkit-column-span: all;
   column-span: all;
-  margin-top: 3rem;
   width: 100%;
 }
 
@@ -1427,15 +1417,11 @@ iframe {
 }
 
 .pagination li {
-  margin-right: 0.8rem;
+  margin-right: 1em;
 }
 
 .pagination a {
   display: block;
-}
-
-.comment {
-  margin: 3.2rem 0;
 }
 
 .comment-list {
@@ -1445,6 +1431,7 @@ iframe {
 .comment .children {
   list-style-type: none;
   margin-bottom: 0;
+  margin-right: 0;
   margin-top: 0;
 }
 
@@ -1464,24 +1451,12 @@ iframe {
   width: 100%;
 }
 
-.entry-comments + .comment-respond {
-  margin-top: 3.2rem;
-}
-
 .search-form {
   display: flex;
 }
 
 .search-form-submit {
   margin-left: 1em;
-}
-
-.widget {
-  margin-bottom: 1.6rem;
-}
-
-.sidebar .widget {
-  margin-bottom: 3.2rem;
 }
 
 .widget.featured-content .entry::after {
@@ -1669,9 +1644,7 @@ iframe {
 }
 
 .mega-menu {
-  background-color: #fff;
   display: none;
-  padding: 2em;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -1759,7 +1732,7 @@ iframe {
   display: flex;
 }
 
-.flex-left {
+.flex-start {
   margin-right: auto;
 }
 
@@ -1768,7 +1741,7 @@ iframe {
   margin-right: auto;
 }
 
-.flex-right {
+.flex-end {
   margin-left: auto;
 }
 
@@ -2445,4 +2418,25 @@ iframe {
 
 .has-h6-font-size {
   font-size: 1.1em;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-static {
+  position: static;
+}
+
+.position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
 }

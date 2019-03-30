@@ -76,10 +76,6 @@
   align-self: flex-start;
 }
 
-.title-area .site-title a {
-  padding: 0;
-}
-
 .menu-toggle-bar {
   display: none;
 }
@@ -123,15 +119,7 @@
 
 .content {
   display: flex;
-  margin-bottom: 4.8rem;
-  margin-top: 4.8rem;
   flex-wrap: wrap;
-}
-
-.center-content .content,
-.sidebar-content .content,
-.content-sidebar .content {
-  width: calc(100% - (calc(30rem + 3.2rem + 3.2rem) + 3.2rem));
 }
 
 .sidebar-content .content {
@@ -158,40 +146,7 @@
   columns: 4;
 }
 
-.sidebar-primary {
-  margin-bottom: 4.8rem;
-  margin-top: 4.8rem;
-  width: calc(30rem + 3.2rem + 3.2rem);
-}
-
-.archive.has-2-columns .entry {
-  margin-left: 3rem;
-  width: calc((100% - (3rem * 1)) / 2 - 0.2px);
-}
-
-.archive.has-2-columns .entry:nth-of-type(2n +1) {
-  margin-left: 0;
-}
-
-.archive.has-3-columns .entry {
-  margin-left: 3rem;
-  width: calc((100% - (3rem * 2)) / 3 - 0.2px);
-}
-
-.archive.has-3-columns .entry:nth-of-type(3n +1) {
-  margin-left: 0;
-}
-
-.archive.has-4-columns .entry {
-  margin-left: 3rem;
-  width: calc((100% - (3rem * 3)) / 4 - 0.2px);
-}
-
-.archive.has-4-columns .entry:nth-of-type(4n +1) {
-  margin-left: 0;
-}
-
-.archive .masonry .entry {
+.archive .content.masonry .entry {
   break-inside: avoid;
   margin-left: 0;
   width: 100%;
@@ -203,78 +158,6 @@
 }
 
 .wp-block-column:first-of-type {
-  margin-left: 0;
-}
-
-.gallery-item {
-  margin-left: 3rem;
-}
-
-.gallery-columns-1 .gallery-item {
-  margin-left: 0;
-}
-
-.gallery-columns-2 .gallery-item {
-  width: calc((100% - (3rem * 1)) / 2 - 0.2px);
-}
-
-.gallery-columns-2 .gallery-item:nth-of-type(2n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-3 .gallery-item {
-  width: calc((100% - (3rem * 2)) / 3 - 0.2px);
-}
-
-.gallery-columns-3 .gallery-item:nth-of-type(3n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-4 .gallery-item {
-  width: calc((100% - (3rem * 3)) / 4 - 0.2px);
-}
-
-.gallery-columns-4 .gallery-item:nth-of-type(4n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-5 .gallery-item {
-  width: calc((100% - (3rem * 4)) / 5 - 0.2px);
-}
-
-.gallery-columns-5 .gallery-item:nth-of-type(5n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-6 .gallery-item {
-  width: calc((100% - (3rem * 5)) / 6 - 0.2px);
-}
-
-.gallery-columns-6 .gallery-item:nth-of-type(6n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-7 .gallery-item {
-  width: calc((100% - (3rem * 6)) / 7 - 0.2px);
-}
-
-.gallery-columns-7 .gallery-item:nth-of-type(7n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-8 .gallery-item {
-  width: calc((100% - (3rem * 7)) / 8 - 0.2px);
-}
-
-.gallery-columns-8 .gallery-item:nth-of-type(8n + 1) {
-  margin-left: 0;
-}
-
-.gallery-columns-9 .gallery-item {
-  width: calc((100% - (3rem * 8)) / 9 - 0.2px);
-}
-
-.gallery-columns-9 .gallery-item:nth-of-type(9n + 1) {
   margin-left: 0;
 }
 
@@ -308,74 +191,19 @@
 .one-half,
 .one-third,
 .one-fourth,
-.one-fifth,
 .one-sixth,
 .two-thirds,
 .two-fourths,
-.two-fifths,
 .two-sixths,
 .three-fourths,
-.three-fifths,
 .three-sixths,
-.four-fifths,
 .four-sixths,
 .five-sixths {
   float: left;
-  margin-bottom: 3rem;
-  margin-left: 3rem;
-}
-
-.one-half,
-.two-fourths,
-.three-sixths {
-  width: calc((100% - (3rem * 1)) / 2 - 0.2px);
-}
-
-.one-third,
-.two-sixths {
-  width: calc((100% - (3rem * 2)) / 3 - 0.2px);
-}
-
-.one-fourth {
-  width: calc((100% - (3rem * 3)) / 4 - 0.2px);
-}
-
-.one-fifth {
-  width: calc((100% - (3rem * 4)) / 5 - 0.2px);
-}
-
-.one-sixth {
-  width: calc((100% - (3rem * 5)) / 6 - 0.2px);
-}
-
-.two-thirds,
-.four-sixths {
-  width: calc(calc((100% - (3rem * 2)) / 3 - 0.2px) * 2 + 3rem);
-}
-
-.two-fifths {
-  width: calc(calc((100% - (3rem * 4)) / 5 - 0.2px) * 2 + 3rem);
-}
-
-.three-fourths {
-  width: calc(calc((100% - (3rem * 3)) / 4 - 0.2px) * 3 + (3rem * 2));
-}
-
-.three-fifths {
-  width: calc(calc((100% - (3rem * 4)) / 5 - 0.2px) * 3 + (3rem * 2));
-}
-
-.four-fifths {
-  width: calc(calc((100% - (3rem * 4)) / 5 - 0.2px) * 4 + (3rem * 3));
-}
-
-.five-sixths {
-  width: calc(calc((100% - (3rem * 5)) / 6 - 0.2px) * 5 + (3rem * 4));
 }
 
 .first {
   clear: both;
-  margin-left: 0;
 }
 
 .alignleft {
@@ -388,7 +216,7 @@
   margin: 0 0 1.6rem 1.6rem;
 }
 
-.flex-left-desktop {
+.flex-start-desktop {
   margin-right: auto;
 }
 
@@ -397,6 +225,6 @@
   margin-right: auto;
 }
 
-.flex-right-desktop {
+.flex-end-desktop {
   margin-left: auto;
 }

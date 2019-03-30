@@ -9,14 +9,14 @@
  * Description: Core functionality plugin for the Genesis Customizer theme.
  * Author:      SEO Themes
  * Author URI:  https://seothemes.com/
- * GitHub URI:  https://github.com/seothemes/genesis-customizer/
+ * GitHub URI:  https://github.com/genesiscustomizer/plugin/
  * Domain Path: /languages
  * License:     GPL-3.0-or-later
  * License URI: http://www.opensource.org/licenses/gpl-license.php
  *
- * @package   SeoThemes\GenesisCustomizer
+ * @package   GenesisCustomizer\Plugin
  * @link      https://genesiscustomizer.com
- * @author    Genesis Customizer
+ * @author    SEO Themes
  * @copyright Copyright © 2019 SEO Themes
  * @license   GPL-3.0-or-later
  */

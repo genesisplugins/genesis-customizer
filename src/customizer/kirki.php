@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 // Load Kirki.
 require_once _get_path() . 'vendor/aristath/kirki/kirki.php';

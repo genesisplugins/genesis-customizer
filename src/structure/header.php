@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_filter( 'body_class', __NAMESPACE__ . '\header_body_classes', 100, 1 );
 /**
@@ -159,4 +159,27 @@ function after_title_area( $close_html ) {
 	}
 
 	return $close_html;
+}
+
+add_filter( 'genesis_seo_title', __NAMESPACE__ . '\site_title_link', 10, 3 );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $title
+ * @param $inside
+ * @param $wrap
+ *
+ * @return mixed
+ */
+function site_title_link( $title, $inside, $wrap ) {
+	$link = sprintf(
+		'<a href="%s" class="%s">%s</a>',
+		trailingslashit( home_url() ),
+		apply_filters( 'genesis_customizer_site_title_link', 'site-title-link' ),
+		get_bloginfo( 'name' )
+	);
+
+	return str_replace( $inside, $link, $title );
 }

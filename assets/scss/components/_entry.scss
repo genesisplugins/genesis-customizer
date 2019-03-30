@@ -3,16 +3,16 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .entry {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	align-content: flex-start;
 
 	.archive & {
-		margin-bottom: $gutter;
 
 		> * {
 
@@ -22,43 +22,7 @@
 		}
 	}
 
-	.archive.has-2-columns & {
-
-		@include mq(m) {
-			width: $one-half;
-			margin-left: $gutter;
-
-			&:nth-of-type(2n +1) {
-				margin-left: 0;
-			}
-		}
-	}
-
-	.archive.has-3-columns & {
-
-		@include mq(m) {
-			width: $one-third;
-			margin-left: $gutter;
-
-			&:nth-of-type(3n +1) {
-				margin-left: 0;
-			}
-		}
-	}
-
-	.archive.has-4-columns & {
-
-		@include mq(m) {
-			width: $one-fourth;
-			margin-left: $gutter;
-
-			&:nth-of-type(4n +1) {
-				margin-left: 0;
-			}
-		}
-	}
-
-	.archive .masonry & {
+	.archive .content.masonry & {
 
 		@include mq(m) {
 			width: 100%;
@@ -107,7 +71,6 @@
 	// Entry image link.
 	&-image-link {
 		display: block;
-		margin-bottom: $spacing--l;
 
 		img {
 			width: 100%;
@@ -117,12 +80,6 @@
 	// Entry content.
 	&-content {
 		width: 100%;
-
-		form,
-		pre,
-		table {
-			margin-bottom: $gutter;
-		}
 
 		p {
 
@@ -146,7 +103,5 @@
 	}
 
 	// Comments.
-	&-comments {
-		padding: $gutter;
-	}
+	&-comments {}
 }

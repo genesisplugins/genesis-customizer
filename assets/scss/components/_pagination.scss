@@ -3,12 +3,11 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .pagination {
 	width: 100%;
-	margin-top: $gutter;
 	column-span: all;
 
 	ul {
@@ -48,7 +47,7 @@
 	}
 
 	li {
-		margin-right: $spacing--s;
+		margin-right: 1em;
 	}
 
 	a {

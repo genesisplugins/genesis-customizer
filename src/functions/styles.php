@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_main_styles' );
 /**

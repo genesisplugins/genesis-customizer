@@ -1,14 +1,14 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer\Tests;
+namespace GenesisCustomizer\Tests;
 
 use Brain\Monkey\Functions;
-use function SeoThemes\GenesisCustomizer\_get_media_query;
+use function GenesisCustomizer\_get_media_query;
 
 /**
  * Class Test_GetMediaQuery
  *
- * @package \SeoThemes\GenesisCustomizer\Tests
+ * @package GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetMediaQuery extends Test_Case {
@@ -21,7 +21,7 @@ class Test_GetMediaQuery extends Test_Case {
 	 * @return void
 	 */
 	public function test_should_return_formatted_media_query() {
-		Functions\expect( 'SeoThemes\GenesisCustomizer\_get_value' )
+		Functions\expect( 'GenesisCustomizer\_get_value' )
 			->twice()
 			->with( 'general_breakpoints_global' )
 			->andReturn( 600 );

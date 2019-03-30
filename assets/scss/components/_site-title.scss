@@ -8,12 +8,4 @@
 
 		@include hide-visually;
 	}
-
-	a {
-		padding: 0;
-
-		@include mq(m) {
-			padding: 0;
-		}
-	}
 }

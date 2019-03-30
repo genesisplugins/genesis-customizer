@@ -1,16 +1,15 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer\Tests;
+namespace GenesisCustomizer\Tests;
 
 use Brain\Monkey\Functions;
 use Brain\Monkey\Expectation\Exception\NotAllowedMethod;
-use function SeoThemes\GenesisCustomizer\_get_value;
-
+use function GenesisCustomizer\_get_value;
 
 /**
  * Class Test_GetMediaQuery
  *
- * @package \SeoThemes\GenesisCustomizer\Tests
+ * @package GenesisCustomizer\Tests
  * @group   bootstrap
  */
 class Test_GetValue extends Test_Case {
@@ -30,7 +29,7 @@ class Test_GetValue extends Test_Case {
 
 		$this->assertSame( 'genesis-customizer_field', _get_value( 'field', 'default' ) );
 
-		Functions\expect( 'SeoThemes\GenesisCustomizer\_get_default' )
+		Functions\expect( 'GenesisCustomizer\_get_default' )
 			->once()
 			->andReturnFirstArg();
 

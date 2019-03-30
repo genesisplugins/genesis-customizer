@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -74,12 +74,12 @@ return [
 		'type'      => 'select',
 		'settings'  => 'alignment',
 		'label'     => __( 'Align Menu', 'genesis-customizer' ),
-		'default'   => 'flex-right-desktop',
+		'default'   => 'center',
 		'transport' => 'refresh',
 		'choices'   => [
-			'flex-left-desktop'   => __( 'Left', 'genesis-customizer' ),
-			'flex-center-desktop' => __( 'Center', 'genesis-customizer' ),
-			'flex-right-desktop'  => __( 'Right', 'genesis-customizer' ),
+			'flex-start' => __( 'Left', 'genesis-customizer' ),
+			'center'     => __( 'Center', 'genesis-customizer' ),
+			'flex-end'   => __( 'Right', 'genesis-customizer' ),
 		],
 	],
 	[

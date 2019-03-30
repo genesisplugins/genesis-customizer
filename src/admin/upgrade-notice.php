@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'admin_notices', __NAMESPACE__ . '\upgrade_notice' );
 /**

@@ -5,11 +5,10 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .comment {
-	margin: $spacing--l 0;
 
 	// Comment list wrapper.
 	&-list {
@@ -20,7 +19,7 @@
 	.children {
 		list-style-type: none;
 
-		@include margin(0 null);
+		@include margin(0 0 0 null);
 	}
 
 	// Comment header.
@@ -68,10 +67,6 @@
 	// Comment respond.
 	&-respond {
 		width: 100%;
-
-		.entry-comments + & {
-			margin-top: $spacing--l;
-		}
 	}
 
 	// Comment logged in as.

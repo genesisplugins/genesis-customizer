@@ -3,7 +3,7 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .nav {
@@ -27,8 +27,19 @@
 			justify-content: center;
 		}
 
+		.desktop.has-logo-above &.flex-start-desktop {
+			justify-content: flex-start;
+		}
+
+		.desktop.has-logo-above &.flex-center-desktop {
+			justify-content: center;
+		}
+
+		.desktop.has-logo-above &.flex-end-desktop {
+			justify-content: flex-end;
+		}
+
 		.mobile & {
-			position: absolute;
 			top: 100%;
 			left: 0;
 			width: 100vw;
@@ -70,7 +81,8 @@
 		}
 
 		.mobile.has-mobile-menu-top & {
-			left: -5vw;
+			transition: none;
+			order: 4;
 		}
 
 		.no-js & {

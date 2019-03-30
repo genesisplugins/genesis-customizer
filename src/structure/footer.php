@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'genesis_before', __NAMESPACE__ . '\footer_credits' );
 /**

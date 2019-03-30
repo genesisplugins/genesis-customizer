@@ -2,12 +2,12 @@
 /**
  * Test Case for the unit tests.
  *
- * @package SeoThemes\GenesisCustomizer\Tests
+ * @package GenesisCustomizer\Plugin\Tests
  *
  * @since   1.5.0
  */
 
-namespace SeoThemes\GenesisCustomizer\Tests;
+namespace GenesisCustomizer\Tests;
 
 use Brain\Monkey;
 use Brain\Monkey\Functions;
@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Abstract Class Test_Case
  *
- * @package Beans\Framework\Tests\Unit
+ * @package GenesisCustomizer\Plugin\Tests
  */
 abstract class Test_Case extends TestCase {
 

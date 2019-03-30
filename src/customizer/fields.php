@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_fields' );
 /**

@@ -3,19 +3,28 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .sidebar {
 
+	// Primary sidebar.
 	&-primary {
 
-		@include margin($spacing--l null);
+		.sidebar-sidebar-content & {
+			order: -1;
+		}
+	}
 
-		@include mq(m) {
-			width: $layout--width--sidebar;
+	// Secondary sidebar.
+	&-secondary {
 
-			@include margin($spacing--xl null);
+		.sidebar-sidebar-content & {
+			order: -2;
+		}
+
+		.sidebar-content-sidebar & {
+			order: -1;
 		}
 	}
 

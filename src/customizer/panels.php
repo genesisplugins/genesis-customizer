@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\add_panels', 20 );
 /**
@@ -20,6 +20,7 @@ function add_panels() {
 		'menus'       => __( 'Menus', 'genesis-customizer' ),
 		'hero'        => __( 'Hero Section', 'genesis-customizer' ),
 		'content'     => __( 'Content Area', 'genesis-customizer' ),
+		'sidebars'    => __( 'Sidebars', 'genesis-customizer' ),
 		'single'      => __( 'Single Post / Page', 'genesis-customizer' ),
 		'archive'     => __( 'Blog / Archive', 'genesis-customizer' ),
 		'footer'      => __( 'Footer', 'genesis-customizer' ),

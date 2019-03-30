@@ -3,7 +3,7 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .archive {
@@ -11,7 +11,6 @@
 	// Archive description box.
 	&-description {
 		width: 100%;
-		margin-bottom: $spacing--l;
 		column-span: all;
 
 		h1 {

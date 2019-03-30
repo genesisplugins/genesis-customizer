@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -47,13 +47,13 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-1',
+		'settings' => 'divider-232',
 		'default'  => '<hr>',
 	],
 	[
 		'type'     => 'slider',
 		'settings' => 'menu-item-spacing',
-		'label'    => __( 'Menu Item Spacing', 'genesis-customizer' ),
+		'label'    => __( 'Menu Item Vertical Spacing', 'genesis-customizer' ),
 		'default'  => '10',
 		'choices'  => [
 			'min'  => 0,
@@ -67,7 +67,7 @@ return [
 				'value_pattern' => '$px 0',
 			],
 			[
-				'element'       => '.mobile-menu',
+				'element'       => '.mobile .nav-primary',
 				'property'      => 'padding',
 				'value_pattern' => '$px 0',
 			],
@@ -75,14 +75,47 @@ return [
 	],
 	[
 		'type'     => 'custom',
-		'settings' => 'divider-2',
+		'settings' => 'divider-1',
 		'default'  => '<hr>',
+	],
+	[
+		'type'            => 'radio-buttonset',
+		'settings'        => 'position',
+		'label'           => esc_html__( 'Positioning', 'genesis-customizer' ),
+		'default'         => 'absolute',
+		'choices'         => [
+			'absolute' => esc_html__( 'Absolute', 'genesis-customizer' ),
+			'relative' => esc_html__( 'Relative', 'genesis-customizer' ),
+		],
+		'output'          => [
+			[
+				'element'  => '.mobile .nav-primary',
+				'property' => 'position',
+			],
+		],
+		'active_callback' => [
+			[
+				'setting' => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-left',
+				'operator' => '!==',
+			],
+			[
+				'setting' => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-right',
+				'operator' => '!==',
+			],
+			[
+				'setting' => _get_setting( 'animation' ),
+				'value'    => 'has-mobile-menu-center',
+				'operator' => '!==',
+			],
+		],
 	],
 	[
 		'type'            => 'custom',
 		'settings'        => 'tip-1',
 		'default'         => sprintf(
-			'<p>%s <strong>%s</strong>%s </p><a href="%s" target="_blank" class="button-primary">%s</a>',
+			'<hr><p>%s <strong>%s</strong>%s </p><a href="%s" target="_blank" class="button-primary">%s</a>',
 			esc_html__( 'More mobile menu options available in', 'genesis-customizer' ),
 			esc_html__( 'Genesis Customizer Pro', 'genesis-customizer' ),
 			esc_html__( '!', 'genesis-customizer' ),

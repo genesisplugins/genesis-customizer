@@ -3,15 +3,10 @@
 ///
 /// @group  Components
 /// @author Lee Anthony <seothemeswp@gmail.com>
-/// @link   https://github.com/seothemes/genesis-starter-theme
+/// @link   https://github.com/genesiscustomizer/plugin
 ////
 
 .widget {
-	margin-bottom: $spacing--m;
-
-	.sidebar & {
-		margin-bottom: $spacing--l;
-	}
 
 	// Widget wrapper.
 	&-wrap {}

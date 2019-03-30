@@ -1,15 +1,15 @@
 <?php
 /**
- * Bootstraps the Beans Unit Tests.
+ * Bootstraps the Genesis Customizer Unit Tests.
  *
- * @package     Beans\Framework\Tests\Unit
- * @since       1.5.0
- * @link        http://www.getbeans.io
- * @license     GNU-2.0+
+ * @package GenesisCustomizer\Plugin
+ * @since   1.0.0
+ * @link    https://genesiscustomizer.com
+ * @license GPL-3.0-or-later
  */
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
-	trigger_error( 'Beans Unit Tests require PHP 5.6 or higher.', E_USER_ERROR ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error -- Valid use case for our testing suite.
+	trigger_error( 'Genesis Customizer Unit Tests require PHP 5.6 or higher.', E_USER_ERROR ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error -- Valid use case for our testing suite.
 }
 
 define( 'GENESIS_CUSTOMIZER_TESTS_DIR', __DIR__ );

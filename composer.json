@@ -21,11 +21,6 @@
     "phpunit/phpunit": "~5.7.9",
     "wp-phpunit/wp-phpunit": "^5.1"
   },
-  "autoload": {
-    "classmap": [
-      "src/classes/"
-    ]
-  },
   "config": {
     "preferred-install": {
       "*": "dist"

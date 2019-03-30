@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'customize_controls_print_scripts', __NAMESPACE__ . '\kirki_scripts', 999 );
 /**

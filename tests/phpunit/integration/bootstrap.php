@@ -2,10 +2,10 @@
 /**
  * Bootstraps the WordPress Integration Tests
  *
- * @package     Beans\Framework\Tests\Integration
- * @since       1.5.0
- * @link        http://www.getbeans.io
- * @license     GNU-2.0+
+ * @package GenesisCustomizer\Plugin
+ * @since   1.0.0
+ * @link    https://genesiscustomizer.com
+ * @license GPL-3.0-or-later
  */
 
 if ( ! file_exists( '../../../wp-content' ) ) {

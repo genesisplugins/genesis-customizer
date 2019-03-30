@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_filter( 'kirki_control_types', __NAMESPACE__ . '\register_controls' );
 /**

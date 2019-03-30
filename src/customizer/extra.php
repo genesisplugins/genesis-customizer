@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'customize_register', __NAMESPACE__ . '\custom_sections' );
 /**
@@ -78,7 +78,7 @@ function go_pro() {
 	}
 }
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\go_pro_fields', 15 );
+//add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\go_pro_fields', 15 );
 /**
  * Description of expected behavior.
  *

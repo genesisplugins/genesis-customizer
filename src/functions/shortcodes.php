@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 // Add search form shortcode.
 add_shortcode( 'search_form', function () {

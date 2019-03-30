@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -8,29 +8,39 @@ return [
 		'settings' => 'colors',
 		'label'    => __( 'Colors', 'genesis-customizer' ),
 		'choices'  => [
-			'background'        => __( 'Background', 'genesis-customizer' ),
+			'background'        => __( 'Sidebar Background', 'genesis-customizer' ),
+			'text'              => __( 'Text', 'genesis-customizer' ),
 			'widget-background' => __( 'Widget Background', 'genesis-customizer' ),
 			'widget-title'      => __( 'Widget Title', 'genesis-customizer' ),
 		],
 		'default'  => [
 			'background'        => '',
+			'text'              => '',
 			'widget-background' => _get_color( 'white' ),
 			'widget-title'      => '',
 		],
 		'output'   => [
 			[
 				'choice'   => 'background',
-				'element'  => '.sidebar-primary',
+				'element'  => '.sidebar-secondary',
 				'property' => 'background-color',
 			],
 			[
+				'choice'   => 'text',
+				'element'  => '.sidebar-secondary',
+				'property' => 'color',
+			],
+			[
 				'choice'   => 'widget-background',
-				'element'  => '.sidebar-primary .widget',
+				'element'  => '.sidebar-secondary .widget',
 				'property' => 'background-color',
 			],
 			[
 				'choice'   => 'widget-title',
-				'element'  => '.sidebar-primary .widget-title',
+				'element'  => [
+					'.sidebar-secondary .widget-title',
+					'.sidebar-secondary .widgettitle',
+				],
 				'property' => 'color',
 			],
 		],
@@ -54,7 +64,7 @@ return [
 		],
 		'output'   => [
 			[
-				'element' => '.sidebar-primary',
+				'element' => '.sidebar-secondary',
 			],
 		],
 	],
@@ -77,7 +87,7 @@ return [
 		],
 		'output'   => [
 			[
-				'element' => '.widget-title',
+				'element' => '.sidebar-secondary .widget-title',
 			],
 		],
 	],
@@ -90,7 +100,7 @@ return [
 		'type'     => 'slider',
 		'settings' => 'width',
 		'label'    => __( 'Sidebar Width', 'genesis-customizer' ),
-		'default'  => '364',
+		'default'  => '164',
 		'choices'  => [
 			'min'  => 200,
 			'max'  => 600,
@@ -98,17 +108,22 @@ return [
 		],
 		'output'   => [
 			[
-				'element'     => '.sidebar-primary',
+				'element'     => '.sidebar-secondary',
 				'property'    => 'width',
 				'units'       => 'px',
 				'media_query' => _get_media_query(),
 			],
 			[
-				'element'         => '.sidebar-content .content, .content-sidebar .content, .center-content .content',
+				'element'         => [
+					'.content-sidebar-sidebar .content',
+					'.sidebar-sidebar-content .content',
+					'.sidebar-content-sidebar .content',
+				],
 				'property'        => 'width',
-				'value_pattern'   => 'calc(100% - $px - 3.2rem)',
+				'value_pattern'   => 'calc(100% - ( sidebarPrimarypx + $px ) - ( globalSpacingpx * 2 ))',
 				'pattern_replace' => [
-					'widgetSpacing' => $prefix . '_widget_spacing',
+					'sidebarPrimary' => 'genesis-customizer_sidebars_primary_width',
+					'globalSpacing'  => 'genesis-customizer_base_global_gutter',
 				],
 				'media_query'     => _get_media_query(),
 			],
@@ -126,7 +141,7 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.sidebar-primary .widget',
+				'element'  => '.sidebar-secondary .widget',
 				'property' => 'padding',
 				'units'    => 'px',
 			],
@@ -144,7 +159,7 @@ return [
 		'default'  => '0px 3px 6px 0px rgba(0,10,20,0.01)',
 		'output'   => [
 			[
-				'element'  => '.sidebar .widget',
+				'element'  => '.sidebar-secondary .widget',
 				'property' => 'box-shadow',
 			],
 		],

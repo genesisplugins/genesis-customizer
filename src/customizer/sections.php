@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_sections' );
 /**
@@ -59,6 +59,10 @@ function add_sections() {
 			'featured-image' => __( 'Featured Image', 'genesis-customizer' ),
 			'avatar'         => __( 'Avatar', 'genesis-customizer' ),
 			'sidebar'        => __( 'Sidebar', 'genesis-customizer' ),
+		],
+		'sidebars'    => [
+			'primary'   => __( 'Primary Sidebar', 'genesis-customizer' ),
+			'secondary' => __( 'Secondary Sidebar', 'genesis-customizer' ),
 		],
 		'single'      => [
 			'entry'          => __( 'Entry', 'genesis-customizer' ),

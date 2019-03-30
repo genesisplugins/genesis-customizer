@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -43,6 +43,11 @@ return [
 					'.comment-respond',
 				],
 				'property' => 'padding',
+				'units'    => 'px',
+			],
+			[
+				'element'  => '.children .comment',
+				'property' => 'padding-top',
 				'units'    => 'px',
 			],
 		],

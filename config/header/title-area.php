@@ -1,6 +1,6 @@
 <?php
 
-namespace SeoThemes\GenesisCustomizer;
+namespace GenesisCustomizer;
 
 return [
 	[
@@ -45,11 +45,6 @@ return [
 			esc_attr( '"title_tagline"' ),
 			esc_html__( 'Site Identity Section', 'genesis-customizer' )
 		),
-	],
-	[
-		'type'     => 'custom',
-		'settings' => 'divider-1',
-		'default'  => '<hr>',
 	],
 	[
 		'type'     => 'typography',
@@ -98,6 +93,27 @@ return [
 		'type'     => 'custom',
 		'settings' => 'divider-3',
 		'default'  => '<hr>',
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'site-title-spacing',
+		'label'    => __( 'Site Title Bottom Spacing', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'       => [
+					'.site-title-link',
+					'.desktop .menu-primary .site-title-link',
+				],
+				'property'      => 'padding',
+				'value_pattern' => '0 0 $px',
+			],
+		],
 	],
 	[
 		'type'     => 'slider',

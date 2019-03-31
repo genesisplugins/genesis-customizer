@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\setup_layouts', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\setup_layouts', 15 );
 /**
  * Description of expected behavior.
  *

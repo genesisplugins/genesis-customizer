@@ -337,6 +337,86 @@
         ]
     },
     {
+        "name": "monolog/monolog",
+        "version": "1.x-dev",
+        "version_normalized": "1.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "4d5b7e6ba1127789c7ff59d6f762298eaa29787f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4d5b7e6ba1127789c7ff59d6f762298eaa29787f",
+            "reference": "4d5b7e6ba1127789c7ff59d6f762298eaa29787f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "sentry/sentry": "^0.13",
+            "swiftmailer/swiftmailer": "^5.3|^6.0"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+            "sentry/sentry": "Allow sending log messages to a Sentry server"
+        },
+        "time": "2018-12-26T14:24:03+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
         "name": "myclabs/deep-copy",
         "version": "1.x-dev",
         "version_normalized": "1.9999999.9999999.9999999-dev",
@@ -1015,6 +1095,152 @@
         "abandoned": true
     },
     {
+        "name": "proteusthemes/wp-content-importer-v2",
+        "version": "v2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/proteusthemes/WordPress-Importer.git",
+            "reference": "7414ce1bfb56a8be780c520ed63e99cac7ac403b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/proteusthemes/WordPress-Importer/zipball/7414ce1bfb56a8be780c520ed63e99cac7ac403b",
+            "reference": "7414ce1bfb56a8be780c520ed63e99cac7ac403b",
+            "shasum": ""
+        },
+        "time": "2018-04-13T07:31:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ProteusThemes\\WPContentImporter2\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Primoz Cigler",
+                "email": "primoz@proteusnet.com"
+            },
+            {
+                "name": "Gregor Capuder",
+                "email": "capuderg@gmail.com"
+            },
+            {
+                "name": "Humanmade contributors",
+                "homepage": "https://github.com/humanmade/WordPress-Importer/graphs/contributors"
+            }
+        ],
+        "description": "Improved WP content importer used in OCDI plugin and MerlinWP.",
+        "keywords": [
+            "content",
+            "import",
+            "proteusthemes",
+            "theme",
+            "wordpress",
+            "wp"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+            "reference": "c4421fcac1edd5a324fda73e589a5cf96e52ffd0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2018-11-21T13:42:00+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "richtabor/merlin-wp",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/richtabor/MerlinWP.git",
+            "reference": "2be6eb216eb2500a6088e932618e2073b22d0d9c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/richtabor/MerlinWP/zipball/2be6eb216eb2500a6088e932618e2073b22d0d9c",
+            "reference": "2be6eb216eb2500a6088e932618e2073b22d0d9c",
+            "shasum": ""
+        },
+        "require": {
+            "monolog/monolog": "^1.23",
+            "proteusthemes/wp-content-importer-v2": "^2.1.0"
+        },
+        "time": "2018-11-28T19:50:09+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "ProteusThemes",
+                "homepage": "https://www.proteusthemes.com/"
+            },
+            {
+                "name": "Rich Tabor",
+                "homepage": "https://richtabor.com"
+            }
+        ],
+        "description": "Better WordPress Theme Onboarding.",
+        "keywords": [
+            "content",
+            "import",
+            "onboarding",
+            "theme",
+            "wordpress",
+            "wp"
+        ]
+    },
+    {
         "name": "sebastian/code-unit-reverse-lookup",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1667,6 +1893,63 @@
         ],
         "description": "Symfony Yaml Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "tgmpa/tgm-plugin-activation",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git",
+            "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
+            "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2016-05-19T15:46:51+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "class-tgm-plugin-activation.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Griffin",
+                "homepage": "http://thomasgriffinmedia.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Gary Jones",
+                "homepage": "https://github.com/GaryJones",
+                "role": "Developer"
+            },
+            {
+                "name": "Juliette Reinders Folmer",
+                "homepage": "https://github.com/jrfnl",
+                "role": "Developer"
+            }
+        ],
+        "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+        "homepage": "http://tgmpluginactivation.com",
+        "keywords": [
+            "activation",
+            "library",
+            "plugins",
+            "theme",
+            "wordpress"
+        ]
     },
     {
         "name": "webmozart/assert",

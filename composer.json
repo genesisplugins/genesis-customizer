@@ -13,6 +13,8 @@
   "require": {
     "php": ">=5.4.0",
     "aristath/kirki": "dev-develop",
+    "richtabor/merlin-wp": "dev-master",
+    "tgmpa/tgm-plugin-activation": "dev-master",
     "yahnis-elsts/plugin-update-checker": "dev-master"
   },
   "require-dev": {
@@ -21,6 +23,16 @@
     "phpunit/phpunit": "~5.7.9",
     "wp-phpunit/wp-phpunit": "^5.1"
   },
+  "autoload": {
+    "classmap": [
+      "src/classes"
+    ],
+    "files": [
+      "vendor/richtabor/merlin-wp/class-merlin.php",
+      "vendor/aristath/kirki/kirki.php",
+      "src/autoload.php"
+    ]
+  },
   "config": {
     "preferred-install": {
       "*": "dist"
@@ -28,7 +40,8 @@
     "sort-packages": true
   },
   "scripts": {
-    "test-unit": "\"vendor/bin/phpunit\" --testsuite unit --color=always",
-    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always"
+    "d": "composer dump --no-dev",
+    "test-unit": "composer dump && \"vendor/bin/phpunit\" --testsuite unit --color=always",
+    "test-integration": "composer dump && \"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always"
   }
 }

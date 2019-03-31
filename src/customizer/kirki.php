@@ -2,10 +2,7 @@
 
 namespace GenesisCustomizer;
 
-// Load Kirki.
-require_once _get_path() . 'vendor/aristath/kirki/kirki.php';
-
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\kirki_setup' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\kirki_setup' );
 /**
  * Description of expected behavior.
  *
@@ -22,7 +19,7 @@ function kirki_setup() {
 //	} );
 }
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_kirki_config' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\add_kirki_config' );
 /**
  * Adds the theme's Kirki config.
  *

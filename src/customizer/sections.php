@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_sections' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\add_sections' );
 /**
  * Adds Kirki sections.
  *

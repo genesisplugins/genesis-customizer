@@ -46,7 +46,7 @@ function custom_sections( $wp_customize ) {
 
 }
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\go_pro', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\go_pro', 15 );
 /**
  * Description of expected behavior.
  *
@@ -78,7 +78,7 @@ function go_pro() {
 	}
 }
 
-//add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\go_pro_fields', 15 );
+//add_action( 'genesis_setup', __NAMESPACE__ . '\go_pro_fields', 15 );
 /**
  * Description of expected behavior.
  *
@@ -126,7 +126,7 @@ function go_pro_fields() {
 	}
 }
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_misc_fields', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\add_misc_fields', 15 );
 /**
  * Description of expected behavior.
  *

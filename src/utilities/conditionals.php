@@ -66,7 +66,7 @@ function _is_pro_active() {
  */
 function _is_plugin_active( $plugin ) {
 	$plugins = [
-		'genesis-customizer-pro' => 'genesis_customizer_pro',
+		'genesis-customizer-pro' => __NAMESPACE__ . '\pro',
 		'easy-digital-downloads' => 'Easy_Digital_Downloads',
 		'beaver-builder'         => 'FLBuilderLoader',
 		'woocommerce'            => 'WooCommerce',

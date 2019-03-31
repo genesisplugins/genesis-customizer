@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
-    '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-    '051bafe20e2674435a162870efa2d2a7' => $vendorDir . '/brain/monkey/inc/api.php',
-    '38fbb71d514eee25044aa9d94851ee76' => $vendorDir . '/wp-phpunit/wp-phpunit/__loaded.php',
+    'a5f882d89ab791a139cd2d37e50cdd80' => $vendorDir . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
     '89ff252b349d4d088742a09c25f5dd74' => $vendorDir . '/yahnis-elsts/plugin-update-checker/plugin-update-checker.php',
+    'd1cd334f5a619a1a0226b9e2410cce1d' => $vendorDir . '/richtabor/merlin-wp/class-merlin.php',
+    'df4fac3550f84a60488f54e592cab1e6' => $vendorDir . '/aristath/kirki/kirki.php',
+    '51651570b2c3e7669fd43489fdc7ea02' => $baseDir . '/src/autoload.php',
 );

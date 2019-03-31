@@ -15,7 +15,7 @@ namespace GenesisCustomizer;
  *
  * @return bool
  */
-function child_theme_compat() {
+function child_theme_is_compatible() {
 	$handle  = _get_handle();
 	$tags    = wp_get_theme()->get( 'Tags' ) ?: [];
 	$support = get_theme_support( $handle );
@@ -36,10 +36,7 @@ add_action( 'admin_notices', __NAMESPACE__ . '\child_theme_notice' );
  * @return void
  */
 function child_theme_notice() {
-	if ( child_theme_compat() ) {
-		return;
-
-	} else {
+	if ( ! child_theme_is_compatible() ) {
 		printf(
 			'<div class="notice notice-warning"><p><strong>%s</strong> %s <a href="%s" target="_blank">%s</a> %s </p></div>',
 			_get_name(),

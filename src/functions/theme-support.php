@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_theme_supports', 15 );
+add_action( 'genesis_setup', __NAMESPACE__ . '\add_theme_supports', 15 );
 /**
  * Description of expected behavior.
  *

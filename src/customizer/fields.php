@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_customizer_setup', __NAMESPACE__ . '\add_fields' );
+add_action( 'genesis_setup', __NAMESPACE__ . '\add_fields' );
 /**
  * Description of expected behavior.
  *

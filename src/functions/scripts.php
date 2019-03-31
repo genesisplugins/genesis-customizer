@@ -11,8 +11,8 @@ add_action( 'genesis_before', __NAMESPACE__ . '\js_no_js', 0 );
  * @return void
  */
 function js_no_js() {
-    // Add breakpoint
-    $size = _get_value( 'general_breakpoints_menu', _get_breakpoint() );
+	// Add breakpoint
+	$size = _get_value( 'general_breakpoints_menu', _get_breakpoint() );
 
 	?>
     <script>
@@ -21,7 +21,7 @@ function js_no_js() {
             var c = document.body.classList;
             c.remove('no-js');
             c.add('js');
-            if ( window.innerWidth < <?php echo $size ?> ) {
+            if (window.innerWidth < <?php echo $size ?> ) {
                 c.add('mobile');
             } else {
                 c.add('desktop');
@@ -74,6 +74,8 @@ function enqueue_scripts() {
 				'others'  => [],
 			],
 			'menuIconClass'    => '',
+			'subMenuIconClass' => '',
+			'subMenuIcon'      => _get_value( 'menus_sub-menu-toggle_icon' ),
 			'breakpoint'       => _get_value( 'general_breakpoints_menu', _get_breakpoint() ),
 			'headerBreakpoint' => _get_value( 'general_breakpoints_global', _get_breakpoint() ),
 		]

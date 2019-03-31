@@ -21,7 +21,8 @@
 
 		@include mq(0, m) {
 
-			.has-logo-above-mobile & {
+			.has-logo-above-mobile &,
+			.has-logo-below-mobile & {
 				justify-content: center;
 			}
 		}

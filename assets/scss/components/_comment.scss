@@ -18,8 +18,7 @@
 	// Comment children.
 	.children {
 		list-style-type: none;
-
-		@include margin(0 0 0 null);
+		margin: 0;
 	}
 
 	// Comment header.

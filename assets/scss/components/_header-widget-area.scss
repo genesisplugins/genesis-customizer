@@ -18,13 +18,17 @@
 	@include mq(m) {
 		margin-right: auto;
 
-		.has-logo-center & {
+		.has-logo-side & {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
 	@include mq(0, m) {
 
-		.has-logo-above-mobile & {
+		.has-logo-above-mobile &,
+		.has-logo-below-mobile & {
 			margin-right: auto;
 			flex: 1;
 		}
@@ -40,13 +44,15 @@
 		.has-logo-side & {
 			text-align: center;
 			align-self: flex-end;
-			margin-bottom: 20px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
 	@include mq(0, m) {
 
-		.has-logo-above-mobile & {
+		.has-logo-above-mobile &,
+		.has-logo-below-mobile & {
 			margin-left: auto;
 			flex: 1;
 		}

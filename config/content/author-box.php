@@ -9,6 +9,8 @@ return [
 		'label'    => __( 'Colors', 'genesis-customizer' ),
 		'choices'  => [
 			'background' => __( 'Background', 'genesis-customizer' ),
+			'title'      => __( 'Title', 'genesis-customizer' ),
+			'content'    => __( 'Content', 'genesis-customizer' ),
 		],
 		'default'  => [
 			'background' => _get_color( 'white' ),
@@ -28,7 +30,10 @@ return [
 			],
 			[
 				'choice'   => 'content',
-				'element'  => '.author-box-content p',
+				'element'  => [
+					'.author-box-content',
+					'.author-box-content p',
+				],
 				'property' => 'color',
 			],
 		],

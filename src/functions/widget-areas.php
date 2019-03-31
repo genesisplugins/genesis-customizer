@@ -57,6 +57,10 @@ function register_widget_areas() {
 			'name'        => __( 'Primary Sidebar', 'genesis-customizer' ),
 			'description' => __( 'This is the sidebar widget area if you are using a two column site layout option.', 'genesis-customizer' ),
 		],
+		'sidebar-alt'             => [
+			'name'        => __( 'Secondary Sidebar', 'genesis-customizer' ),
+			'description' => __( 'This is the sidebar widget area if you are using a three column site layout option.', 'genesis-customizer' ),
+		],
 		'above-footer'        => [
 			'name'        => __( 'Above Footer', 'genesis-customizer' ),
 			'description' => __( 'This is the Above Footer widget area.', 'genesis-customizer' ),

@@ -28,33 +28,6 @@ function kirki_styles() {
 		.customize-control-kirki-typography .wrapper {
             padding-top: 0;
 		}
-		.customize-control-kirki-box-shadow input[type="range"] {
-			display: block;
-		    -webkit-appearance: none;
-		    background-color: #bdc3c7;
-		    width: 100%;
-		    height: 5px;
-		    border-radius: 5px;
-		    margin: 20px auto;
-		    outline: 0;
-		}
-		.customize-control-kirki-box-shadow input[type="range"]::-webkit-slider-thumb {
-			-webkit-appearance: none;
-			background-color: #0085ba;
-			width: 17px;
-			height: 17px;
-			border-radius: 50%;
-			border: 1px solid #006799;
-			cursor: pointer;
-			transition: 0.3s ease-in-out; 
-		}
-    ​ 	.customize-control-kirki-box-shadow input[type="range"]::-webkit-slider-thumb:hover {
-     		background-color: #006799;
-     		border: 2px solid #0085ba; 
-     	}
-    	.customize-control-kirki-box-shadow input[type="range"]::-webkit-slider-thumb:active {
-      		transform: scale(1.2); 
-      	}
 		.customize-control-kirki-box-shadow .kirki-input-container {
 		  	margin-bottom: 12px; 
 		}
@@ -94,7 +67,7 @@ function kirki_styles() {
 		  	display:none;
 		}
 		.customize-control-kirki-radio-image label {
-    		padding: 0 10px 10px 0;
+    		padding: 0 8px 8px 0;
 		}
 		.customize-control-kirki-radio-image input:checked + label img {
 		    box-shadow: none;

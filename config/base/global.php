@@ -72,6 +72,7 @@ return [
 			[
 				'element'  => [
 					'.single .author-box',
+					'.masonry .pagination',
 					'.entry-comments',
 					'.entry-comments + .comment-respond',
 				],
@@ -82,7 +83,8 @@ return [
 				'element'  => [
 					'.archive-description',
 					'.author-box',
-					'.archive.has-1-columns .entry',
+					'.archive .entry',
+					'.after-entry',
 					'.sidebar-primary .widget',
 				],
 				'property' => 'margin-bottom',

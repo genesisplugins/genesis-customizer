@@ -125,6 +125,9 @@
                     'aria-pressed': false
                 }
             ).append($('<span />', {
+                    'class': 'sub-menu-toggle-icon sub-menu-toggle-' + genesisMenuParams.subMenuIcon
+                })
+            ).append($('<span />', {
                     'class': 'screen-reader-text',
                     'text': genesisMenuParams.subMenu
                 })

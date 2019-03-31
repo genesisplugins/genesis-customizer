@@ -80,14 +80,6 @@
 	// Entry content.
 	&-content {
 		width: 100%;
-
-		p {
-
-			.archive & {
-				display: flex;
-				flex-wrap: wrap;
-			}
-		}
 	}
 
 	// Entry footer.
@@ -103,5 +95,11 @@
 	}
 
 	// Comments.
-	&-comments {}
+	&-comments {
+
+		.author-box ~ &,
+		.after-entry ~ & {
+			margin-top: 0;
+		}
+	}
 }

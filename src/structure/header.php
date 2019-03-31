@@ -29,7 +29,6 @@ function header_body_classes( $classes ) {
 	$classes[] = _get_value( 'header_primary_mobile-layout' );
 	$classes[] = _get_value( 'menus_mobile_animation' );
 
-
 	/*
 	 * Different Logo.
 	 */
@@ -50,7 +49,6 @@ function header_body_classes( $classes ) {
 	} else {
 		$classes[] = 'no-transparent-header';
 	}
-
 
 	return $classes;
 }

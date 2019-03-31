@@ -5,54 +5,8 @@ namespace GenesisCustomizer;
 return [
 	[
 		'type'      => 'multicolor',
-		'settings'  => 'colors',
-		'label'     => __( 'Colors', 'genesis-customizer' ),
-		'choices'   => [
-			'text'        => __( 'Text', 'genesis-customizer' ),
-			'headings'    => __( 'Headings', 'genesis-customizer' ),
-			'links'       => __( 'Links', 'genesis-customizer' ),
-			'links-hover' => __( 'Links Hover', 'genesis-customizer' ),
-		],
-		'default'   => [
-			'text'        => '',
-			'headings'    => '',
-			'links'       => '',
-			'links-hover' => '',
-		],
-		'output'    => [
-			[
-				'choice'   => 'text',
-				'element'  => '.site-footer',
-				'property' => 'color',
-			],
-			[
-				'choice'   => 'headings',
-				'element'  => [
-					'.site-footer h1',
-					'.site-footer h2',
-					'.site-footer h3',
-					'.site-footer h4',
-					'.site-footer h5',
-					'.site-footer h6',
-				],
-				'property' => 'color',
-			],
-			[
-				'choice'   => 'links',
-				'element'  => '.site-footer a',
-				'property' => 'color',
-			],
-			[
-				'choice'   => 'links-hover',
-				'element'  => '.site-footer a:hover, .site-footer a:focus',
-				'property' => 'color',
-			],
-		],
-	],
-	[
-		'type'      => 'multicolor',
 		'settings'  => 'gradient',
-		'label'     => __( 'Gradient', 'genesis-customizer' ),
+		'label'     => __( 'Gradient Overlay', 'genesis-customizer' ),
 		'transport' => 'refresh',
 		'choices'   => [
 			'left'        => __( 'Background Left', 'genesis-customizer' ),

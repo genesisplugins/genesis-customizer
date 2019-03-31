@@ -17,7 +17,8 @@
 			margin-left: 0;
 		}
 
-		.has-logo-above-mobile & {
+		.has-logo-above-mobile &,
+		.has-logo-below-mobile & {
 			text-align: center;
 		}
 

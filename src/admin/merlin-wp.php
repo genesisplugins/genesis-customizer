@@ -2,7 +2,7 @@
 
 namespace GenesisCustomizer;
 
-add_action( 'genesis_setup', __NAMESPACE__ . '\setup_merlin' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_merlin' );
 /**
  * Description of expected behavior.
  *
@@ -11,26 +11,7 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\setup_merlin' );
  * @return void
  */
 function setup_merlin() {
-	$config  = apply_filters( 'genesis_customizer_merlin_config', merlin_config() );
-	$strings = apply_filters( 'genesis_customizer_merlin_strings', merlin_strings() );
-
-	new Merlin_WP( $config, $strings );
-}
-
-add_filter( 'genesis_merlin_steps', __NAMESPACE__ . '\merlin_steps' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @param $steps
- *
- * @return mixed
- */
-function merlin_steps( $steps ) {
-	unset( $steps['child'] );
-
-	return $steps;
+	new Merlin_WP( merlin_config(), merlin_strings() );
 }
 
 /**
@@ -41,7 +22,7 @@ function merlin_steps( $steps ) {
  * @return array
  */
 function merlin_config() {
-	return [
+	return apply_filters( 'genesis_customizer_merlin_config', [
 		'base_path'            => _get_path() . 'vendor/richtabor/',
 		'base_url'             => _get_url() . 'vendor/richtabor/',
 		'directory'            => 'merlin-wp',
@@ -49,7 +30,7 @@ function merlin_config() {
 		'parent_slug'          => 'genesis',
 		'capability'           => 'manage_options',
 		'child_action_btn_url' => 'https://codex.wordpress.org/child_themes',
-		'dev_mode'             => false,
+		'dev_mode'             => true,
 		'license_step'         => false,
 		'license_required'     => false,
 		'license_help_url'     => '',
@@ -57,38 +38,7 @@ function merlin_config() {
 		'edd_item_name'        => '',
 		'edd_theme_slug'       => '',
 		'ready_big_button_url' => get_home_url(),
-	];
-}
-
-add_filter( 'merlin_import_files', __NAMESPACE__ . '\merlin_local_import_files' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @return array
- */
-function merlin_local_import_files() {
-	$demos[] = [
-		'import_file_name'             => 'Default',
-		'local_import_file'            => _get_path() . 'assets/demo/default/content.xml',
-		'local_import_widget_file'     => _get_path() . 'assets/demo/default/widgets.wie',
-		'local_import_customizer_file' => _get_path() . 'assets/demo/default/customizer.dat',
-		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
-		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
-		'preview_url'                  => 'https://genesiscustomizer.com',
-	];
-	$demos[] = [
-		'import_file_name'             => 'Genesis Sample',
-		'local_import_file'            => _get_path() . 'assets/demos/default/content.xml',
-		'local_import_widget_file'     => _get_path() . 'assets/demos/default/widgets.wie',
-		'local_import_customizer_file' => _get_path() . 'assets/demos/default/customizer.dat',
-		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
-		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
-		'preview_url'                  => 'https://genesiscustomizer.com/pro',
-	];
-
-	return $demos;
+	] );
 }
 
 /**
@@ -99,8 +49,7 @@ function merlin_local_import_files() {
  * @return array
  */
 function merlin_strings() {
-
-	return [
+	return apply_filters( 'genesis_customizer_merlin_strings', [
 		'admin-menu'          => esc_html__( 'Theme Setup', 'genesis-customizer' ),
 
 		/* translators: 1: Title Tag 2: Theme Name 3: Closing Title Tag */
@@ -160,41 +109,55 @@ function merlin_strings() {
 		'ready%s'           => esc_html__( 'Your theme has been all set up. Enjoy your new theme by %s.', 'genesis-customizer' ),
 		'ready-action-link' => esc_html__( 'Extras', 'genesis-customizer' ),
 		'ready-big-button'  => esc_html__( 'View your website', 'genesis-customizer' ),
-		'ready-link-1'      => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://wordpress.org/support/', esc_html__( 'Explore WordPress', 'genesis-customizer' ) ),
+		'ready-link-1'      => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', admin_url(), esc_html__( 'Admin Dashboard', 'genesis-customizer' ) ),
 		'ready-link-2'      => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://genesiscustomizer.com/support/', esc_html__( 'Get Theme Support', 'genesis-customizer' ) ),
 		'ready-link-3'      => sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'customize.php' ), esc_html__( 'Start Customizing', 'genesis-customizer' ) ),
+	] );
+}
+
+add_filter( 'genesis_merlin_steps', __NAMESPACE__ . '\merlin_steps' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @param $steps
+ *
+ * @return mixed
+ */
+function merlin_steps( $steps ) {
+	unset( $steps['child'] );
+
+	return $steps;
+}
+
+add_filter( 'merlin_import_files', __NAMESPACE__ . '\merlin_local_import_files' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return array
+ */
+function merlin_local_import_files() {
+	$demos[] = [
+		'import_file_name'             => 'Default',
+		'local_import_file'            => _get_path() . 'assets/demo/default/content.xml',
+		'local_import_widget_file'     => _get_path() . 'assets/demo/default/widgets.wie',
+		'local_import_customizer_file' => _get_path() . 'assets/demo/default/customizer.dat',
+		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
+		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
+		'preview_url'                  => 'https://genesiscustomizer.com',
+	];
+	$demos[] = [
+		'import_file_name'             => 'Genesis Sample',
+		'local_import_file'            => _get_path() . 'assets/demo/genesis-sample/content.xml',
+		'local_import_widget_file'     => _get_path() . 'assets/demo/genesis-sample/widgets.wie',
+		'local_import_customizer_file' => _get_path() . 'assets/demo/genesis-sample/customizer.dat',
+		'import_preview_image_url'     => 'https://genesiscustomizer.test/wp-content/uploads/2019/03/mockup-1024x597.png',
+		'import_notice'                => __( 'A special note for this import.', 'genesis-customizer' ),
+		'preview_url'                  => 'https://genesiscustomizer.com/pro',
 	];
 
-}
-
-add_filter( 'merlin_loading_spinner', __NAMESPACE__ . '\merlin_spinner' );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @param $spinner
- *
- * @return string
- */
-function merlin_spinner( $spinner ) {
-	return 'vendor/richtabor/merlin-wp/assets/images/spinner';
-}
-
-add_filter( 'template_include', __NAMESPACE__ . '\merlin_template_include', 99 );
-/**
- * Description of expected behavior.
- *
- * @since 1.0.0
- *
- * @param $template
- *
- * @return string
- */
-function merlin_template_include( $template ) {
-	$file_name = merlin_spinner() . '.php';
-
-	$template = dirname( __FILE__ ) . '/templates/' . $file_name;
-
-	return $template;
+	return $demos;
 }

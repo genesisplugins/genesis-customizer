@@ -52,21 +52,24 @@ function archive_body_classes( $classes ) {
  * @return string
  */
 function read_more_text() {
-	$style = _get_value( 'archive_read-more_style' );
+	$display = _get_value( 'archive_read-more_display' );
 
-	if ( $style === 'hide' ) {
-		return '';
+	if ( 'none' === $display ) {
+		return;
 	}
 
-	$classes = 'button' === $style ? 'button small' : '';
-
-	$text = _get_value( 'archive_read-more_text' );
-
-	return sprintf( '&hellip; <a href="%s" class="more-link %s">%s</a>',
+	$style    = _get_value( 'archive_read-more_style' );
+	$text     = _get_value( 'archive_read-more_text' );
+	$ellipses = _get_value( 'archive_read-more_ellipses' ) ? '&hellip;&nbsp;' : '';
+	$wrapper  = 'block' === $display ? '<div class="read-more-wrap">%s</div>' : '%s';
+	$classes  = 'button' === $style ? 'button small' : '';
+	$link     = sprintf( '<a href="%s" class="more-link %s">%s</a>',
 		get_the_permalink(),
 		$classes,
 		genesis_a11y_more_link( $text )
 	);
+
+	return sprintf( $ellipses . $wrapper, $link );
 }
 
 /**

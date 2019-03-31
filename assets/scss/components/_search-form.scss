@@ -7,13 +7,15 @@
 ////
 
 .search-form {
-	display: flex;
 
-	&-input {
-	}
+	&-input {}
 
 	&-submit {
-		margin-left: 1em;
+		display: none;
+
+		.header-search & {
+			display: block;
+		}
 	}
 }
 

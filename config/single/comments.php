@@ -17,7 +17,7 @@ return [
 			[
 				'choice'   => 'background',
 				'element'  => '.entry-comments, .comment-respond',
-				'property' => 'background-color'
+				'property' => 'background-color',
 			],
 		],
 	],
@@ -44,6 +44,11 @@ return [
 				],
 				'property' => 'padding',
 				'units'    => 'px',
+			],
+			[
+				'element'       => '.children',
+				'property'      => 'padding',
+				'value_pattern' => '0 0 $px $px',
 			],
 			[
 				'element'  => '.children .comment',

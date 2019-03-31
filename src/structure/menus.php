@@ -35,7 +35,7 @@ function reposition_menus() {
 		add_action( 'genesis_before_title_area', 'genesis_do_nav' );
 
 	} elseif ( 'has-logo-above' === $header_layout ) {
-		add_action( 'genesis_after_title_area', 'genesis_do_nav', 20 );
+		add_action( 'genesis_header', 'genesis_do_nav', 14 );
 
 	} else {
 		add_action( 'genesis_after_title_area', 'genesis_do_nav' );

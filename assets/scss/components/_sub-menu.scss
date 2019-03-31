@@ -20,6 +20,11 @@
 		padding: 1em;
 	}
 
+	.desktop.has-logo-side & {
+		position: relative;
+		margin: 0 auto;
+	}
+
 	.no-js .menu-item-has-children:hover > &,
 	.no-js .menu-item-has-children:focus > & {
 		display: block;
@@ -65,8 +70,14 @@
 		margin: 0 0 0 1em;
 		padding: 0;
 		line-height: 0;
+		box-shadow: none;
 
 		@include size(2em);
+
+		@include hover-focus {
+			box-shadow: none;
+			outline: none;
+		}
 
 		.desktop & {
 			display: none;
@@ -76,17 +87,40 @@
 			outline: $base--border;
 		}
 
-		&:before {
-			content: "";
+		&-icon {
+			display: flex;
+		}
 
-			@include triangle("down", 1rem, 0.5rem, currentColor);
+		&-arrow {
+
+			&:before {
+				content: "";
+
+				@include triangle("down", 1rem, 0.5rem, currentColor);
+			}
+		}
+
+		&-plus {
+
+			&:before {
+				content: "+";
+			}
 		}
 
 		&.activated {
 
-			&:before {
+			.sub-menu-toggle-arrow {
 
-				@include triangle("up", 1rem, 0.5rem, currentColor);
+				&:before {
+					transform: rotate(180deg);
+				}
+			}
+
+			.sub-menu-toggle-plus {
+
+				&:before {
+					content: '-';
+				}
 			}
 		}
 	}

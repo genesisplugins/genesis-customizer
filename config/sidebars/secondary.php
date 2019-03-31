@@ -10,12 +10,16 @@ return [
 		'choices'  => [
 			'background'        => __( 'Sidebar Background', 'genesis-customizer' ),
 			'text'              => __( 'Text', 'genesis-customizer' ),
+			'links'             => __( 'Links', 'genesis-customizer' ),
+			'links-hover'       => __( 'Links Hover', 'genesis-customizer' ),
 			'widget-background' => __( 'Widget Background', 'genesis-customizer' ),
 			'widget-title'      => __( 'Widget Title', 'genesis-customizer' ),
 		],
 		'default'  => [
 			'background'        => '',
 			'text'              => '',
+			'links'             => '',
+			'links-hover'       => '',
 			'widget-background' => _get_color( 'white' ),
 			'widget-title'      => '',
 		],
@@ -28,6 +32,16 @@ return [
 			[
 				'choice'   => 'text',
 				'element'  => '.sidebar-secondary',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'links',
+				'element'  => '.sidebar-secondary a',
+				'property' => 'color',
+			],
+			[
+				'choice'   => 'links-hover',
+				'element'  => '.sidebar-secondary a:hover, .sidebar-secondary a:focus',
 				'property' => 'color',
 			],
 			[

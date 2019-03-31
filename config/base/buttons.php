@@ -45,7 +45,7 @@ return [
 	[
 		'type'      => 'multicolor',
 		'settings'  => 'gradient',
-		'label'     => __( 'Gradient', 'genesis-customizer' ),
+		'label'     => __( 'Background Gradient', 'genesis-customizer' ),
 		'transport' => 'refresh',
 		'choices'   => [
 			'left'         => __( 'Left', 'genesis-customizer' ),

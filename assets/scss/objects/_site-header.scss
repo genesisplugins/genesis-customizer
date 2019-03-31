@@ -25,6 +25,10 @@
 			width: 30rem;
 		}
 
+		.has-logo-side.admin-bar & {
+			padding-top: 32px;
+		}
+
 		.has-logo-side &,
 		.has-logo-side.has-sticky-header &,
 		.has-logo-side.has-sticky-header-desktop & {
@@ -33,7 +37,7 @@
 
 			.wrap {
 				justify-content: center;
-				align-items: center;
+				align-items: flex-start;
 			}
 		}
 

@@ -41,9 +41,9 @@ return [
 	],
 	[
 		'type'     => 'slider',
-		'settings' => 'spacing',
-		'label'    => __( 'Vertical Spacing', 'genesis-customizer' ),
-		'default'  => _get_size( 'xl', '' ),
+		'settings' => 'spacing-top',
+		'label'    => __( 'Spacing Top', 'genesis-customizer' ),
+		'default'  => _get_size( 'm', '' ),
 		'choices'  => [
 			'min'  => 0,
 			'max'  => 100,
@@ -55,6 +55,19 @@ return [
 				'property' => 'padding-top',
 				'units'    => 'px',
 			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'spacing-bottom',
+		'label'    => __( 'Spacing Bottom', 'genesis-customizer' ),
+		'default'  => _get_size( 'xl', '' ),
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
 			[
 				'element'  => '.featured-image',
 				'property' => 'padding-bottom',

@@ -19,22 +19,22 @@ return [
 		'settings' => 'colors',
 		'label'    => __( 'Colors', 'genesis-customizer' ),
 		'choices'  => [
-			'background'             => __( 'Background', 'genesis-customizer' ),
-			'background-active'      => __( 'Background Active', 'genesis-customizer' ),
-			'menu-toggle-bar'        => __( 'Menu Toggle Bar', 'genesis-customizer' ),
-			'text'                   => __( 'Text', 'genesis-customizer' ),
-			'text-active'            => __( 'Text Active', 'genesis-customizer' ),
-			'border'                 => __( 'Border', 'genesis-customizer' ),
-			'border-active'          => __( 'Border Active', 'genesis-customizer' ),
+			'background'        => __( 'Background', 'genesis-customizer' ),
+			'background-active' => __( 'Background Active', 'genesis-customizer' ),
+			'menu-toggle-bar'   => __( 'Menu Toggle Bar', 'genesis-customizer' ),
+			'text'              => __( 'Text and Icon', 'genesis-customizer' ),
+			'text-active'       => __( 'Text and Icon Active', 'genesis-customizer' ),
+			'border'            => __( 'Border', 'genesis-customizer' ),
+			'border-active'     => __( 'Border Active', 'genesis-customizer' ),
 		],
 		'default'  => [
-			'background'             => _get_color( 'transparent' ),
-			'background-active'      => _get_color( 'transparent' ),
-			'menu-toggle-bar'        => _get_color( 'transparent' ),
-			'text'                   => _get_color( 'heading' ),
-			'text-active'            => _get_color( 'heading' ),
-			'border'                 => _get_color( 'transparent' ),
-			'border-active'          => _get_color( 'transparent' ),
+			'background'        => _get_color( 'transparent' ),
+			'background-active' => _get_color( 'transparent' ),
+			'menu-toggle-bar'   => _get_color( 'transparent' ),
+			'text'              => _get_color( 'heading' ),
+			'text-active'       => _get_color( 'heading' ),
+			'border'            => _get_color( 'transparent' ),
+			'border-active'     => _get_color( 'transparent' ),
 		],
 		'output'   => [
 			[
@@ -57,7 +57,10 @@ return [
 			],
 			[
 				'choice'   => 'menu-toggle-bar',
-				'element'  => '.has-logo-above-mobile .menu-toggle-bar',
+				'element'  => [
+					'.has-logo-above-mobile .menu-toggle-bar',
+					'.has-logo-below-mobile .menu-toggle-bar',
+				],
 				'property' => 'background',
 			],
 			[
@@ -145,15 +148,60 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.has-logo-above-mobile .menu-toggle-bar',
+				'element'  => [
+					'.has-logo-above-mobile .menu-toggle-bar',
+					'.has-logo-below-mobile .menu-toggle-bar',
+				],
 				'property' => 'padding',
 				'units'    => 'px',
 			],
 		],
 	],
 	[
+		'type'     => 'slider',
+		'settings' => 'border-width',
+		'label'    => __( 'Border Width', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 10,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.menu-toggle',
+				'property' => 'border-width',
+				'units'    => 'px',
+			],
+			[
+				'element'       => '.menu-toggle',
+				'property'      => 'border-style',
+				'value_pattern' => 'solid',
+				'exclude'       => [ '0' ],
+			],
+		],
+	],
+	[
+		'type'     => 'slider',
+		'settings' => 'border-radius',
+		'label'    => __( 'Border Radius', 'genesis-customizer' ),
+		'default'  => '0',
+		'choices'  => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'output'   => [
+			[
+				'element'  => '.menu-toggle',
+				'property' => 'border-radius',
+				'units'    => 'px',
+			],
+		],
+	],
+	[
 		'type'     => 'custom',
-		'settings' => 'divider-3',
+		'settings' => 'divider-3332',
 		'default'  => '<hr>',
 	],
 	[

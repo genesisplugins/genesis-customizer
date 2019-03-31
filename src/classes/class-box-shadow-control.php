@@ -74,7 +74,7 @@ class Box_Shadow_Control extends \WP_Customize_Control {
 			'jquery',
 			'customize-base',
 			'customize-controls',
-			'jquery-ui-draggable'
+			'jquery-ui-draggable',
 		], '1.0', false ) );
 
 		wp_enqueue_style( 'kirki_box_shadow_control', apply_filters( 'kirki_box_shadow_control_url', _get_url() . 'assets/css/box-shadow.css', [], '1.0' ) );
@@ -159,28 +159,29 @@ class Box_Shadow_Control extends \WP_Customize_Control {
         </div>
 
         <div class="kirki-input-container">
-            <input class="inset" type="checkbox" data-context="inset"/>
-            <label for="{{ data.id }}-inset"><?php esc_html_e( 'Inset', 'kirki-pro' ); ?></label>
+            <div class="customize-control-kirki-multicolor">
+                <input id="{{ data.id }}-color" type="text" data-default-color="{{ data.default }}"
+                       value="{{ data.value.color }}" class="kirki-color-control" data-id="{{ data.id }}"
+                       data-alpha="true"/>
+            </div>
         </div>
 
-        <div class="kirki-input-container">
-            <label for="{{ data.id }}-blur-radius"><?php esc_html_e( 'Blur Radius', 'kirki-pro' ); ?></label>
-            <input class="blur-radius" type="range" min="0" max="50" step="1" value="0"
-                   id="{{ data.id }}-blur-radius"
-                   data-context="blur-radius"/>
-        </div>
-
-        <div class="kirki-input-container">
-            <label for="{{ data.id }}-spread-radius"><?php esc_html_e( 'Spread Radius', 'kirki-pro' ); ?></label>
-            <input class="spread-radius" type="range" min="0" max="50" step="1" value="0"
-                   id="{{ data.id }}-spread-radius" data-context="spread-radius"/>
-        </div>
-
-        <div class="kirki-input-container">
-            <label for="{{ data.id }}-color"><?php esc_html_e( 'Shadow Color', 'kirki-pro' ); ?></label>
-            <input id="{{ data.id }}-color" type="text" data-default-color="{{ data.default }}"
-                   value="{{ data.value.color }}" class="kirki-color-control" data-id="{{ data.id }}"
-                   data-alpha="true"/>
+        <div class="customize-control-kirki-slider">
+            <div class="kirki-input-container">
+                <label for="{{ data.id }}-blur-radius"><?php esc_html_e( 'Blur Radius', 'kirki-pro' ); ?></label>
+                <div class="wrapper">
+                    <input class="blur-radius" type="range" min="0" max="50" step="1" value="0"
+                           id="{{ data.id }}-blur-radius"
+                           data-context="blur-radius"/>
+                </div>
+            </div>
+            <div class="kirki-input-container">
+                <label for="{{ data.id }}-spread-radius"><?php esc_html_e( 'Spread Radius', 'kirki-pro' ); ?></label>
+                <div class="wrapper">
+                    <input class="spread-radius" type="range" min="0" max="50" step="1" value="0"
+                           id="{{ data.id }}-spread-radius" data-context="spread-radius"/>
+                </div>
+            </div>
         </div>
 
         <input class="hidden-value" type="hidden" {{{ data.link }}}/>

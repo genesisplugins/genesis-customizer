@@ -5,19 +5,29 @@ namespace GenesisCustomizer;
 return [
 	[
 		'type'     => 'select',
-		'settings' => 'style',
-		'label'    => __( 'Read More Style', 'genesis-customizer' ),
-		'default'  => 'text',
+		'settings' => 'display',
+		'label'    => __( 'Display', 'genesis-customizer' ),
+		'default'  => 'inline',
 		'choices'  => [
-			'text'   => __( 'Text', 'genesis-customizer' ),
+			'inline' => __( 'Inline', 'genesis-customizer' ),
+			'block'  => __( 'Block', 'genesis-customizer' ),
+			'none'   => __( 'None', 'genesis-customizer' ),
+		],
+	],
+	[
+		'type'     => 'select',
+		'settings' => 'style',
+		'label'    => __( 'Style', 'genesis-customizer' ),
+		'default'  => 'link',
+		'choices'  => [
+			'link'   => __( 'Link', 'genesis-customizer' ),
 			'button' => __( 'Button', 'genesis-customizer' ),
-			'hide'   => __( 'Hidden', 'genesis-customizer' ),
 		],
 	],
 	[
 		'type'     => 'text',
 		'settings' => 'text',
-		'label'    => __( 'Read More Text', 'genesis-customizer' ),
+		'label'    => __( 'Text', 'genesis-customizer' ),
 		'default'  => __( 'Read more', 'genesis-customizer' ),
 		'required' => [
 			[
@@ -26,5 +36,11 @@ return [
 				'operator' => '!==',
 			],
 		],
+	],
+	[
+		'type'     => 'checkbox',
+		'settings' => 'ellipses',
+		'label'    => __( 'Show ellipses', 'genesis-customizer' ),
+		'default'  => true,
 	],
 ];

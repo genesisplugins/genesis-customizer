@@ -12,7 +12,6 @@
 /vendor/doctrine/
 /vendor/hamcrest/
 /vendor/mockery/
-/vendor/monolog/
 /vendor/myclabs/
 /vendor/phpdocumentor/
 /vendor/phpspec/

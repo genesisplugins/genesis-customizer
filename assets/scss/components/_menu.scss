@@ -15,7 +15,7 @@
 
 	@include overlay();
 
-	.desktop & {
+	@include mq(m) {
 		width: auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -51,7 +51,7 @@
 
 		@include margin(null auto);
 
-		.mobile & {
+		@include mq(0, m) {
 
 			.no-js & {
 				width: 100%;
@@ -59,7 +59,7 @@
 			}
 		}
 
-		.desktop & {
+		@include mq(m) {
 			display: block;
 			width: auto;
 			margin: 0;
@@ -72,15 +72,15 @@
 			&:first-of-type {
 				padding-left: 0 !important;
 			}
-		}
 
-		.desktop.has-logo-side & {
-			width: 100%;
-			padding: 0;
+			.has-logo-side & {
+				width: 100%;
+				padding: 0;
 
-			a {
-				justify-content: center;
-				text-align: center;
+				a {
+					justify-content: center;
+					text-align: center;
+				}
 			}
 		}
 
@@ -117,7 +117,7 @@
 			outline: none;
 		}
 
-		.mobile & {
+		@include mq(0, m) {
 			display: flex;
 		}
 
@@ -219,6 +219,15 @@
 
 		@include position(fixed, -100vw null null -100vw);
 
+		@include mq(m) {
+			display: none;
+		}
+
+		.has-mobile-menu-top &,
+		.has-mobile-menu-center & {
+			display: none;
+		}
+
 		&.activated {
 			opacity: 1;
 			z-index: 3;
@@ -226,12 +235,6 @@
 			left: 0;
 
 			@include size(100%);
-		}
-
-		.desktop &,
-		.has-mobile-menu-top &,
-		.has-mobile-menu-center & {
-			display: none;
 		}
 	}
 

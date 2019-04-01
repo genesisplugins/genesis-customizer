@@ -11,14 +11,6 @@
 	z-index: 10;
 	transition: background-color $base--transition-duration $base--transition-timing-function;
 
-	@include mq(0, m) {
-
-		.admin-bar.has-sticky-header-mobile &,
-		.admin-bar.has-sticky-header & {
-			top: 46px !important;
-		}
-	}
-
 	@include mq(m) {
 
 		.has-logo-side & {
@@ -40,11 +32,6 @@
 				align-items: flex-start;
 			}
 		}
-
-		.admin-bar.has-sticky-header &,
-		.admin-bar.has-sticky-header-desktop & {
-			top: 32px !important;
-		}
 	}
 
 	.wrap {
@@ -52,5 +39,11 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	input,
+	select,
+	textarea {
+		margin-bottom: 0;
 	}
 }

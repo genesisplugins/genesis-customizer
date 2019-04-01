@@ -18,16 +18,6 @@
         genesisMenus = {},
         menusToCombine = [];
 
-    $(window).on("load resize scroll", function () {
-        if ($(window).innerWidth() <= genesisMenuParams.breakpoint) {
-            $('body').removeClass('desktop');
-            $('body').addClass('mobile');
-        } else {
-            $('body').removeClass('mobile');
-            $('body').addClass('desktop');
-        }
-    });
-
     /**
      * Validate the menus passed by the theme with what's being loaded on the page,
      * and pass the new and accurate information to our new data.

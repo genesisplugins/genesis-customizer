@@ -230,14 +230,16 @@ return [
 				'units'    => '%',
 			],
 			[
-				'element'       => '.mobile.has-mobile-menu-top .nav-primary',
+				'element'       => '.has-mobile-menu-top .nav-primary',
 				'property'      => 'margin-left',
 				'value_pattern' => 'calc((-100vw - -$vw) / 2)',
+				'media_query'   => _get_media_query( 'max' ),
 			],
 			[
-				'element'       => '.mobile.has-mobile-menu-top .nav-primary',
+				'element'       => '.has-mobile-menu-top .nav-primary',
 				'property'      => 'margin-right',
 				'value_pattern' => 'calc((-100vw - -$vw) / 2)',
+				'media_query'   => _get_media_query( 'max' ),
 			],
 		],
 	],

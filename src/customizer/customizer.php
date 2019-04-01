@@ -53,9 +53,14 @@ function modify_defaults( $wp_customize ) {
 //	$wp_customize->get_section( 'static_front_page' )->panel = _get_handle() . '_general-settings';
 
 //	$wp_customize->remove_section( 'colors' );
-	$wp_customize->remove_section( 'header_image' );
+//	$wp_customize->remove_section( 'header_image' );
+
 	$wp_customize->remove_control( 'background_color' );
 	$wp_customize->remove_control( 'header_textcolor' );
 	$wp_customize->remove_control( 'header_text' );
+
+	$wp_customize->get_section( 'header_image' )->panel = _get_handle() . '_hero';
+	$wp_customize->get_section( 'header_image' )->title = __('Default Background', 'genesis-customizer');
+	$wp_customize->get_section( 'header_image' )->priority = 15;
 
 }

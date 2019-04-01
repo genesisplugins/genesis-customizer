@@ -13,7 +13,6 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\add_theme_supports', 15 );
 function add_theme_supports() {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'custom-header' );
 	add_theme_support( 'dark-editor-style' );
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'genesis-accessibility' );
@@ -30,10 +29,7 @@ function add_theme_supports() {
 		'width'       => 300,
 		'flex-height' => true,
 		'flex-width'  => true,
-		'header-text' => [
-			'.site-title',
-			'.site-description',
-		],
+		'header-text' => '',
 	] );
 	add_theme_support( 'custom-header', [
 		'header-selector'  => 'section.hero-section',
@@ -44,7 +40,7 @@ function add_theme_supports() {
 		'flex-height'      => true,
 		'flex-width'       => true,
 		'uploads'          => true,
-		'video'            => true,
+		'video'            => false,
 		'wp-head-callback' => __NAMESPACE__ . '\custom_header',
 	] );
 	add_theme_support( 'genesis-accessibility', [
@@ -62,6 +58,7 @@ function add_theme_supports() {
 	add_theme_support( 'genesis-structural-wraps', [
 		'header',
 		'menu-secondary',
+		'hero-section',
 		'footer-widgets',
 		'footer-credits',
 	] );

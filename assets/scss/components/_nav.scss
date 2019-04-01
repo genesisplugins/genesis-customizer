@@ -10,79 +10,79 @@
 
 	&-primary {
 
-		.desktop & {
+		@include mq(m) {
 			display: flex;
-		}
 
-		.desktop.has-logo-side & {
-			width: 100%;
-
-			.menu {
+			.has-logo-side & {
 				width: 100%;
+
+				.menu {
+					width: 100%;
+				}
+			}
+
+			.has-logo-above & {
+				width: 100%;
+				justify-content: center;
+			}
+
+			.has-logo-above &.flex-start-desktop {
+				justify-content: flex-start;
+			}
+
+			.has-logo-above &.flex-center-desktop {
+				justify-content: center;
+			}
+
+			.has-logo-above &.flex-end-desktop {
+				justify-content: flex-end;
 			}
 		}
 
-		.desktop.has-logo-above & {
-			width: 100%;
-			justify-content: center;
-		}
-
-		.desktop.has-logo-above &.flex-start-desktop {
-			justify-content: flex-start;
-		}
-
-		.desktop.has-logo-above &.flex-center-desktop {
-			justify-content: center;
-		}
-
-		.desktop.has-logo-above &.flex-end-desktop {
-			justify-content: flex-end;
-		}
-
-		.mobile & {
+		@include mq(0, m) {
 			top: 100%;
 			left: 0;
 			width: 100vw;
 			display: none;
 			z-index: 4;
-		}
 
-		.mobile.has-mobile-menu-left &,
-		.mobile.has-mobile-menu-right &,
-		.mobile.has-mobile-menu-center & {
-			display: flex;
-			align-items: center;
+			.has-mobile-menu-left &,
+			.has-mobile-menu-right &,
+			.has-mobile-menu-center & {
+				display: flex;
+				align-items: center;
 
-			@include position(fixed, 0 0 0 0);
-			@include size(100%);
-			@include padding(0 $spacing--l);
-		}
-
-		.mobile.has-mobile-menu-center & {
-			transform: scale(0);
-			opacity: 0;
-
-			&.visible {
-				opacity: 1;
-				transform: scale(1);
+				@include position(fixed, 0 0 0 0);
+				@include size(100%);
+				@include padding(0 $spacing--l);
 			}
-		}
 
-		.mobile.has-mobile-menu-right & {
-			transform: translateX(100vw);
-		}
+			.has-mobile-menu-center & {
+				transform: scale(0);
+				opacity: 0;
 
-		.mobile.has-mobile-menu-left & {
-			transform: translateX(-100vw);
-
-			&.visible {
-				transform: translateX(0);
+				&.visible {
+					opacity: 1;
+					transform: scale(1);
+				}
 			}
-		}
 
-		.mobile.has-mobile-menu-top & {
-			transition: none;
-			order: 4;
+			.has-mobile-menu-right & {
+				transform: translateX(100vw);
+			}
+
+			.has-mobile-menu-left & {
+				transform: translateX(-100vw);
+
+				&.visible {
+					transform: translateX(0);
+				}
+			}
+
+			.has-mobile-menu-top & {
+				transition: none;
+				order: 4;
+			}
 		}
 
 		.no-js & {
@@ -94,11 +94,11 @@
 	&-secondary {
 		transition: background-color $base--transition-duration $base--transition-timing-function, opacity $base--transition-duration $base--transition-timing-function;
 
-		.mobile & {
+		@include mq(0, m) {
 			display: none;
 		}
 
-		.desktop & {
+		@include mq(m) {
 			z-index: 2;
 			width: 100%;
 			position: relative;

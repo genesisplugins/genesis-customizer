@@ -18,6 +18,17 @@
 
 	@include overlay();
 
+	.wp-custom-header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		z-index: -1;
+
+		@include size(100%);
+		@include position(absolute, 0 0 0 0);
+	}
+
 	.wrap {
 		justify-content: center;
 		position: relative;

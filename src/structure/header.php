@@ -13,48 +13,37 @@ add_filter( 'body_class', __NAMESPACE__ . '\header_body_classes', 100, 1 );
  * @return array
  */
 function header_body_classes( $classes ) {
-	$transparent_enabled    = _get_value( 'header_transparent_enabled' );
-	$has_different_logo     = _get_value( 'header_transparent_different-logo' );
-	$different_logo         = _get_value( 'header_transparent_logo' );
-	$header_layout          = _get_value( 'header_primary_layout' );
-	$sticky_enabled         = _get_value( 'header_sticky_enabled' );
-	$page_builder_templates = [
-		'blocks.php',
-		'beaver-builder.php',
-		'elementor_header_footer',
-	];
+	$header_layout  = _get_value( 'header_primary_layout' );
+	$sticky_enabled = _get_value( 'header_sticky_enabled' );
 
 	$classes[] = $header_layout;
 	$classes[] = $sticky_enabled ? $sticky_enabled : 'no-sticky-header';
 	$classes[] = _get_value( 'header_primary_mobile-layout' );
 	$classes[] = _get_value( 'menus_mobile_animation' );
 
-	/*
-	 * Different Logo.
-	 */
-	if ( 'no-transparent-header' !== $transparent_enabled && $has_different_logo && $different_logo ) {
-		$classes[] = 'has-transparent-logo';
-	}
-
-	/*
-	 * Only add transparent header class if:
-	 *
-	 * Enabled on setting is not equal to none.
-	 * Header layout is not set to side logo layout.
-	 * Page has hero section or page builder template.
-	 */
-	if ( 'no-transparent-header' !== $transparent_enabled && 'has-logo-side' !== $header_layout && ( in_array( 'has-hero-section', $classes ) || is_page_template( $page_builder_templates ) ) ) {
-		$classes[] = $transparent_enabled;
-
-	} else {
-		$classes[] = 'no-transparent-header';
-	}
-
 	return $classes;
 }
 
+add_filter( 'genesis_attr_site-title', __NAMESPACE__ . '\display_title_tagline' );
+add_filter( 'genesis_attr_site-description', __NAMESPACE__ . '\display_title_tagline' );
+/**
+ * Description of expected behavior.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function display_title_tagline( $atts ) {
+	$display = _get_value( 'title-tagline' );
 
-add_action( 'genesis_site_title', __NAMESPACE__ . '\custom_logo' );
+	if ( ! $display ) {
+		$atts['class'] = $atts['class'] . ' screen-reader-text';
+	}
+
+	return $atts;
+}
+
+add_action( 'genesis_site_title', __NAMESPACE__ . '\custom_logo', 5 );
 /**
  * Description of expected behavior.
  *
@@ -65,15 +54,35 @@ add_action( 'genesis_site_title', __NAMESPACE__ . '\custom_logo' );
 function custom_logo() {
 	$html = has_custom_logo() ? the_custom_logo() : '';
 
-	$different   = _get_value( 'header_transparent_different-logo' );
-	$transparent = _get_value( 'header_transparent_logo' );
+	$sticky           = _get_value( 'header_sticky_different-logo' );
+	$sticky_logo      = _get_value( 'header_sticky_logo' );
+	$transparent      = _get_value( 'header_transparent_different-logo' );
+	$transparent_logo = _get_value( 'header_transparent_logo' );
 
-	if ( $different && $transparent ) {
+	if ( $sticky && $sticky_logo ) {
+		$attr = [
+			'class' => 'sticky-logo',
+		];
+
+		$alt = get_post_meta( $sticky_logo, '_wp_attachment_image_alt', true );
+
+		if ( empty( $alt ) ) {
+			$attr['alt'] = get_bloginfo( 'name', 'display' );
+		}
+
+		$html .= sprintf(
+			'<a href="%1$s" class="sticky-logo-link" rel="home" itemprop="url">%2$s</a>',
+			esc_url( home_url( '/' ) ),
+			wp_get_attachment_image( $sticky_logo, 'full', false, $attr )
+		);
+	}
+
+	if ( $transparent && $transparent_logo ) {
 		$attr = [
 			'class' => 'transparent-logo',
 		];
 
-		$alt = get_post_meta( $transparent, '_wp_attachment_image_alt', true );
+		$alt = get_post_meta( $transparent_logo, '_wp_attachment_image_alt', true );
 
 		if ( empty( $alt ) ) {
 			$attr['alt'] = get_bloginfo( 'name', 'display' );
@@ -82,7 +91,7 @@ function custom_logo() {
 		$html .= sprintf(
 			'<a href="%1$s" class="transparent-logo-link" rel="home" itemprop="url">%2$s</a>',
 			esc_url( home_url( '/' ) ),
-			wp_get_attachment_image( $transparent, 'full', false, $attr )
+			wp_get_attachment_image( $transparent_logo, 'full', false, $attr )
 		);
 	}
 

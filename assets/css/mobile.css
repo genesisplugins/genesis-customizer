@@ -1,8 +1,3 @@
-.admin-bar.has-sticky-header-mobile .site-header,
-.admin-bar.has-sticky-header .site-header {
-  top: 46px !important;
-}
-
 .has-logo-above-mobile .primary-header > .wrap,
 .has-logo-below-mobile .primary-header > .wrap {
   justify-content: center;
@@ -24,6 +19,74 @@
   text-align: right;
 }
 
+.nav-primary {
+  display: none;
+  left: 0;
+  top: 100%;
+  width: 100vw;
+  z-index: 4;
+}
+
+.has-mobile-menu-left .nav-primary,
+.has-mobile-menu-right .nav-primary,
+.has-mobile-menu-center .nav-primary {
+  bottom: 0;
+  display: flex;
+  height: 100%;
+  left: 0;
+  padding: 0 3.2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.has-mobile-menu-center .nav-primary {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.has-mobile-menu-center .nav-primary.visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.has-mobile-menu-right .nav-primary {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+}
+
+.has-mobile-menu-left .nav-primary {
+  -webkit-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+}
+
+.has-mobile-menu-left .nav-primary.visible {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.has-mobile-menu-top .nav-primary {
+  transition: none;
+  order: 4;
+}
+
+.nav-secondary {
+  display: none;
+}
+
+.no-js .menu-item {
+  padding: 0;
+  width: 100%;
+}
+
+.menu-toggle {
+  display: flex;
+}
+
 .menu-toggle-bar {
   z-index: 5;
   order: 1;
@@ -43,6 +106,11 @@
 
 .has-logo-below-mobile .menu-toggle-bar {
   order: -1;
+}
+
+.no-js .sub-menu .menu-item {
+  margin: 0 1.6rem 0 0;
+  width: auto;
 }
 
 .has-logo-above-mobile .header-left,
@@ -82,6 +150,11 @@
   flex: none;
 }
 
+.has-logo-above-mobile .header-search-toggle,
+.has-logo-below-mobile .header-search-toggle {
+  position: absolute;
+}
+
 .has-sticky-header-mobile .site-header {
   position: absolute;
   top: 0;
@@ -89,6 +162,10 @@
 
 .has-sticky-header-mobile.has-sticky-nav-secondary .shrink .nav-secondary {
   opacity: 1;
+}
+
+.has-sticky-header-mobile .shrink .sticky-logo-link .sticky-logo {
+  display: block;
 }
 
 .hide-mobile {

@@ -19,7 +19,7 @@
         var headerSearchScroll = navSecondaryScroll;
         var primaryHeaderHeight = $('.primary-header').outerHeight();
         var windowWidth = $(window).innerWidth();
-        var breakpoint = genesisMenuParams.headerBreakpoint;
+        var breakpoint = genesisMenuParams.breakpoint;
 
         if (!aboveHeader.is(':visible')) {
             aboveHeaderHeight = 0;
@@ -116,7 +116,7 @@
         var stickyHeader = false;
         var transparentHeader = false;
         var windowWidth = $(window).innerWidth();
-        var breakpoint = genesisMenuParams.headerBreakpoint;
+        var breakpoint = genesisMenuParams.breakpoint;
 
         // Sticky Header mobile.
         if (windowWidth <= breakpoint && body.hasClass('has-sticky-header-mobile')) {

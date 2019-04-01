@@ -13,32 +13,35 @@ return [
 			'link-hover' => __( 'Sub Menu Link Hover', 'genesis-customizer' ),
 		],
 		'default'  => [
-			'background'               => _get_color( 'white' ),
-			'link'                     => _get_color( 'text' ),
-			'link-hover'               => _get_color( 'accent' ),
+			'background' => _get_color( 'white' ),
+			'link'       => _get_color( 'text' ),
+			'link-hover' => _get_color( 'accent' ),
 		],
 		'output'   => [
 			[
-				'choice'   => 'background',
-				'element'  => '.desktop .sub-menu',
-				'property' => 'background-color',
+				'choice'      => 'background',
+				'element'     => '.sub-menu',
+				'property'    => 'background-color',
+				'media_query' => _get_media_query(),
 			],
 			[
-				'choice'   => 'link',
-				'element'  => [
-					'.desktop .sub-menu',
-					'.desktop .sub-menu a',
+				'choice'      => 'link',
+				'element'     => [
+					'.sub-menu',
+					'.sub-menu a',
 				],
-				'property' => 'color',
+				'property'    => 'color',
+				'media_query' => _get_media_query(),
 			],
 			[
-				'choice'   => 'link-hover',
-				'element'  => [
-					'.desktop .sub-menu a:hover',
-					'.desktop .sub-menu a:focus',
-					'.desktop .sub-menu .current-menu-item > a',
+				'choice'      => 'link-hover',
+				'element'     => [
+					'.sub-menu a:hover',
+					'.sub-menu a:focus',
+					'.sub-menu .current-menu-item > a',
 				],
-				'property' => 'color',
+				'property'    => 'color',
+				'media_query' => _get_media_query(),
 			],
 		],
 	],
@@ -61,7 +64,8 @@ return [
 		],
 		'output'   => [
 			[
-				'element' => '.desktop .sub-menu a',
+				'element'     => '.sub-menu a',
+				'media_query' => _get_media_query(),
 			],
 		],
 	],
@@ -82,9 +86,10 @@ return [
 		],
 		'output'   => [
 			[
-				'element'  => '.desktop .sub-menu',
-				'property' => 'width',
-				'units'    => 'px',
+				'element'     => '.sub-menu',
+				'property'    => 'width',
+				'units'       => 'px',
+				'media_query' => _get_media_query(),
 			],
 		],
 	],
@@ -100,14 +105,16 @@ return [
 		],
 		'output'   => [
 			[
-				'element'       => '.desktop .sub-menu .menu-item a',
+				'element'       => '.sub-menu .menu-item a',
 				'property'      => 'padding',
 				'value_pattern' => '$px',
+				'media_query'   => _get_media_query(),
 			],
 			[
-				'element'       => '.desktop .sub-menu .menu-item',
+				'element'       => '.sub-menu .menu-item',
 				'property'      => 'padding',
 				'value_pattern' => '0px',
+				'media_query'   => _get_media_query(),
 			],
 		],
 	],

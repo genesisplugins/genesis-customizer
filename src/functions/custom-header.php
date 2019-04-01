@@ -2,6 +2,15 @@
 
 namespace GenesisCustomizer;
 
+register_default_headers( [
+	'sunset' => [
+		'url'           => _get_url() . 'assets/img/hero-section.jpg',
+		'thumbnail_url' => _get_url() . 'assets/img/hero-section.jpg',
+		'description'   => __( 'Default image', 'genesis-customizer' ),
+	],
+] );
+
+add_filter( 'theme_mod_header_image', __NAMESPACE__ . '\custom_header', 25 );
 /**
  * Custom header image callback.
  *
@@ -17,7 +26,8 @@ function custom_header() {
 	$id      = '';
 	$url     = '';
 	$custom  = _get_value( 'header_hero-section_background' );
-	$default = isset( $custom['background-image'] ) ? $custom['background-image'] : get_theme_support( 'custom-header', 'default_image' );
+	$default = get_theme_support( 'custom-header' )[0]['default_image'];
+	$default = isset( $custom['background-image'] ) ? $custom['background-image'] : $default;
 
 	/// TODO: Add rules for every conditional in template-loader.php.
 	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
@@ -26,26 +36,26 @@ function custom_header() {
 	} elseif ( is_front_page() ) {
 		$id = get_option( 'page_on_front' );
 
-	} elseif ( 'posts' === get_option( 'show_on_front' ) && is_home() ) {
+	} elseif ( is_home() ) {
 		$id = get_option( 'page_for_posts' );
 
 	} elseif ( is_post_type_archive() ) {
-		$url = get_theme_mod(get_query_var( 'post_type' ) . '-image', $default );
+		$url = get_theme_mod( get_query_var( 'post_type' ) . '-image', $default );
 
 	} elseif ( is_category() ) {
-		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+		$url = get_theme_mod( 'term-' . get_the_category()[0]->cat_ID, $default );
 
 	} elseif ( is_tag() ) {
-		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+		$url = get_theme_mod( 'term-' . get_the_category()[0]->cat_ID, $default );
 
 	} elseif ( is_tax() ) {
-		$url = get_theme_mod('term-' . get_the_category()[0]->cat_ID, $default );
+		$url = get_theme_mod( 'term-' . get_the_category()[0]->cat_ID, $default );
 
 	} elseif ( is_search() ) {
-		$url = get_theme_mod('search-image', $default );
+		$url = get_theme_mod( 'search-image', $default );
 
 	} elseif ( is_404() ) {
-		$url = get_theme_mod('404-image', $default );
+		$url = get_theme_mod( '404-image', $default );
 
 	} elseif ( is_singular() ) {
 		$id = get_the_id();
@@ -70,11 +80,13 @@ function custom_header() {
 		$url = false;
 	}
 
-	if ( $url && $url !== $default ) {
+	if ( $url ) {
 		$selector = get_theme_support( 'custom-header', 'header-selector' );
 		$value    = 'no_image' === $settings ? 'none' : 'url(%s)';
 
-		return printf( '<style type="text/css">' . esc_attr( $selector ) . '{background-image:' . $value . '}</style>' . "\n", esc_url( $url ) );
+		return $url;
+
+//		return printf( '<style type="text/css">' . esc_attr( $selector ) . '{background-image:' . $value . '}</style>' . "\n", esc_url( $url ) );
 	} else {
 		return '';
 	}

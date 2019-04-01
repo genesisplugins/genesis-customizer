@@ -50,8 +50,7 @@ function add_sections() {
 			'mega'            => __( 'Mega Menu', 'genesis-customizer' ),
 		],
 		'hero'        => [
-			'settings'   => __( 'Settings', 'genesis-customizer' ),
-			'background' => __( 'Background', 'genesis-customizer' ),
+			'settings' => __( 'Settings', 'genesis-customizer' ),
 		],
 		'content'     => [
 			'main'           => __( 'Main Content', 'genesis-customizer' ),
@@ -98,14 +97,16 @@ function add_sections() {
 	] );
 
 	foreach ( $panels as $panel => $sections ) {
-		$priority = 0;
+		$priority = 10;
 
 		foreach ( $sections as $section => $title ) {
 			\Kirki::add_section( $handle . "_{$panel}_${section}", [
 				'title'    => $title,
 				'panel'    => $handle . "_{$panel}",
-				'priority' => $priority + 10,
+				'priority' => $priority,
 			] );
+
+			$priority = $priority + 10;
 		}
 	}
 }

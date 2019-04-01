@@ -76,7 +76,8 @@ return [
 		],
 		'output'   => [
 			[
-				'element' => '.desktop .menu-secondary a',
+				'element'     => '.menu-secondary a',
+				'media_query' => _get_media_query(),
 			],
 		],
 	],
@@ -138,9 +139,10 @@ return [
 		],
 		'output'   => [
 			[
-				'element'       => '.desktop .menu-secondary a',
+				'element'       => '.menu-secondary a',
 				'property'      => 'padding',
 				'value_pattern' => '$px 0',
+				'media_query'   => _get_media_query(),
 			],
 		],
 	],
@@ -156,9 +158,10 @@ return [
 		],
 		'output'   => [
 			[
-				'element'       => '.desktop .menu-secondary .menu-item',
+				'element'       => '.menu-secondary .menu-item',
 				'property'      => 'padding',
 				'value_pattern' => '0 $px',
+				'media_query'   => _get_media_query(),
 			],
 		],
 	],

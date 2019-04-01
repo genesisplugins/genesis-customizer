@@ -21,9 +21,10 @@ return [
 		],
 		'output'   => [
 			[
-				'choice'   => 'background',
-				'element'  => '.mobile .nav-primary',
-				'property' => 'background-color',
+				'choice'      => 'background',
+				'element'     => '.nav-primary',
+				'property'    => 'background-color',
+				'media_query' => _get_media_query( 'max' ),
 			],
 			[
 				'choice'   => 'overlay',
@@ -31,17 +32,19 @@ return [
 				'property' => 'background-color',
 			],
 			[
-				'choice'   => 'links',
-				'element'  => '.mobile .menu-primary a',
-				'property' => 'color',
+				'choice'      => 'links',
+				'element'     => '.menu-primary a',
+				'property'    => 'color',
+				'media_query' => _get_media_query( 'max' ),
 			],
 			[
-				'choice'   => 'links-hover',
-				'element'  => [
-					'.mobile .menu-primary a:hover',
-					'.mobile .menu-primary a:focus',
+				'choice'      => 'links-hover',
+				'element'     => [
+					'.menu-primary a:hover',
+					'.menu-primary a:focus',
 				],
-				'property' => 'color',
+				'property'    => 'color',
+				'media_query' => _get_media_query( 'max' ),
 			],
 		],
 	],
@@ -62,14 +65,16 @@ return [
 		],
 		'output'   => [
 			[
-				'element'       => '.mobile .menu-primary a',
+				'element'       => '.menu-primary a',
 				'property'      => 'padding',
 				'value_pattern' => '$px 0',
+				'media_query'   => _get_media_query( 'max' ),
 			],
 			[
-				'element'       => '.mobile .nav-primary',
+				'element'       => '.nav-primary',
 				'property'      => 'padding',
 				'value_pattern' => '$px 0',
+				'media_query'   => _get_media_query( 'max' ),
 			],
 		],
 	],
@@ -89,23 +94,24 @@ return [
 		],
 		'output'          => [
 			[
-				'element'  => '.mobile .nav-primary',
-				'property' => 'position',
+				'element'     => '.nav-primary',
+				'property'    => 'position',
+				'media_query' => _get_media_query( 'max' ),
 			],
 		],
 		'active_callback' => [
 			[
-				'setting' => _get_setting( 'animation' ),
+				'setting'  => _get_setting( 'animation' ),
 				'value'    => 'has-mobile-menu-left',
 				'operator' => '!==',
 			],
 			[
-				'setting' => _get_setting( 'animation' ),
+				'setting'  => _get_setting( 'animation' ),
 				'value'    => 'has-mobile-menu-right',
 				'operator' => '!==',
 			],
 			[
-				'setting' => _get_setting( 'animation' ),
+				'setting'  => _get_setting( 'animation' ),
 				'value'    => 'has-mobile-menu-center',
 				'operator' => '!==',
 			],

@@ -1,6 +1,19 @@
 (function (document, $) {
 
     /**
+     * Admin bar site header spacing.
+     */
+    $(window).on("load resize", function () {
+        if ($('body').hasClass('admin-bar')) {
+            var adminBar = $('#wpadminbar').outerHeight();
+
+            $('.has-sticky-header .site-header').css('top', adminBar);
+            $('.has-sticky-header-mobile .site-header').css('top', adminBar);
+            $('.has-sticky-header-desktop .site-header').css('top', adminBar);
+        }
+    });
+
+    /**
      * Hide/show mega menu.
      */
     var megaMenuLink = $('.has-mega-menu');

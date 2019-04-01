@@ -13,16 +13,16 @@
 	margin: 0 0 0 $spacing--s;
 	list-style-type: none;
 
-	.desktop & {
+	@include mq(m) {
 		position: absolute;
 		z-index: 1;
 		margin: 0 0 0 -1em;
 		padding: 1em;
-	}
 
-	.desktop.has-logo-side & {
-		position: relative;
-		margin: 0 auto;
+		.has-logo-side & {
+			position: relative;
+			margin: 0 auto;
+		}
 	}
 
 	.no-js .menu-item-has-children:hover > &,
@@ -34,12 +34,15 @@
 	.menu-item {
 		width: 100%;
 
-		.mobile.no-js & {
-			width: auto;
-			margin: 0 $spacing--m 0 0;
+		@include mq(0, m) {
+
+			.no-js & {
+				width: auto;
+				margin: 0 $spacing--m 0 0;
+			}
 		}
 
-		.desktop & {
+		@include mq(m) {
 			width: auto;
 
 			&:last-of-type {
@@ -55,7 +58,7 @@
 	// Sub sub menu.
 	& & {
 
-		.desktop & {
+		@include mq(m) {
 			top: 0;
 			left: 100%;
 			margin-top: -1em;
@@ -79,7 +82,7 @@
 			outline: none;
 		}
 
-		.desktop & {
+		@include mq(m) {
 			display: none;
 		}
 

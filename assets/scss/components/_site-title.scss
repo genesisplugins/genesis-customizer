@@ -3,9 +3,4 @@
 .title-area .site-title {
 	margin: 0;
 	font-weight: $font-weight--bold;
-
-	.wp-custom-logo & {
-
-		@include hide-visually;
-	}
 }

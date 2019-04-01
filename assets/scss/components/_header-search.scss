@@ -10,6 +10,7 @@
 
 	&-toggle {
 		position: relative;
+		box-shadow: none;
 
 		&.left {
 			order: -1;
@@ -25,13 +26,19 @@
 			right: 0;
 		}
 
-		.mobile.has-logo-above-mobile &,
-		.mobile.has-logo-below-mobile & {
-			position: absolute;
+		@include mq(0, m) {
+
+			.has-logo-above-mobile &,
+			.has-logo-below-mobile & {
+				position: absolute;
+			}
 		}
 
-		.desktop.has-logo-side & {
-			display: none;
+		@include mq(m) {
+
+			.has-logo-side & {
+				display: none;
+			}
 		}
 	}
 

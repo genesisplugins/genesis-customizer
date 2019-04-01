@@ -1,6 +1,19 @@
 (function (document, $) {
 
     /**
+     * Admin bar site header spacing.
+     */
+    $(window).on("load resize", function () {
+        if ($('body').hasClass('admin-bar')) {
+            var adminBar = $('#wpadminbar').outerHeight();
+
+            $('.has-sticky-header .site-header').css('top', adminBar);
+            $('.has-sticky-header-mobile .site-header').css('top', adminBar);
+            $('.has-sticky-header-desktop .site-header').css('top', adminBar);
+        }
+    });
+
+    /**
      * Hide/show mega menu.
      */
     var megaMenuLink = $('.has-mega-menu');
@@ -89,16 +102,6 @@
         genesisMenusUnchecked = genesisMenuParams.menuClasses,
         genesisMenus = {},
         menusToCombine = [];
-
-    $(window).on("load resize scroll", function () {
-        if ($(window).innerWidth() <= genesisMenuParams.breakpoint) {
-            $('body').removeClass('desktop');
-            $('body').addClass('mobile');
-        } else {
-            $('body').removeClass('mobile');
-            $('body').addClass('desktop');
-        }
-    });
 
     /**
      * Validate the menus passed by the theme with what's being loaded on the page,
@@ -571,13 +574,16 @@
             var menu = $('.has-logo-center .menu-primary > .menu-item');
             var items = menu.length / 2 - 1;
             var windowWidth = $(window).innerWidth();
-            var header = $('.site-header').outerWidth();
-            var breakpoint = genesisMenuParams.headerBreakpoint;
+            var breakpoint = genesisMenuParams.breakpoint;
+            var menuToggle = $('.menu-toggle');
+            var menuToggleBar = $('.menu-toggle-bar');
 
-            if (windowWidth >= breakpoint || header >= breakpoint) {
-                menu.eq(Math.floor(items)).after(logo);
+            if (windowWidth <= breakpoint && menuToggleBar.length) {
+                logo.insertBefore(menuToggleBar);
+            } else if (windowWidth <= breakpoint) {
+                logo.insertBefore(menuToggle);
             } else {
-                logo.insertBefore($('.menu-toggle-bar'));
+                menu.eq(Math.floor(items)).after(logo);
             }
         });
     }
@@ -607,7 +613,7 @@
         var headerSearchScroll = navSecondaryScroll;
         var primaryHeaderHeight = $('.primary-header').outerHeight();
         var windowWidth = $(window).innerWidth();
-        var breakpoint = genesisMenuParams.headerBreakpoint;
+        var breakpoint = genesisMenuParams.breakpoint;
 
         if (!aboveHeader.is(':visible')) {
             aboveHeaderHeight = 0;
@@ -704,7 +710,7 @@
         var stickyHeader = false;
         var transparentHeader = false;
         var windowWidth = $(window).innerWidth();
-        var breakpoint = genesisMenuParams.headerBreakpoint;
+        var breakpoint = genesisMenuParams.breakpoint;
 
         // Sticky Header mobile.
         if (windowWidth <= breakpoint && body.hasClass('has-sticky-header-mobile')) {

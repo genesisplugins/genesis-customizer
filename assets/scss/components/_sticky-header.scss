@@ -36,3 +36,33 @@
 
 	@include has-sticky-header;
 }
+
+.sticky-logo-link .sticky-logo {
+	display: none;
+
+	.has-sticky-header .shrink & {
+		display: block;
+	}
+
+	@include mq(0, m) {
+
+		.has-sticky-header-mobile .shrink & {
+			display: block;
+		}
+	}
+
+	@include mq(m) {
+
+		.has-sticky-header-desktop .shrink & {
+			display: block;
+		}
+	}
+}
+
+.has-sticky-logo .shrink {
+
+	.custom-logo,
+	.transparent-logo {
+		display: none;
+	}
+}

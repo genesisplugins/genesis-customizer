@@ -146,18 +146,19 @@ function add_misc_fields() {
 	] );
 
 	\Kirki::add_field( $handle, [
-		'type'     => 'slider',
-		'section'  => 'title_tagline',
-		'settings' => $handle . '_logo_width_mobile',
-		'label'    => __( 'Logo Width Mobile', 'genesis-customizer' ),
-		'priority' => 8,
-		'default'  => '200',
-		'choices'  => [
+		'type'      => 'slider',
+		'section'   => 'title_tagline',
+		'settings'  => $handle . '_logo_width_mobile',
+		'label'     => __( 'Logo Width Mobile', 'genesis-customizer' ),
+		'transport' => 'auto',
+		'priority'  => 8,
+		'default'   => '200',
+		'choices'   => [
 			'min'  => 0,
 			'max'  => 600,
 			'step' => 1,
 		],
-		'output'   => [
+		'output'    => [
 			[
 				'element'     => '.custom-logo',
 				'property'    => 'width',
@@ -168,18 +169,19 @@ function add_misc_fields() {
 	] );
 
 	\Kirki::add_field( $handle, [
-		'type'     => 'slider',
-		'section'  => 'title_tagline',
-		'settings' => $handle . '_logo_width_desktop',
-		'label'    => __( 'Logo Width Desktop', 'genesis-customizer' ),
-		'priority' => 8,
-		'default'  => '200',
-		'choices'  => [
+		'type'      => 'slider',
+		'section'   => 'title_tagline',
+		'settings'  => $handle . '_logo_width_desktop',
+		'label'     => __( 'Logo Width Desktop', 'genesis-customizer' ),
+		'transport' => 'auto',
+		'priority'  => 8,
+		'default'   => '200',
+		'choices'   => [
 			'min'  => 0,
 			'max'  => 600,
 			'step' => 1,
 		],
-		'output'   => [
+		'output'    => [
 			[
 				'element'     => '.custom-logo',
 				'property'    => 'width',
@@ -190,18 +192,19 @@ function add_misc_fields() {
 	] );
 
 	\Kirki::add_field( $handle, [
-		'type'     => 'slider',
-		'section'  => 'title_tagline',
-		'settings' => $handle . '_logo_spacing',
-		'label'    => __( 'Logo Spacing', 'genesis-customizer' ),
-		'priority' => 8,
-		'default'  => '16',
-		'choices'  => [
+		'type'      => 'slider',
+		'section'   => 'title_tagline',
+		'settings'  => $handle . '_logo_spacing',
+		'label'     => __( 'Logo Spacing', 'genesis-customizer' ),
+		'transport' => 'auto',
+		'priority'  => 8,
+		'default'   => '16',
+		'choices'   => [
 			'min'  => - 20,
 			'max'  => 100,
 			'step' => 1,
 		],
-		'output'   => [
+		'output'    => [
 			[
 				'element'       => '.custom-logo',
 				'property'      => 'margin',
@@ -217,6 +220,31 @@ function add_misc_fields() {
 		'priority' => 8,
 		'default'  => '<hr>',
 	] );
+
+	\Kirki::add_field( $handle, [
+		'type'     => 'checkbox',
+		'section'  => 'title_tagline',
+		'settings' => $handle . '_title-tagline',
+		'label'    => __( 'Display site title and tagline?', 'genesis-customizer' ),
+		'priority' => 20,
+		'default'  => true,
+	] );
+
+	if ( _is_pro_active() ) {
+		\Kirki::add_field( $handle, [
+			'type'     => 'custom',
+			'section'  => 'title_tagline',
+			'settings' => $handle . '_tip-3983480',
+			'priority' => 7,
+			'default'  => sprintf(
+				'<p><strong>%s</strong> %s <a href="javascript:wp.customize.control( %s ).focus();">%s</a></p><hr>',
+				esc_html__( 'Tip: ', 'genesis-customizer' ),
+				esc_html__( 'Using a transparent header? Set an alternative logo from the  ', 'genesis-customizer' ),
+				esc_attr( '"genesis-customizer_header_transparent_different-logo"' ),
+				esc_html__( 'Transparent Header Logo Setting', 'genesis-customizer' )
+			),
+		] );
+	}
 }
 
 add_filter( 'genesis_customizer_sections', __NAMESPACE__ . '\other_hero_images', 15, 1 );

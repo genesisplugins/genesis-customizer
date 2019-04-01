@@ -13,13 +13,16 @@
             var menu = $('.has-logo-center .menu-primary > .menu-item');
             var items = menu.length / 2 - 1;
             var windowWidth = $(window).innerWidth();
-            var header = $('.site-header').outerWidth();
-            var breakpoint = genesisMenuParams.headerBreakpoint;
+            var breakpoint = genesisMenuParams.breakpoint;
+            var menuToggle = $('.menu-toggle');
+            var menuToggleBar = $('.menu-toggle-bar');
 
-            if (windowWidth >= breakpoint || header >= breakpoint) {
-                menu.eq(Math.floor(items)).after(logo);
+            if (windowWidth <= breakpoint && menuToggleBar.length) {
+                logo.insertBefore(menuToggleBar);
+            } else if (windowWidth <= breakpoint) {
+                logo.insertBefore(menuToggle);
             } else {
-                logo.insertBefore($('.menu-toggle-bar'));
+                menu.eq(Math.floor(items)).after(logo);
             }
         });
     }

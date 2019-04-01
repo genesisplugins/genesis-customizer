@@ -108,7 +108,7 @@ return [
 			[
 				'element'       => [
 					'.site-title-link',
-					'.desktop .menu-primary .site-title-link',
+					'.menu-primary .site-title-link',
 				],
 				'property'      => 'padding',
 				'value_pattern' => '0 0 $px',
